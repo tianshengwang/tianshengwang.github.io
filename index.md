@@ -1,6 +1,5 @@
 
 Assistant Professor (from Sept 1, 2025) · Department of Pharmaceutical Health Outcomes & Policy (PHOP) · University of Houston College of Pharmacy
-Former Postdoctoral Scholar · Department of Epidemiology · UNC Gillings School of Global Public Health
 
 [Google Scholar](https://scholar.google.com/citations?user=JYtT5K8AAAAJ&hl=en) · [GitHub](https://github.com/tianshengwang) · ORCID: 0000-0002-0980-8896 · Email: [tianwang@uh.edu](mailto:tianwang@uh.edu)
 
@@ -8,19 +7,17 @@ Former Postdoctoral Scholar · Department of Epidemiology · UNC Gillings School
 
 ## Research Focus
 
-I develop and apply **causal inference** and **machine learning** methods in **pharmacoepidemiology** using real‑world data. Current themes:
+I develop and apply **AI-powered causal inference** methods to assess drug effects in real‑world data. Current themes:
 
 * **Heterogeneous Treatment Effects (HTE):** Iterative Causal Forest (iCF) and **High‑dimensional iCF (hdiCF)** for subgroup identification.
-* **Confounding Control:** Temporal/longitudinal patterns (e.g., thdPS) for confounding control.
+* **Confounding Control:** Longitudinal patterns (e.g., thdPS) for confounding control (collaborative project with [Dr. Til Stürmer](https://sph.unc.edu/adv_profile/til-sturmer-md-phd/) @ UNC).
 * **Drug repurposing for dementia:** Claims‑based algorithms for **dementia** identification and drug repurposing pipelines.
 
 ---
 
 ## News
 
-* **Aug 2025:** AJE paper on a claims‑based algorithm for incident and prevalent dementia (ARIC/Medicare) accepted.
-* **Aug 2025:** Presenting *Temporal High‑dimensional Propensity Score (thdPS)* and *Statin utilization trajectories & 1‑year mortality* at **ICPE 2025**.
-
+* **Sep 2025:** Start tenure track assistant professor position at Department of Pharmaceutical Health Outcomes and Policy, University of Houston College of Pharmacy.
 > For recent publications and talks, see below.
 
 ---
@@ -45,48 +42,37 @@ I develop and apply **causal inference** and **machine learning** methods in **p
 
   * Repo: [`tianshengwang/hdiCF`](https://github.com/tianshengwang/hdiCF)
    
-* **HDsetting** — Comparing of hdPS (3 binary variables per code) and hdiCF (1 ordinal variable per code) setting for HTE assessment.
+* **HDsetting** — A novel high-dimensional setting (1 ordinal variable per code) for HTE assessment.
 
   * Repo: [`tianshengwang/HDsetting`](https://github.com/tianshengwang/HDsetting)
-* **Dementia Claims Algorithm (ARIC/Medicare)** — Code and documentation.
+* **Dementia identification algorithm** — a novel incident and prevalent dementia identification algorithm for claims data.
 
-  * Repo: [`tianshengwang/IdentifyADRD](https://github.com/tianshengwang/IdentifyADRD)
+  * Repo: [`tianshengwang/IdentifyADRD`](https://github.com/tianshengwang/IdentifyADRD)
 
-> If you use these tools, please cite the corresponding paper(s).
+> more coming soon...
 
 ---
 
-## Talks (Selected)
+## Talks (Recent)
 
-* *Advancing Pharmacoepidemiology with Causal Inference & ML* — invited seminars (Pitt, UTHealth, OSU, HPHCI/HMS, HSPH), 2024–2025.
-* *High‑dimensional Iterative Causal Forest (hdiCF)* — UNC DPOP (2024), ICPE (2023).
-* *Temporal High‑dimensional PS (thdPS); Statin trajectories & mortality* — ICPE 2025.
+* *Improving confounding control by statin utilization prior to follow-up for 1-year mortality in US older adults* — 8/25/2025 ICPE. Washingon DC.
+* *Temporal High Dimensional Propensity Score (thdPS): A Novel Approach to Improve Confounding Control by Incorporating Temporality*; — 8/25/2025 ICPE. Washingon DC.
 
 ---
 
 ## Teaching
 
-* Methods & Issues in Pharmacoepidemiology (EPID 765) — TA.
-* Quantitative Methods for Health Care Professionals (PUBH 741) — TA.
-* Guest lectures in healthcare database epidemiology & clinical research methods.
+coming soon
 
 ---
 
+## Lab
+
+coming soon
+
+---
 ## Contact
 
 * **Email:** [tianwang@uh.edu](mailto:tianwang@uh.edu)
 * **GitHub:** [@tianshengwang](https://github.com/tianshengwang)
 * **Google Scholar:** T. Wang (Tiansheng)
-
----
-
-### How this site works
-
-This repository is a user site for GitHub Pages. To publish:
-
-1. In repo **Settings → Pages**, set **Build and deployment** to the branch you prefer (e.g., `iCF`) and root.
-2. Add an `index.md` (you may copy this README content) or `index.html` for a custom home page.
-3. (Optional) Create `_config.yml` with `theme: minima` and set a title/description.
-
-> If you prefer a one‑page HTML site with a custom layout, create `index.html` at the repo root; I can provide a fully styled version on request.
-
