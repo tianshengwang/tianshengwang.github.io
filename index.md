@@ -70,7 +70,7 @@ coming soon
 
 ---
 
-## Lab
+## CausalRx Lab
 
 coming soon
 
