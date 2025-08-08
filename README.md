@@ -12,8 +12,8 @@ Former Postdoctoral Scholar · Department of Epidemiology · UNC Gillings School
 I develop and apply **causal inference** and **machine learning** methods in **pharmacoepidemiology** using real‑world data. Current themes:
 
 * **Heterogeneous Treatment Effects (HTE):** Iterative Causal Forest (iCF) and **High‑dimensional iCF (hdiCF)** for subgroup identification.
-* **Confounding Control:** Temporal/longitudinal patterns (e.g., thdPS) and target trial emulation.
-* **Neuroepidemiology:** Claims‑based algorithms for **dementia** identification and drug repurposing pipelines.
+* **Confounding Control:** Temporal/longitudinal patterns (e.g., thdPS) for confounding control.
+* **Drug repurposing for dementia:** Claims‑based algorithms for **dementia** identification and drug repurposing pipelines.
 
 ---
 
@@ -31,7 +31,6 @@ I develop and apply **causal inference** and **machine learning** methods in **p
 * **High‑dimensional Iterative Causal Forest (hdiCF):** Wang T\*, Pate V, Wyss R, Buse JB, Kosorok MR, Stürmer T. *Am J Epidemiol*, 2025.
 * **Algorithm for Dementia Identification (Medicare, ARIC):** Wang T, Pate V, Kim DH, et al. *Am J Epidemiol*, 2025.
 * **GLP‑1RA & Asthma Exacerbations (subgroups via hdiCF):** Wang T\*, Wang J, et al. *Pharmacoepidemiol Drug Saf*, 2025.
-* **Proximal Causal Inference in Vaccine Effectiveness (TTE):** Guo J, **Wang T**, et al. *eClinicalMedicine*, 2025.
 
 *A fuller list is available on* [Google Scholar](https://scholar.google.com/citations?user=JYtT5K8AAAAJ&hl=en).
 
@@ -39,36 +38,22 @@ I develop and apply **causal inference** and **machine learning** methods in **p
 
 ## Software & Data Resources
 
-* **iCF / hdiCF** — Causal ML for subgrouping in observational data.
+* **iCF** — Causal ML for subgrouping in observational data via predefined variables.
+
+  * Repo: [`tianshengwang/iCF`](https://github.com/tianshengwang/iCF)
+
+* **hdiCF** — Causal ML for subgrouping in observational data via raw diagnosis, procedure, and prescription code.
 
   * Repo: [`tianshengwang/hdiCF`](https://github.com/tianshengwang/hdiCF)
-* **HDsetting** — R & SAS utilities for generating high‑dimensional claims variables (HD variables).
+   
+* **HDsetting** — Comparing of hdPS (3 binary variables per code) and hdiCF (1 ordinal variable per code) setting for HTE assessment.
 
   * Repo: [`tianshengwang/HDsetting`](https://github.com/tianshengwang/HDsetting)
 * **Dementia Claims Algorithm (ARIC/Medicare)** — Code and documentation.
 
-  * Repo: [`tianshengwang/IdentifyDementia_ARIC`](#) *(rename of Identify\_AD\_RWD suggested)*
+  * Repo: [`tianshengwang/IdentifyADRD](https://github.com/tianshengwang/IdentifyADRD)
 
-> If you use these tools, please cite the corresponding paper(s). Issues & PRs are welcome.
-
----
-
-## Figures & Notation (README‑safe)
-
-Use HTML or math (Kramdown/KaTeX) so symbols render on GitHub Pages:
-
-* Subscript: `X<sub>S</sub>` → X<sub>S</sub>
-* Superscript hat (LaTeX): `$\hat{Y}$`, `$\hat{W}$`
-* Precomposed alternatives: **Ŷ**, **Ŵ**
-
-**Figure 1.** The key steps of the hdiCF algorithm.
-All *n*, *c*, *m*, and *S* are parameters (*n* = 50, 100, 200; *c* = 0.01, 0.02, 0.05; *m* = 15, 20, 25; *S* = 0.01, 0.05, 0.1).
-X<sub>S</sub> = selected variables; \$\hat{W}\$ = predicted propensity score (PS); \$\hat{Y}\$ = predicted outcome.
-
-**Figure 2.** Heterogeneous treatment effect assessment by HDo and HDb settings.
-HD = high‑dimensional; PS = propensity score; G<sub>D</sub> = subgroup decision of iCF.
-All *n*, *c*, *m*, and *S* are parameters (*n* = 200; *c* = 0.01; *m* = 20; *S* = 0.05).
-X<sub>S</sub> = selected variables; \$\hat{Y}\$ = predicted outcome; \$\hat{W}\$ = predicted propensity score.
+> If you use these tools, please cite the corresponding paper(s).
 
 ---
 
