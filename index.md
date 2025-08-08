@@ -1,5 +1,5 @@
 
-Assistant Professor (from 9/1/2025) · Department of Pharmaceutical Health Outcomes & Policy (PHOP) · University of Houston College of Pharmacy
+Assistant Professor (from Sep 1, 2025) · Dept. of Pharmaceutical Health Outcomes & Policy (PHOP) · University of Houston College of Pharmacy
 
 ---
 
@@ -15,7 +15,7 @@ I develop and apply **AI-powered causal inference** methods to assess drug effec
 
 ## News
 
-* **Sep 2025:** Start tenure track assistant professor position at Department of Pharmaceutical Health Outcomes and Policy, University of Houston College of Pharmacy.
+* **Sep 2025:** Start tenure track assistant professor position at Dept. of Pharmaceutical Health Outcomes and Policy, University of Houston College of Pharmacy.
 > For recent publications and talks, see below.
 
 ---
