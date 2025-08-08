@@ -1,3 +1,4 @@
+<img src="/assets/img/tian-ghibli.jpg" alt="Tiansheng (Tian) Wang portrait" width="360">
 
 
 Assistant Professor (from Sept 1, 2025) · Department of Pharmaceutical Health Outcomes & Policy (PHOP) · University of Houston College of Pharmacy
