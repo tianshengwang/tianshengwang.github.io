@@ -1,4 +1,3 @@
-<img src = images/Tian_UHAP.jpg width=300>
 
 Assistant Professor (from Sept 1, 2025) · Department of Pharmaceutical Health Outcomes & Policy (PHOP) · University of Houston College of Pharmacy
 Former Postdoctoral Scholar · Department of Epidemiology · UNC Gillings School of Global Public Health
