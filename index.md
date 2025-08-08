@@ -1,17 +1,15 @@
 
 Assistant Professor (from Sept 1, 2025) · Department of Pharmaceutical Health Outcomes & Policy (PHOP) · University of Houston College of Pharmacy
 
-[Google Scholar](https://scholar.google.com/citations?user=JYtT5K8AAAAJ&hl=en) · [GitHub](https://github.com/tianshengwang) · ORCID: 0000-0002-0980-8896 · Email: [tianwang@uh.edu](mailto:tianwang@uh.edu)
-
 ---
 
 ## Research Focus
 
 I develop and apply **AI-powered causal inference** methods to assess drug effects in real‑world data. Current themes:
 
-* **Heterogeneous Treatment Effects (HTE):** Iterative Causal Forest (iCF) and **High‑dimensional iCF (hdiCF)** for subgroup identification.
-* **Confounding Control:** Longitudinal patterns (e.g., thdPS) for confounding control (collaborative project with [Dr. Til Stürmer](https://sph.unc.edu/adv_profile/til-sturmer-md-phd/) @ UNC).
-* **Drug repurposing for dementia:** Claims‑based algorithms for **dementia** identification and drug repurposing pipelines.
+* **Heterogeneous Treatment Effects (HTE) assessment:** heterogeneous causal effects assessment and subgroup identification in real-world data.
+* **Confounding Control:** Longitudinal patterns (e.g., thdPS) of features for confounding control (collaborative project with [Dr. Til Stürmer](https://sph.unc.edu/adv_profile/til-sturmer-md-phd/) @ UNC).
+* **Drug repurposing for Alzheimer's disease and related dementia (ADRD):** assess causal effects of drug repurposing candidates on dementia.
 
 ---
 
@@ -23,10 +21,16 @@ I develop and apply **AI-powered causal inference** methods to assess drug effec
 ---
 
 ## Selected Publications
+* **HTE assessment**
+  * Wang T, Keil AP, Kim S, Wyss R, Htoo PT, Funk MJ, Buse JB, Kosorok MR, Stürmer T. **Iterative Causal Forest: A Novel Algorithm for Subgroup Identification.** _Am J Epidemiol._ 2024 May 7;193(5):764-776 https://doi.org/10.1093/aje/kwad219.
+  * Wang T, Pate V, Wyss R, Buse JB, Kosorok MR, Stürmer T. **High-dimensional Iterative Causal Forest (hdiCF): a Novel Algorithm for Subgroup Identification in Claims Data.** _Am J Epidemiol._ 2024 Sep 5:kwae322. https://doi.org/10.1093/aje/kwae322.
+  * Wang T, Pate V, Wyss R, Buse JB, Kosorok MR, Stürmer T. **A Novel High Dimensional Approach to Assess Heterogeneous Treatment Effect in Claims Data.** _Am J Epidemiol._ 2025 June 11. https://doi.org/10.1093/aje/kwaf127.
+* **Confounding control**
+  * Wang T, Wang J, Song Z, Miller E, Pate V, Her Q, Yang J, Charlier SHR, Egger P, Barnes EL, Buse JB, Becker C, Sandler RS, Meier C, Jick S, Stürmer T. Caution in Handling Switchers in Pharmacoepidemiologic Studies Estimating Treatment Effects: The Example of Dipeptidyl Peptidase-4 Inhibitors and Inflammatory Bowel Disease. _Am J Epidemiol._ 2025. https://doi.org/10.1093/aje/kwaf044
+* **Drug repurposing for ADRD:**
+  * Wang T, Pate V, Kim DH, Power MC, Garden G, Palta P, Knopman D, Jonson-Funk M, Stürmer T, Kucharska-Newton AM. **Developing A Novel Algorithm to Identify Incident and Prevalent Dementia in Medicare Claims. The ARIC Study.** _Am J Epidemiol._ 2025 Aug 4. https://doi.org/10.1093/aje/kwaf166.
 
-* **High‑dimensional Iterative Causal Forest (hdiCF):** Wang T\*, Pate V, Wyss R, Buse JB, Kosorok MR, Stürmer T. *Am J Epidemiol*, 2025.
-* **Algorithm for Dementia Identification (Medicare, ARIC):** Wang T, Pate V, Kim DH, et al. *Am J Epidemiol*, 2025.
-* **GLP‑1RA & Asthma Exacerbations (subgroups via hdiCF):** Wang T\*, Wang J, et al. *Pharmacoepidemiol Drug Saf*, 2025.
+
 
 *A fuller list is available on* [Google Scholar](https://scholar.google.com/citations?user=JYtT5K8AAAAJ&hl=en).
 
@@ -75,4 +79,3 @@ coming soon
 
 * **Email:** [tianwang@uh.edu](mailto:tianwang@uh.edu)
 * **GitHub:** [@tianshengwang](https://github.com/tianshengwang)
-* **Google Scholar:** T. Wang (Tiansheng)
