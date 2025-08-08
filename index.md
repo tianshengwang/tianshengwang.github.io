@@ -1,5 +1,5 @@
 
-Assistant Professor (from Sept 1, 2025) · Department of Pharmaceutical Health Outcomes & Policy (PHOP) · University of Houston College of Pharmacy
+Assistant Professor (from 9/1/2025) · Department of Pharmaceutical Health Outcomes & Policy (PHOP) · University of Houston College of Pharmacy
 
 ---
 
