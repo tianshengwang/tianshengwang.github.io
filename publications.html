@@ -5,35 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Publications — Tiansheng (Tian) Wang</title>
   <meta name="description" content="Publications by Tiansheng (Tian) Wang — Pharmacoepidemiology, causal inference, machine learning." />
-  <link rel="stylesheet" href="/styles.css"> <!-- Link to your existing CSS -->
-  <link rel="icon" href="/images/favicon.jpg" sizes="32x32">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://tianshengwang.ai/assets/styles.css">
+  <link rel="icon" href="https://tianshengwang.ai/images/favicon.jpg" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="https://tianshengwang.ai/images/favicon.svg">
 </head>
 <body>
 
 <header>
   <div class="container">
     <nav>
-      <div class="brand"><a href="/index.html">Tiansheng (Tian) Wang</a></div>
+      <div class="brand"><a href="https://tianshengwang.ai/">Tiansheng (Tian) Wang</a></div>
       <div class="nav">
-        <a href="/index.html#home">Home</a>
-        <a href="/index.html#lab">Lab</a>
-        <a href="/index.html#software">Software</a>
-        <a href="/publications.html" class="active">Publications</a>
-        <a href="/index.html#gallery">Gallery</a>
+        <a href="https://tianshengwang.ai/#home">Home</a>
+        <a href="https://tianshengwang.ai/#lab">Lab</a>
+        <a href="https://tianshengwang.ai/#software">Software</a>
+        <a href="https://tianshengwang.ai/publications.html" class="active">Publications</a>
+        <a href="https://tianshengwang.ai/#gallery">Gallery</a>
+        <button id="themeToggle" class="toggle" aria-label="Toggle light/dark">🌙</button>
       </div>
     </nav>
   </div>
 </header>
 
 <main>
-  <section class="container">
+  <section class="container reveal">
     <h1>Publications</h1>
     <p>Here is a list of selected publications and conference presentations.</p>
 
     <h2>Peer-Reviewed Journal Articles</h2>
     <ul class="pub">
-      <li>Wang T, et al. <a href="https://doi.org/10.1093/aje/kwad219" target="_blank"><strong>Iterative Causal Forest</strong></a>. <em>Am J Epidemiol</em>. 2024.</li>
-      <li>Wang T, et al. <a href="https://doi.org/10.1093/aje/kwae322" target="_blank"><strong>High-dimensional Iterative Causal Forest</strong></a>. <em>Am J Epidemiol</em>. 2024.</li>
+      <li>Wang T, et al. <a href="https://doi.org/10.1093/aje/kwad219" target="_blank" rel="noopener"><strong>Iterative Causal Forest</strong></a>. <em>Am J Epidemiol.</em> 2024.</li>
+      <li>Wang T, et al. <a href="https://doi.org/10.1093/aje/kwae322" target="_blank" rel="noopener"><strong>High-dimensional Iterative Causal Forest</strong></a>. <em>Am J Epidemiol.</em> 2024.</li>
     </ul>
 
     <h2>Conference Presentations</h2>
@@ -43,15 +50,15 @@
   </section>
 </main>
 
-<footer>
+<section id="contact" class="reveal">
   <div class="container">
-    <p style="color:#7c869a">© <span id="year"></span> Tiansheng (Tian) Wang</p>
+    <h2>Contact</h2>
+    <p><strong>Email:</strong> <a href="mailto:tianwang@uh.edu">tianwang@uh.edu</a> · <strong>GitHub:</strong> <a href="https://github.com/tianshengwang" target="_blank" rel="noopener">@tianshengwang</a></p>
+    <p style="color:#7c869a">© <span id="year"></span> Tiansheng (Tian) Wang — Built with vanilla HTML/CSS, animated blobs, and scroll-reveal ✦ Hosted on GitHub Pages.</p>
   </div>
-</footer>
+</section>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-
+<button id="toTop" class="toTop" aria-label="Back to top">↑</button>
+<script defer src="https://tianshengwang.ai/assets/site.js"></script>
 </body>
 </html>
