@@ -32,8 +32,11 @@
     .subtitle{color:var(--muted);margin:0 0 18px}
     .badges a{display:inline-block;margin:8px 8px 0 0;padding:8px 12px;border:1px solid var(--border);border-radius:999px;background:rgba(255,255,255,0.03)}
     .avatarWrap{display:flex;justify-content:center}
-    .avatar{width:220px;height:220px;border-radius:28px;object-fit:cover;border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,.35)}
-
+.avatar {
+  width: 80%;
+  max-width: 350px;
+  height: auto;
+}
     /* Animated background blobs */
     .blob{position:absolute;filter:blur(40px);opacity:.5;z-index:-1}
     .b1{width:420px;height:420px;background:radial-gradient(circle at 30% 30%, #60a5fa, transparent 60%);top:-60px;left:-80px;animation:float1 12s ease-in-out infinite}
