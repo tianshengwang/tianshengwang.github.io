@@ -34,6 +34,7 @@
     root.setAttribute('data-theme', 'light');
     toggle.textContent = '☀️';
   } else {
+    // Dark is default — remove any attribute
     root.removeAttribute('data-theme');
     toggle.textContent = '🌙';
   }
@@ -51,6 +52,7 @@
     }
   });
 })();
+
 
 // Back to top
 (() => {
