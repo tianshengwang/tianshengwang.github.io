@@ -65,6 +65,10 @@
 
     footer{padding:28px 0;color:#7c869a}
 
+    /* Back to top */
+    .toTop{position:fixed;right:16px;bottom:16px;border:1px solid var(--border);background:var(--card);color:var(--fg);border-radius:12px;padding:10px 12px;cursor:pointer;opacity:0;pointer-events:none;transition:all .25s ease;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+    .toTop.show{opacity:1;pointer-events:auto}
+
     /* Scroll reveal */
     .reveal{opacity:0;transform:translateY(16px);transition:all .6s ease}
     .reveal.show{opacity:1;transform:none}
@@ -83,6 +87,8 @@
       <div class="brand">Tiansheng (Tian) Wang</div>
       <div class="nav">
         <a href="#research">Research</a>
+        <a href="#latest-news">Latest</a>
+        <a href="#cv">CV</a>
         <a href="#publications">Publications</a>
         <a href="#software">Software</a>
         <a href="#contact">Contact</a>
@@ -133,6 +139,72 @@
         <li><strong>Sep 2025:</strong> Start tenure track assistant professor position at Dept. of Pharmaceutical Health Outcomes and Policy, University of Houston College of Pharmacy.</li>
       </ul>
       <p class="subtitle">For recent publications and talks, see below.</p>
+    </div>
+  </section>
+
+  <!-- NEW: Latest News -->
+  <section id="latest-news" class="reveal">
+    <div class="container">
+      <h2>Latest News</h2>
+      <ul>
+        <li><strong>Aug 2025:</strong> Presented at ICPE 2025 on Temporal High Dimensional Propensity Score and Statin Utilization Trajectories.</li>
+        <li><strong>Jul 2025:</strong> Paper accepted in <em>American Journal of Epidemiology</em> on claims-based dementia algorithm.</li>
+        <li><strong>May 2025:</strong> Invited seminar at University of Pittsburgh on advancing pharmacoepidemiology with causal inference and ML.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- NEW: Active Research Areas -->
+  <section id="active-research" class="reveal">
+    <div class="container">
+      <h2>Active Research Areas</h2>
+      <div class="cards">
+        <div class="card half">
+          <h3>HTE Assessment</h3>
+          <p>Using iterative causal forest (iCF) and high-dimensional iCF (hdiCF) to detect treatment heterogeneity in real-world data.</p>
+        </div>
+        <div class="card half">
+          <h3>Confounding Control</h3>
+          <p>Leveraging temporal patterns of variables (thdPS) and proximal causal inference to reduce bias in observational studies.</p>
+        </div>
+        <div class="card half">
+          <h3>Drug Repurposing</h3>
+          <p>Identifying and evaluating candidate drugs for Alzheimer's disease and related dementias using large healthcare datasets.</p>
+        </div>
+        <div class="card half">
+          <h3>Methods Development</h3>
+          <p>Designing novel high-dimensional settings and algorithms for more accurate subgroup identification and effect estimation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cv" class="reveal">
+    <div class="container">
+      <h2>Compact CV</h2>
+      <div class="cards">
+        <div class="card half">
+          <h3>Positions</h3>
+          <ul>
+            <li><strong>Assistant Professor</strong>, Dept. of Pharmaceutical Health Outcomes & Policy (PHOP), University of Houston College of Pharmacy — <em>Sep 2025 – present</em></li>
+            <li><strong>Postdoctoral Scholar</strong>, Dept. of Epidemiology, UNC Gillings School of Global Public Health — <em>2022 – 2025</em></li>
+          </ul>
+        </div>
+        <div class="card half">
+          <h3>Education</h3>
+          <ul>
+            <li><strong>PhD</strong> — <em>(add institution & year)</em></li>
+            <li><strong>PharmD</strong> — <em>(add institution & year)</em></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Selected Honors / Awards</h3>
+          <ul>
+            <li><em>(Add award / society, year)</em></li>
+            <li><em>(Add award / society, year)</em></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -214,6 +286,8 @@
   </section>
 </main>
 
+<button id="toTop" class="toTop" aria-label="Back to top">↑</button>
+
 <script>
   // year
   document.getElementById('year').textContent = new Date().getFullYear();
@@ -233,6 +307,15 @@
     if(next==='light'){ root.setAttribute('data-theme','light'); toggle.textContent='☀️'; }
     else { root.removeAttribute('data-theme'); toggle.textContent='🌙'; }
     localStorage.setItem('theme', next);
+  });
+
+  // back to top
+  const toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', ()=>{
+    if(window.scrollY > 320){ toTop.classList.add('show'); } else { toTop.classList.remove('show'); }
+  });
+  toTop.addEventListener('click', ()=>{
+    window.scrollTo({top:0, behavior:'smooth'});
   });
 </script>
 </body>
