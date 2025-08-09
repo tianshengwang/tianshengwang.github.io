@@ -26,19 +26,19 @@ I develop and apply **AI-powered causal inference** methods to assess drug effec
 
 ## Selected Publications
 * **HTE assessment**
-  * Wang T, et al. **Iterative Causal Forest: A Novel Algorithm for Subgroup Identification.** _Am J Epidemiol._ 2024 May 7;193(5):764-776 [doi.org/10.1093/aje/kwad219](https://doi.org/10.1093/aje/kwad219).
-  * Wang T, et al. **High-dimensional Iterative Causal Forest (hdiCF): a Novel Algorithm for Subgroup Identification in Claims Data.** _Am J Epidemiol._ 2024 [doi.org/10.1093/aje/kwae322](https://doi.org/10.1093/aje/kwae322).
-  * Wang T, et al. **A Novel High Dimensional Approach to Assess Heterogeneous Treatment Effect in Claims Data.** _Am J Epidemiol._ 2025 June 11. [https://doi.org/10.1093/aje/kwaf127](doi.org/10.1093/aje/kwaf127).
-  * Wang T, et al. **Glucagon-like Peptide 1 Receptor Agonists in Asthma Exacerbations: an Application of High-dimensional Iterative Causal Forest to Identify Subgroups.** _Pharmacoepidemiol Drug Saf._ 2025; 34:e70192. [doi.org/10.1002/pds.70192](https://onlinelibrary.wiley.com/doi/10.1002/pds.70192)
-  * Wang T, et al. Glucagon-like Peptide 1 Receptor Agonists and Asthma Exacerbations: Which Patients Benefit Most? _Ann Am Thorac Soc._ 2024 Jul 16. [doi: 10.1513/AnnalsATS.202309-836OC.](https://www.atsjournals.org/doi/abs/10.1513/AnnalsATS.202309-836OC)  
+  * Wang T, et al. [Iterative Causal Forest: A Novel Algorithm for Subgroup Identification.](https://doi.org/10.1093/aje/kwad219) _Am J Epidemiol._ 2024 May 7;193(5):764-776.
+  * Wang T, et al. [High-dimensional Iterative Causal Forest (hdiCF): a Novel Algorithm for Subgroup Identification in Claims Data.](https://doi.org/10.1093/aje/kwae322) _Am J Epidemiol._ 2024
+  * Wang T, et al. [A Novel High Dimensional Approach to Assess Heterogeneous Treatment Effect in Claims Data.](doi.org/10.1093/aje/kwaf127) _Am J Epidemiol._ 2025 June 11.
+  * Wang T, et al. [Glucagon-like Peptide 1 Receptor Agonists in Asthma Exacerbations: an Application of High-dimensional Iterative Causal Forest to Identify Subgroups.](https://onlinelibrary.wiley.com/doi/10.1002/pds.70192) _Pharmacoepidemiol Drug Saf._ 2025; 34:e70192.
+  * Wang T, et al. [Glucagon-like Peptide 1 Receptor Agonists and Asthma Exacerbations: Which Patients Benefit Most?](https://www.atsjournals.org/doi/abs/10.1513/AnnalsATS.202309-836OC) _Ann Am Thorac Soc._ 2024 Jul 16. 
 
 * **Confounding control**
-  * Wang T, et al. **Caution in Handling Switchers in Pharmacoepidemiologic Studies Estimating Treatment Effects: The Example of Dipeptidyl Peptidase-4 Inhibitors and Inflammatory Bowel Disease.** _Am J Epidemiol._ 2025.[doi.org/10.1093/aje/kwaf044](https://doi.org/10.1093/aje/kwaf044) 
+  * Wang T, et al. [Caution in Handling Switchers in Pharmacoepidemiologic Studies Estimating Treatment Effects: The Example of Dipeptidyl Peptidase-4 Inhibitors and Inflammatory Bowel Disease.](https://doi.org/10.1093/aje/kwaf044) _Am J Epidemiol._ 2025.
 * **Drug repurposing for ADRD**
-  * Wang T, et al. **Developing A Novel Algorithm to Identify Incident and Prevalent Dementia in Medicare Claims. The ARIC Study.** _Am J Epidemiol._ 2025 Aug 4. [doi.org/10.1093/aje/kwaf166](https://doi.org/10.1093/aje/kwaf166).
+  * Wang T, et al. [Developing A Novel Algorithm to Identify Incident and Prevalent Dementia in Medicare Claims. The ARIC Study.](https://doi.org/10.1093/aje/kwaf166) _Am J Epidemiol._ 2025 Aug 4.
 * **Others**
-  * Wang T, et al. **Incretin-based Therapies and Diabetic Retinopathy: Real World Evidence in Older US Adults.** _Diabetes Care_ 2018 Sep;41(9):1998-2009. [doi.org/10.2337/dc17-2285](https://diabetesjournals.org/care/article/41/9/1998/40738/Incretin-Based-Therapies-and-Diabetic-Retinopathy)
-  * Wang T, et al. **Dipeptidyl Peptidase-4 Inhibitors and Risk of Inflammatory Bowel Disease: Real World Evidence in US Adults.** _Diabetes Care_ 2019 Nov;42(11):2065-2074. [doi.org/10.2337/dc19-0162](https://diabetesjournals.org/care/article/42/11/2065/36360/Dipeptidyl-Peptidase-4-Inhibitors-and-Risk-of)
+  * Wang T, et al. [Incretin-based Therapies and Diabetic Retinopathy: Real World Evidence in Older US Adults.](https://diabetesjournals.org/care/article/41/9/1998/40738/Incretin-Based-Therapies-and-Diabetic-Retinopathy) _Diabetes Care_ 2018 Sep;41(9):1998-2009.
+  * Wang T, et al. [Dipeptidyl Peptidase-4 Inhibitors and Risk of Inflammatory Bowel Disease: Real World Evidence in US Adults.](https://diabetesjournals.org/care/article/42/11/2065/36360/Dipeptidyl-Peptidase-4-Inhibitors-and-Risk-of) _Diabetes Care_ 2019 Nov;42(11):2065-2074.
    
 
 
@@ -49,20 +49,13 @@ I develop and apply **AI-powered causal inference** methods to assess drug effec
 
 ## Software
 
-* **iCF** — Causal ML for subgrouping in observational data via predefined variables.
+* **[iCF](https://github.com/tianshengwang/iCF)** — Causal ML for subgrouping in observational data via predefined variables.
 
-  * Repo: [`tianshengwang/iCF`](https://github.com/tianshengwang/iCF)
-
-* **hdiCF** — Causal ML for subgrouping in observational data via raw diagnosis, procedure, and prescription code.
-
-  * Repo: [`tianshengwang/hdiCF`](https://github.com/tianshengwang/hdiCF)
+* **[hdiCF](https://github.com/tianshengwang/hdiCF)** — Causal ML for subgrouping in observational data via raw diagnosis, procedure, and prescription code.
    
-* **HDsetting** — A novel high-dimensional setting (1 ordinal variable per code) for HTE assessment.
+* **[HDsetting](https://github.com/tianshengwang/HDsetting)** — A novel high-dimensional setting (1 ordinal variable per code) for HTE assessment.
 
-  * Repo: [`tianshengwang/HDsetting`](https://github.com/tianshengwang/HDsetting)
-* **IdentifyADRD** — a novel incident and prevalent dementia identification algorithm for claims data.
-
-  * Repo: [`tianshengwang/IdentifyADRD`](https://github.com/tianshengwang/IdentifyADRD)
+* **[IdentifyADRD](https://github.com/tianshengwang/IdentifyADRD)** — a novel incident and prevalent dementia identification algorithm for claims data.
 
 > more coming soon...
 
@@ -70,8 +63,8 @@ I develop and apply **AI-powered causal inference** methods to assess drug effec
 
 ## Talks (Recent)
 
-* *Improving confounding control by statin utilization prior to follow-up for 1-year mortality in US older adults* — 8/25/2025 ICPE. Washingon DC.
-* *Temporal High Dimensional Propensity Score (thdPS): A Novel Approach to Improve Confounding Control by Incorporating Temporality*; — 8/25/2025 ICPE. Washingon DC.
+* *Improving confounding control by statin utilization prior to follow-up for 1-year mortality in US older adults* — 8/25/2025 ICPE. Washingon DC, USA.
+* *Temporal High Dimensional Propensity Score (thdPS): A Novel Approach to Improve Confounding Control by Incorporating Temporality*; — 8/25/2025 ICPE. Washingon DC, USA.
 
 ---
 
