@@ -73,6 +73,17 @@
     .reveal{opacity:0;transform:translateY(16px);transition:all .6s ease}
     .reveal.show{opacity:1;transform:none}
 
+    /* Active Research Panels */
+    .panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:16px}
+    .panel h3{margin-top:0}
+    .panel-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:16px}
+    .panel .summary{color:var(--fg)}
+    .panel .pubs ul{margin:8px 0 0 18px}
+    .figure-card{border:1px dashed var(--border);border-radius:12px;padding:10px;text-align:center;background:color-mix(in srgb, var(--card) 80%, transparent)}
+    .figure-card img{max-width:100%;border-radius:10px}
+    .figure-card .caption{color:var(--muted);font-size:.9rem;margin-top:6px}
+    @media(max-width:900px){.panel-grid{grid-template-columns:1fr}}
+
     /* Responsive */
     @media(max-width:900px){
       .grid{grid-template-columns:1fr}
@@ -154,28 +165,98 @@
     </div>
   </section>
 
-  <!-- NEW: Active Research Areas -->
+  <!-- UPDATED: Active Research Areas stacked panels with 3 columns each -->
   <section id="active-research" class="reveal">
     <div class="container">
       <h2>Active Research Areas</h2>
-      <div class="cards">
-        <div class="card half">
-          <h3>HTE Assessment</h3>
-          <p>Using iterative causal forest (iCF) and high-dimensional iCF (hdiCF) to detect treatment heterogeneity in real-world data.</p>
-        </div>
-        <div class="card half">
-          <h3>Confounding Control</h3>
-          <p>Leveraging temporal patterns of variables (thdPS) and proximal causal inference to reduce bias in observational studies.</p>
-        </div>
-        <div class="card half">
-          <h3>Drug Repurposing</h3>
-          <p>Identifying and evaluating candidate drugs for Alzheimer's disease and related dementias using large healthcare datasets.</p>
-        </div>
-        <div class="card half">
-          <h3>Methods Development</h3>
-          <p>Designing novel high-dimensional settings and algorithms for more accurate subgroup identification and effect estimation.</p>
+
+      <!-- Panel 1: HTE Assessment -->
+      <div class="panel">
+        <h3>HTE Assessment</h3>
+        <div class="panel-grid">
+          <div class="summary">
+            <p>Using <strong>Iterative Causal Forest (iCF)</strong> and <strong>High‑dimensional iCF (hdiCF)</strong> to detect and characterize heterogeneous treatment effects in observational data.</p>
+          </div>
+          <div class="pubs">
+            <ul>
+              <li><a href="https://doi.org/10.1093/aje/kwad219" target="_blank" rel="noopener">Iterative Causal Forest</a> — <em>Am J Epidemiol</em>, 2024</li>
+              <li><a href="https://doi.org/10.1093/aje/kwae322" target="_blank" rel="noopener">High‑dimensional iCF (hdiCF)</a> — <em>Am J Epidemiol</em>, 2024</li>
+              <li><a href="https://doi.org/10.1093/aje/kwaf127" target="_blank" rel="noopener">High‑dimensional HTE in Claims</a> — <em>Am J Epidemiol</em>, 2025</li>
+            </ul>
+          </div>
+          <div class="figure">
+            <div class="figure-card">
+              <img src="/images/figures/hte_demo.png" alt="HTE schematic" />
+              <div class="caption">Figure: iCF / hdiCF workflow (placeholder)</div>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- Panel 2: Confounding Control -->
+      <div class="panel">
+        <h3>Confounding Control</h3>
+        <div class="panel-grid">
+          <div class="summary">
+            <p>Temporal high‑dimensional propensity score (<strong>thdPS</strong>), proximal causal inference, and target trial emulation for bias reduction under complex treatment dynamics.</p>
+          </div>
+          <div class="pubs">
+            <ul>
+              <li><a href="https://doi.org/10.1093/aje/kwaf044" target="_blank" rel="noopener">Handling Switchers in Treatment Effect Estimation</a> — <em>Am J Epidemiol</em>, 2025</li>
+            </ul>
+          </div>
+          <div class="figure">
+            <div class="figure-card">
+              <img src="/images/figures/thdps_timeline.png" alt="thdPS timeline" />
+              <div class="caption">Figure: thdPS timeline patterns (placeholder)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 3: Drug Repurposing for ADRD -->
+      <div class="panel">
+        <h3>Drug Repurposing for ADRD</h3>
+        <div class="panel-grid">
+          <div class="summary">
+            <p>Evaluating candidate drugs for <strong>Alzheimer's disease and related dementias</strong> with claims‑based phenotyping and robust causal ML pipelines.</p>
+          </div>
+          <div class="pubs">
+            <ul>
+              <li><a href="https://doi.org/10.1093/aje/kwaf166" target="_blank" rel="noopener">Claims‑based Dementia Algorithm (ARIC/Medicare)</a> — <em>Am J Epidemiol</em>, 2025</li>
+            </ul>
+          </div>
+          <div class="figure">
+            <div class="figure-card">
+              <img src="/images/figures/adrd_algorithm.png" alt="Dementia algorithm" />
+              <div class="caption">Figure: ADRD identification algorithm (placeholder)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 4: Methods Development -->
+      <div class="panel">
+        <h3>Methods Development</h3>
+        <div class="panel-grid">
+          <div class="summary">
+            <p>Designing novel <strong>high‑dimensional settings</strong> (e.g., one‑ordinal‑per‑code) and learning algorithms for reliable subgroup discovery and effect estimation.</p>
+          </div>
+          <div class="pubs">
+            <ul>
+              <li><a href="https://github.com/tianshengwang/HDsetting" target="_blank" rel="noopener">HDsetting</a> — code base</li>
+              <li><a href="https://github.com/tianshengwang/hdiCF" target="_blank" rel="noopener">hdiCF</a> — implementation</li>
+            </ul>
+          </div>
+          <div class="figure">
+            <div class="figure-card">
+              <img src="/images/figures/methods_blocks.png" alt="Methods blocks" />
+              <div class="caption">Figure: High‑dimensional setting blocks (placeholder)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
