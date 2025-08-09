@@ -29,10 +29,17 @@ I develop and apply **AI-powered causal inference** methods to assess drug effec
   * Wang T, et al. **Iterative Causal Forest: A Novel Algorithm for Subgroup Identification.** _Am J Epidemiol._ 2024 May 7;193(5):764-776 [https://doi.org/10.1093/aje/kwad219](https://doi.org/10.1093/aje/kwad219).
   * Wang T, et al. **High-dimensional Iterative Causal Forest (hdiCF): a Novel Algorithm for Subgroup Identification in Claims Data.** _Am J Epidemiol._ 2024 [https://doi.org/10.1093/aje/kwae322](https://doi.org/10.1093/aje/kwae322).
   * Wang T, et al. **A Novel High Dimensional Approach to Assess Heterogeneous Treatment Effect in Claims Data.** _Am J Epidemiol._ 2025 June 11. [https://doi.org/10.1093/aje/kwaf127](https://doi.org/10.1093/aje/kwaf127).
+  * Wang T, et al. **Glucagon-like Peptide 1 Receptor Agonists in Asthma Exacerbations: an Application of High-dimensional Iterative Causal Forest to Identify Subgroups.** _Pharmacoepidemiol Drug Saf._ 2025; 34:e70192. [https://doi.org/10.1002/pds.70192](https://onlinelibrary.wiley.com/doi/10.1002/pds.70192)
+  * Wang T, et al. Glucagon-like Peptide 1 Receptor Agonists and Asthma Exacerbations: Which Patients Benefit Most? _Ann Am Thorac Soc._ 2024 Jul 16. [doi: 10.1513/AnnalsATS.202309-836OC.](https://www.atsjournals.org/doi/abs/10.1513/AnnalsATS.202309-836OC)  
+
 * **Confounding control**
   * Wang T, et al. **Caution in Handling Switchers in Pharmacoepidemiologic Studies Estimating Treatment Effects: The Example of Dipeptidyl Peptidase-4 Inhibitors and Inflammatory Bowel Disease.** _Am J Epidemiol._ 2025.[https://doi.org/10.1093/aje/kwaf044](https://doi.org/10.1093/aje/kwaf044)** 
-* **Drug repurposing for ADRD:**
+* **Drug repurposing for ADRD**
   * Wang T, et al. **Developing A Novel Algorithm to Identify Incident and Prevalent Dementia in Medicare Claims. The ARIC Study.** _Am J Epidemiol._ 2025 Aug 4. [https://doi.org/10.1093/aje/kwaf166](https://doi.org/10.1093/aje/kwaf166).
+* **Others**
+  * Wang T, et al. **Incretin-based Therapies and Diabetic Retinopathy: Real World Evidence in Older US Adults.** _Diabetes Care_ 2018 Sep;41(9):1998-2009. [https://doi.org/10.2337/dc17-2285](https://diabetesjournals.org/care/article/41/9/1998/40738/Incretin-Based-Therapies-and-Diabetic-Retinopathy)
+  * Wang T, et al. **Dipeptidyl Peptidase-4 Inhibitors and Risk of Inflammatory Bowel Disease: Real World Evidence in US Adults.** _Diabetes Care_ 2019 Nov;42(11):2065-2074. [https://doi.org/10.2337/dc19-0162](https://diabetesjournals.org/care/article/42/11/2065/36360/Dipeptidyl-Peptidase-4-Inhibitors-and-Risk-of)
+   
 
 
 
