@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tiansheng (Tian) Wang — Pharmacoepidemiology • Causal Inference • ML</title>
+  <meta name="description" content="Tiansheng (Tian) Wang — Assistant Professor (PHOP, UH). Pharmacoepidemiology, causal inference, machine learning, real‑world data." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f19; --fg:#e6e8ee; --muted:#9aa3b2; --card:#0f1627; --border:#20293a; --accent:#60a5fa; --accent2:#22d3ee;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+    a{color:#93c5fd;text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1080px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg, rgba(11,15,25,.9), rgba(11,15,25,.6) 60%, transparent);backdrop-filter:blur(8px)}
+    nav{display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:800;letter-spacing:.3px}
+    .nav a{margin-left:16px;color:#cbd5e1}
+    .nav a:hover{color:#fff}
+    .btn{display:inline-block;padding:10px 14px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#071426;font-weight:700}
+    .btn:hover{filter:brightness(1.05)}
+
+    /* Hero */
+    .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
+    .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+    .title{font-size:38px;line-height:1.15;margin:0 0 8px}
+    .subtitle{color:var(--muted);margin:0 0 18px}
+    .badges a{display:inline-block;margin:8px 8px 0 0;padding:8px 12px;border:1px solid var(--border);border-radius:999px;background:rgba(255,255,255,0.03)}
+    .avatarWrap{display:flex;justify-content:center}
+    .avatar{width:220px;height:220px;border-radius:28px;object-fit:cover;border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+
+    /* Animated background blobs */
+    .blob{position:absolute;filter:blur(40px);opacity:.5;z-index:-1}
+    .b1{width:420px;height:420px;background:radial-gradient(circle at 30% 30%, #60a5fa, transparent 60%);top:-60px;left:-80px;animation:float1 12s ease-in-out infinite}
+    .b2{width:380px;height:380px;background:radial-gradient(circle at 70% 70%, #22d3ee, transparent 60%);bottom:-80px;right:-60px;animation:float2 13s ease-in-out infinite}
+    @keyframes float1{0%,100%{transform:translate(0,0)}50%{transform:translate(10px,18px)}}
+    @keyframes float2{0%,100%{transform:translate(0,0)}50%{transform:translate(-14px,-10px)}}
+
+    section{padding:36px 0;border-bottom:1px solid var(--border)}
+    h2{font-size:22px;margin:0 0 12px}
+
+    .cards{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .card{grid-column:span 12;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px}
+    @media(min-width:900px){.card.half{grid-column:span 6}}
+
+    .pub li{margin-bottom:12px}
+
+    footer{padding:28px 0;color:#7c869a}
+
+    /* Scroll reveal */
+    .reveal{opacity:0;transform:translateY(16px);transition:all .6s ease}
+    .reveal.show{opacity:1;transform:none}
+
+    /* Responsive */
+    @media(max-width:900px){
+      .grid{grid-template-columns:1fr}
+      .avatar{width:180px;height:180px}
+      .title{font-size:30px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <div class="brand">Tiansheng (Tian) Wang</div>
+      <div class="nav">
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#software">Software</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="container grid">
+      <div>
+        <h1 class="title">Pharmacoepidemiology • Causal Inference • Machine Learning</h1>
+        <p class="subtitle">Assistant Professor (PHOP, University of Houston) starting Sept 1, 2025. Former Postdoctoral Scholar, UNC Gillings School of Global Public Health (Epidemiology). I build methods and tools for real‑world evidence and precision medicine.</p>
+        <div class="badges">
+          <a href="https://scholar.google.com/citations?user=JYtT5K8AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://github.com/tianshengwang" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://orcid.org/0000-0002-0980-8896" target="_blank" rel="noopener">ORCID</a>
+          <a href="mailto:tianwang@uh.edu">Email</a>
+        </div>
+        <p style="margin-top:18px">
+          <a class="btn" href="#publications">View publications</a>
+        </p>
+      </div>
+      <div class="avatarWrap">
+        <img class="avatar" src="/assets/img/tian-ghibli.jpg" alt="Portrait of Tiansheng (Tian) Wang" />
+      </div>
+    </div>
+  </section>
+
+  <section id="research" class="reveal">
+    <div class="container">
+      <h2>Research</h2>
+      <div class="cards">
+        <div class="card half"><h3>Heterogeneous Treatment Effects (HTE)</h3><p>Iterative Causal Forest (iCF) and High‑dimensional iCF (hdiCF) for subgroup identification in observational data.</p></div>
+        <div class="card half"><h3>Confounding Control</h3><p>Temporal high‑dimensional PS (thdPS), target trial emulation, and proximal causal inference.</p></div>
+        <div class="card"><h3>Neuroepidemiology</h3><p>Claims‑based algorithms for dementia identification (Medicare/ARIC) and data‑driven drug repurposing.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications" class="reveal">
+    <div class="container">
+      <h2>Selected Publications</h2>
+      <ul class="pub">
+        <li>Wang T, Keil AP, Kim S, Wyss R, Htoo PT, Funk MJ, Buse JB, Kosorok MR, Stürmer T. <strong>Iterative Causal Forest: A Novel Algorithm for Subgroup Identification.</strong> <em>Am J Epidemiol.</em> 2024;193(5):764–776. <a href="https://doi.org/10.1093/aje/kwad219" target="_blank" rel="noopener">doi:10.1093/aje/kwad219</a></li>
+        <li>Wang T, Pate V, Wyss R, Buse JB, Kosorok MR, Stürmer T. <strong>High‑dimensional Iterative Causal Forest (hdiCF): a Novel Algorithm for Subgroup Identification in Claims Data.</strong> <em>Am J Epidemiol.</em> 2024. <a href="https://doi.org/10.1093/aje/kwae322" target="_blank" rel="noopener">doi:10.1093/aje/kwae322</a></li>
+        <li>Wang T, Pate V, Wyss R, Buse JB, Kosorok MR, Stürmer T. <strong>A Novel High Dimensional Approach to Assess Heterogeneous Treatment Effect in Claims Data.</strong> <em>Am J Epidemiol.</em> 2025. <a href="https://doi.org/10.1093/aje/kwaf127" target="_blank" rel="noopener">doi:10.1093/aje/kwaf127</a></li>
+        <li>Wang T, Pate V, Kim DH, Power MC, Garden G, Palta P, Knopman D, Jonson‑Funk M, Stürmer T, Kucharska‑Newton AM. <strong>Developing A Novel Algorithm to Identify Incident and Prevalent Dementia in Medicare Claims. The ARIC Study.</strong> <em>Am J Epidemiol.</em> 2025. <a href="https://doi.org/10.1093/aje/kwaf166" target="_blank" rel="noopener">doi:10.1093/aje/kwaf166</a></li>
+      </ul>
+      <p style="color:var(--muted)">More on <a href="https://scholar.google.com/citations?user=JYtT5K8AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
+    </div>
+  </section>
+
+  <section id="software" class="reveal">
+    <div class="container">
+      <h2>Software</h2>
+      <div class="cards">
+        <div class="card half"><strong>hdiCF</strong> — High‑dimensional Iterative Causal Forest for subgroup identification. <a href="https://github.com/tianshengwang/hdiCF" target="_blank" rel="noopener">GitHub</a></div>
+        <div class="card half"><strong>HDsetting</strong> — R & SAS utilities for building high‑dimensional claims variables. <a href="https://github.com/tianshengwang/HDsetting" target="_blank" rel="noopener">GitHub</a></div>
+        <div class="card"><strong>Dementia Claims Algorithm (ARIC/Medicare)</strong> — code & docs. <a href="#" target="_blank" rel="noopener">Repo</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="reveal">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:tianwang@uh.edu">tianwang@uh.edu</a> · GitHub: <a href="https://github.com/tianshengwang" target="_blank" rel="noopener">@tianshengwang</a> · ORCID: <a href="https://orcid.org/0000-0002-0980-8896" target="_blank" rel="noopener">0000-0002-0980-8896</a></p>
+      <p style="color:#7c869a">© <span id="year"></span> Tiansheng (Tian) Wang — Built with vanilla HTML/CSS, animated blobs, and scroll‑reveal ✦ Hosted on GitHub Pages.</p>
+    </div>
+  </section>
+</main>
+
+<script>
+  // year
+  document.getElementById('year').textContent = new Date().getFullYear();
+  // scroll reveal
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); obs.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
