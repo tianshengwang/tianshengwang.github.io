@@ -76,13 +76,44 @@
     /* Active Research Panels */
     .panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:16px}
     .panel h3{margin-top:0}
-    .panel-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:16px}
     .panel .summary{color:var(--fg)}
-    .panel .pubs ul{margin:8px 0 0 18px}
     .figure-card{border:1px dashed var(--border);border-radius:12px;padding:10px;text-align:center;background:color-mix(in srgb, var(--card) 80%, transparent)}
     .figure-card img{max-width:100%;border-radius:10px}
     .figure-card .caption{color:var(--muted);font-size:.9rem;margin-top:6px}
-    @media(max-width:900px){.panel-grid{grid-template-columns:1fr}}
+
+    /* Panels: summary + per-article rows with their own figures */
+.panel .summary{color:var(--fg); margin-bottom:12px}
+
+.panel-items{
+  display:grid;
+  gap:16px;              /* space between rows */
+}
+
+/* Each paper row: text left, figure right */
+.paper{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap:16px;
+  align-items:start;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:12px;
+  background:color-mix(in srgb, var(--card) 92%, transparent);
+}
+
+/* Title/link area */
+.paper .meta ul{margin:6px 0 0 18px}
+.paper .meta li{margin:8px 0}
+
+/* Figure card reused */
+.figure-card{border:1px dashed var(--border);border-radius:10px;padding:10px;text-align:center;background:color-mix(in srgb, var(--card) 80%, transparent)}
+.figure-card img{max-width:100%;border-radius:8px}
+.figure-card .caption{color:var(--muted);font-size:.9rem;margin-top:6px}
+
+/* Mobile: stack text over figure */
+@media (max-width:900px){
+  .paper{grid-template-columns:1fr}
+}
 
     /* Responsive */
     @media(max-width:900px){
@@ -168,71 +199,118 @@
 
       <!-- Panel 1: HTE Assessment -->
       <div class="panel">
-        <h3>HTE Assessment</h3>
-        <div class="panel-grid">
-          <div class="summary">
-            <p>heterogeneous causal effects assessment and subgroup identification in real‑world data.</p>
-          </div>
-          <div class="pubs">
-            <ul>
-              <li><a href="https://doi.org/10.1093/aje/kwad219" target="_blank" rel="noopener">Iterative Causal Forest</a> — <em>Am J Epidemiol</em>, 2024</li>
-              <li><a href="https://doi.org/10.1093/aje/kwae322" target="_blank" rel="noopener">High‑dimensional iCF (hdiCF)</a> — <em>Am J Epidemiol</em>, 2024</li>
-              <li><a href="https://doi.org/10.1093/aje/kwaf127" target="_blank" rel="noopener">High‑dimensional HTE in Claims</a> — <em>Am J Epidemiol</em>, 2025</li>
-            </ul>
-          </div>
-          <div class="figure">
-            <div class="figure-card">
-              <img src="/images/figures/FIGURE1_hdiCF_3KEYsteps.jpg" alt="HTE schematic" />
-              <div class="caption">Figure: iCF / hdiCF workflow (placeholder)</div>
-            </div>
-          </div>
-        </div>
+  <h3>HTE Assessment</h3>
+  <div class="summary">
+    heterogeneous causal effects assessment and subgroup identification in real-world data.
+  </div>
+
+  <div class="panel-items">
+    <!-- Row 1 -->
+    <article class="paper">
+      <div class="meta">
+        <ul>
+          <li><a href="https://doi.org/10.1093/aje/kwad219" target="_blank" rel="noopener"><strong>Iterative Causal Forest</strong></a> — <em>Am J Epidemiol</em>, 2024</li>
+          <li>Key idea: alternating subgroup discovery & effect re-estimation.</li>
+        </ul>
       </div>
+      <figure class="figure-card">
+        <img src="/images/figures/FIGURE1_hdiCF_3KEYsteps.jpg" alt="iCF / hdiCF workflow">
+        <figcaption class="caption">Workflow for iCF / hdiCF</figcaption>
+      </figure>
+    </article>
+
+    <!-- Row 2 -->
+    <article class="paper">
+      <div class="meta">
+        <ul>
+          <li><a href="https://doi.org/10.1093/aje/kwae322" target="_blank" rel="noopener"><strong>High-dimensional iCF (hdiCF)</strong></a> — <em>Am J Epidemiol</em>, 2024</li>
+          <li>Extends iCF to raw codes via high-dimensional feature engineering.</li>
+        </ul>
+      </div>
+      <figure class="figure-card">
+        <img src="/images/figures/hte_demo.jpg" alt="hdiCF schematic">
+        <figcaption class="caption">High-dimensional extension</figcaption>
+      </figure>
+    </article>
+
+    <!-- Row 3 -->
+    <article class="paper">
+      <div class="meta">
+        <ul>
+          <li><a href="https://doi.org/10.1093/aje/kwaf127" target="_blank" rel="noopener"><strong>High-dimensional HTE in Claims</strong></a> — <em>Am J Epidemiol</em>, 2025</li>
+          <li>Application of hdiCF to large administrative claims.</li>
+        </ul>
+      </div>
+      <figure class="figure-card">
+        <img src="/images/figures/methods_blocks.jpg" alt="High-dimensional blocks">
+        <figcaption class="caption">HD setting blocks</figcaption>
+      </figure>
+    </article>
+  </div>
+</div>
 
       <!-- Panel 2: Confounding Control -->
-      <div class="panel">
-        <h3>Confounding Control</h3>
-        <div class="panel-grid">
-          <div class="summary">
-            <p>Using robust study design and longitudinal patterns of features for confounding control (collaborative project with Dr. Til Stürmer @ UNC).</p>
-          </div>
-          <div class="pubs">
-            <ul>
-              <li><a href="https://doi.org/10.1093/aje/kwaf044" target="_blank" rel="noopener">Handling Switchers in Treatment Effect Estimation</a> — <em>Am J Epidemiol</em>, 2025</li>
-            </ul>
-          </div>
-          <div class="figure">
-            <div class="figure-card">
-              <img src="/images/figures/Fig1_ACNUvsTVE_v3.jpg" alt="thdPS timeline" />
-              <div class="caption">Figure: thdPS timeline patterns (placeholder)</div>
-            </div>
-          </div>
-        </div>
+     <div class="panel">
+  <h3>Confounding Control</h3>
+  <div class="summary">
+    Using robust study design and longitudinal patterns of features for confounding control (collaborative project with Dr. Til Stürmer @ UNC).
+  </div>
+
+  <div class="panel-items">
+    <article class="paper">
+      <div class="meta">
+        <ul>
+          <li><a href="https://doi.org/10.1093/aje/kwaf044" target="_blank" rel="noopener"><strong>Handling Switchers in Treatment Effect Estimation</strong></a> — <em>Am J Epidemiol</em>, 2025</li>
+          <li>Guidance for switch/crossover handling in observational analyses.</li>
+        </ul>
       </div>
+      <figure class="figure-card">
+        <img src="/images/figures/Fig1_ACNUvsTVE_v3.jpg" alt="Switchers vs strategies">
+        <figcaption class="caption">Estimands & switchers</figcaption>
+      </figure>
+    </article>
+
+    <article class="paper">
+      <div class="meta">
+        <ul>
+          <li><strong>Temporal high-dimensional PS (thdPS)</strong> — work in progress</li>
+          <li>Leverages temporal patterns for stronger confounding control.</li>
+        </ul>
+      </div>
+      <figure class="figure-card">
+        <img src="/images/figures/thdps_timeline.jpg" alt="thdPS timeline">
+        <figcaption class="caption">thdPS timeline patterns</figcaption>
+      </figure>
+    </article>
+  </div>
+</div>
+
 
       <!-- Panel 3: Drug Repurposing for ADRD -->
       <div class="panel">
-        <h3>Drug Repurposing for ADRD</h3>
-        <div class="panel-grid">
-          <div class="summary">
-            <p>assess causal effects of drug repurposing candidates on dementia.</p>
-          </div>
-          <div class="pubs">
-            <ul>
-              <li><a href="https://doi.org/10.1093/aje/kwaf166" target="_blank" rel="noopener">Claims‑based Dementia Algorithm (ARIC/Medicare)</a> — <em>Am J Epidemiol</em>, 2025</li>
-            </ul>
-          </div>
-          <div class="figure">
-            <div class="figure-card">
-              <img src="/images/figures/Fig3_StudyDesignTimeline_Dementia.jpg" alt="Dementia algorithm" />
-              <div class="caption">Figure: ADRD identification algorithm (placeholder)</div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <h3>Drug Repurposing for ADRD</h3>
+  <div class="summary">
+    assess causal effects of drug repurposing candidates on dementia.
+  </div>
 
-     
-    </div>
+  <div class="panel-items">
+    <article class="paper">
+      <div class="meta">
+        <ul>
+          <li><a href="https://doi.org/10.1093/aje/kwaf166" target="_blank" rel="noopener"><strong>Claims-based Dementia Algorithm (ARIC/Medicare)</strong></a> — <em>Am J Epidemiol</em>, 2025</li>
+          <li>Validated incident & prevalent ADRD identification.</li>
+        </ul>
+      </div>
+      <figure class="figure-card">
+        <img src="/images/figures/Fig3_StudyDesignTimeline_Dementia.jpg" alt="ADRD algorithm timeline">
+        <figcaption class="caption">ADRD identification timeline</figcaption>
+      </figure>
+    </article>
+
+    <!-- Add more ADRD papers here as new rows -->
+  </div>
+</div>
+
   </section>
 
 
