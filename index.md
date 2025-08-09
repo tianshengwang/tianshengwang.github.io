@@ -26,13 +26,13 @@ I develop and apply **AI-powered causal inference** methods to assess drug effec
 
 ## Selected Publications
 * **HTE assessment**
-  * Wang T, Keil AP, Kim S, Wyss R, Htoo PT, Funk MJ, Buse JB, Kosorok MR, Stürmer T. **Iterative Causal Forest: A Novel Algorithm for Subgroup Identification.** _Am J Epidemiol._ 2024 May 7;193(5):764-776 https://doi.org/10.1093/aje/kwad219.
-  * Wang T, Pate V, Wyss R, Buse JB, Kosorok MR, Stürmer T. **High-dimensional Iterative Causal Forest (hdiCF): a Novel Algorithm for Subgroup Identification in Claims Data.** _Am J Epidemiol._ 2024 Sep 5:kwae322. https://doi.org/10.1093/aje/kwae322.
-  * Wang T, Pate V, Wyss R, Buse JB, Kosorok MR, Stürmer T. **A Novel High Dimensional Approach to Assess Heterogeneous Treatment Effect in Claims Data.** _Am J Epidemiol._ 2025 June 11. https://doi.org/10.1093/aje/kwaf127.
+  * Wang T, et al. **Iterative Causal Forest: A Novel Algorithm for Subgroup Identification.** _Am J Epidemiol._ 2024 May 7;193(5):764-776 https://doi.org/10.1093/aje/kwad219.
+  * Wang T, et al. **High-dimensional Iterative Causal Forest (hdiCF): a Novel Algorithm for Subgroup Identification in Claims Data.** _Am J Epidemiol._ 2024 Sep 5:kwae322. https://doi.org/10.1093/aje/kwae322.
+  * Wang T, et al. **A Novel High Dimensional Approach to Assess Heterogeneous Treatment Effect in Claims Data.** _Am J Epidemiol._ 2025 June 11. https://doi.org/10.1093/aje/kwaf127.
 * **Confounding control**
-  * Wang T, Wang J, Song Z, Miller E, Pate V, Her Q, Yang J, Charlier SHR, Egger P, Barnes EL, Buse JB, Becker C, Sandler RS, Meier C, Jick S, Stürmer T. Caution in Handling Switchers in Pharmacoepidemiologic Studies Estimating Treatment Effects: The Example of Dipeptidyl Peptidase-4 Inhibitors and Inflammatory Bowel Disease. _Am J Epidemiol._ 2025. https://doi.org/10.1093/aje/kwaf044
+  * Wang T, et al. Caution in Handling Switchers in Pharmacoepidemiologic Studies Estimating Treatment Effects: The Example of Dipeptidyl Peptidase-4 Inhibitors and Inflammatory Bowel Disease. _Am J Epidemiol._ 2025. https://doi.org/10.1093/aje/kwaf044
 * **Drug repurposing for ADRD:**
-  * Wang T, Pate V, Kim DH, Power MC, Garden G, Palta P, Knopman D, Jonson-Funk M, Stürmer T, Kucharska-Newton AM. **Developing A Novel Algorithm to Identify Incident and Prevalent Dementia in Medicare Claims. The ARIC Study.** _Am J Epidemiol._ 2025 Aug 4. https://doi.org/10.1093/aje/kwaf166.
+  * Wang T, et al. **Developing A Novel Algorithm to Identify Incident and Prevalent Dementia in Medicare Claims. The ARIC Study.** _Am J Epidemiol._ 2025 Aug 4. https://doi.org/10.1093/aje/kwaf166.
 
 
 
@@ -40,7 +40,7 @@ I develop and apply **AI-powered causal inference** methods to assess drug effec
 
 ---
 
-## Software & Data Resources
+## Software
 
 * **iCF** — Causal ML for subgrouping in observational data via predefined variables.
 
@@ -53,7 +53,7 @@ I develop and apply **AI-powered causal inference** methods to assess drug effec
 * **HDsetting** — A novel high-dimensional setting (1 ordinal variable per code) for HTE assessment.
 
   * Repo: [`tianshengwang/HDsetting`](https://github.com/tianshengwang/HDsetting)
-* **Dementia identification algorithm** — a novel incident and prevalent dementia identification algorithm for claims data.
+* **IdentifyADRD** — a novel incident and prevalent dementia identification algorithm for claims data.
 
   * Repo: [`tianshengwang/IdentifyADRD`](https://github.com/tianshengwang/IdentifyADRD)
 
