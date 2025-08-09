@@ -3,7 +3,8 @@
       --bg:#0b0f19; --fg:#e6e8ee; --muted:#9aa3b2; --card:#0f1627; --border:#20293a; --accent:#60a5fa; --accent2:#22d3ee;
       --link:#93c5fd; --link-hover:#ffffff;
     }
-    [data-theme="light"]{ /* light theme */
+    html:not([data-theme]),
+    [data-theme="dark"]{ /* light theme */
       --bg:#ffffff; --fg:#0b1220; --muted:#5b6476; --card:#f7f9fc; --border:#e5e7eb; --accent:#2563eb; --accent2:#06b6d4;
       --link:#1d4ed8; --link-hover:#0b1220;
     }
