@@ -1,4 +1,7 @@
-![Tiansheng (Tian) Wang portrait](/images/Tian_UHAP3.jpg)
+<p align="center">
+  <img src="/images/Tian_UHAP3.jpg" alt="Tiansheng (Tian) Wang portrait" width="250">
+</p>
+
 
 Assistant Professor (from Sep 1, 2025) · Dept. of Pharmaceutical Health Outcomes & Policy (PHOP) · University of Houston College of Pharmacy
 
