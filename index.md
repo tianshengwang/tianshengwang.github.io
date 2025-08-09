@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/images/Tian_UHAP3.jpg" alt="Tiansheng (Tian) Wang portrait" width="250">
+  <img src="/images/Tian_UHAP23.jpg" alt="Tiansheng (Tian) Wang portrait" width="250">
 </p>
 
 
