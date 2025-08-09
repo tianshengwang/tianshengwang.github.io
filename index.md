@@ -30,7 +30,7 @@ I develop and apply **AI-powered causal inference** methods to assess drug effec
   * Wang T, et al. **High-dimensional Iterative Causal Forest (hdiCF): a Novel Algorithm for Subgroup Identification in Claims Data.** _Am J Epidemiol._ 2024 Sep 5:kwae322. https://doi.org/10.1093/aje/kwae322.
   * Wang T, et al. **A Novel High Dimensional Approach to Assess Heterogeneous Treatment Effect in Claims Data.** _Am J Epidemiol._ 2025 June 11. https://doi.org/10.1093/aje/kwaf127.
 * **Confounding control**
-  * Wang T, et al. **Caution in Handling Switchers in Pharmacoepidemiologic Studies Estimating Treatment Effects: The Example of Dipeptidyl Peptidase-4 Inhibitors and Inflammatory Bowel Disease.** _Am J Epidemiol._ 2025. [https://doi.org/10.1093/aje/kwaf044](https://doi.org/10.1093/aje/kwaf044)
+  * Wang T, et al. **[Caution in Handling Switchers in Pharmacoepidemiologic Studies Estimating Treatment Effects: The Example of Dipeptidyl Peptidase-4 Inhibitors and Inflammatory Bowel Disease. _Am J Epidemiol._ 2025.](https://doi.org/10.1093/aje/kwaf044)** 
 * **Drug repurposing for ADRD:**
   * Wang T, et al. **Developing A Novel Algorithm to Identify Incident and Prevalent Dementia in Medicare Claims. The ARIC Study.** _Am J Epidemiol._ 2025 Aug 4. https://doi.org/10.1093/aje/kwaf166.
 
