@@ -110,3 +110,20 @@ html[data-theme="light"] {
       .grid{grid-template-columns:1fr}
       .title{font-size:28px}
     }
+/* Force true centering inside software cards */
+.soft-media{
+  display:grid;            /* grid centers reliably */
+  place-items:center;      /* both axes */
+  text-align:center;
+}
+.soft-media img{
+  display:block;
+  max-width:100%;
+  max-height:100%;
+  width:auto;              /* let width follow height */
+  height:100%;
+  object-fit:contain;
+  object-position:center center;
+  margin:0 auto;           /* extra centering guard */
+}
+
