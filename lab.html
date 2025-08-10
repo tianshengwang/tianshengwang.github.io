@@ -15,6 +15,17 @@
   <!-- Favicon -->
   <link rel="icon" href="/images/favicon.jpg" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+
+  <!-- Scoped fixes to ensure 2-up layout -->
+  <style>
+    /* Keep hero title link styled like text but obviously clickable */
+    .title a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+    /* Force two-column layout for Research Areas on desktop, stack on mobile */
+    .research-areas .two-col { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 900px) {
+      .research-areas .two-col { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -38,23 +49,19 @@
   <!-- Hero -->
   <section class="hero reveal">
     <div class="container">
-      <h1 class="title">CausalRx.AI Lab</h1>
+      <h1 class="title"><a href="https://causalrx.ai" target="_blank" rel="noopener">CausalRx.AI</a> Lab</h1>
       <p class="subtitle">
         We develop and apply <strong>machine learning–powered causal inference</strong> methods to evaluate drug effects using real-world data.
         Based at the University of Houston (from <strong>Sep 1, 2025</strong>), with collaborations in epidemiology, biostatistics, computer science, and clinical domains.
       </p>
-      <p>
-        Our short domain <a href="https://CausalRx.AI" target="_blank" rel="noopener" class="button secondary">CausalRx.AI ↗</a>
-        is a dedicated <strong>domain name</strong> that forwards directly to this page.
-      </p>
     </div>
   </section>
 
-  <!-- Research Areas moved to the top: Methods (left) & Applications (right) -->
-  <section class="reveal">
+  <!-- Research Areas (moved to top, 2-up) -->
+  <section class="reveal research-areas">
     <div class="container">
       <h2>Research Areas</h2>
-      <div class="grid two">
+      <div class="two-col">
         <div class="card" id="methods">
           <h3>Methods</h3>
           <ul>
@@ -189,3 +196,4 @@
 <script defer src="/assets/site.js"></script>
 </body>
 </html>
+
