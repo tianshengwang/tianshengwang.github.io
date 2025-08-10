@@ -10,9 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css?v=3">
+  <link rel="stylesheet" href="/assets/styles.css?v=4">
 
-  <!-- Favicon (optional) -->
   <link rel="icon" href="/images/favicon.jpg" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 </head>
@@ -35,16 +34,26 @@
 </header>
 
 <main>
-  <!-- Quick links row (PubMed / Scholar / ORCID) -->
+
+  <!-- Quick links -->
   <section class="reveal" style="border-bottom:1px solid var(--border);">
     <div class="container">
       <h1 style="margin-bottom:8px;">Publications</h1>
       <p class="subtitle" style="margin-top:0;">Peer-reviewed articles and selected conference presentations.</p>
 
       <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:14px;">
-        <a class="ghost" href="https://pubmed.ncbi.nlm.nih.gov/?term=Tiansheng%20Wang%5BAuthor%5D" target="_blank" rel="noopener">
-          🔎 PubMed (author search)
+        <!-- Precise PubMed: author + (UNC OR UH) + PDAT >= 2022-09-01 -->
+        <a class="ghost" target="_blank" rel="noopener"
+           href="https://pubmed.ncbi.nlm.nih.gov/?term=%28Wang%20Tiansheng%5BAuthor%5D%20OR%20Wang%20T%5BAuthor%5D%29%20AND%20%28%22University%20of%20North%20Carolina%22%5BAffiliation%5D%20OR%20%22University%20of%20Houston%22%5BAffiliation%5D%29%20AND%20%282022%2F09%2F01%5BDate%20-%20Publication%5D%20%3A%203000%5BDate%20-%20Publication%5D%29">
+          🔎 PubMed (UNC/UH since 2022)
         </a>
+
+        <!-- Broader PubMed author search (all years) -->
+        <a class="ghost" target="_blank" rel="noopener"
+           href="https://pubmed.ncbi.nlm.nih.gov/?term=Wang%20Tiansheng%5BAuthor%5D%20OR%20Wang%20T%5BAuthor%5D">
+          🔎 PubMed (all)
+        </a>
+
         <a class="ghost" href="https://scholar.google.com/citations?user=JYtT5K8AAAAJ&hl=en" target="_blank" rel="noopener">
           G Google Scholar
         </a>
@@ -55,58 +64,70 @@
     </div>
   </section>
 
-  <!-- Featured publications -->
+  <!-- FEATURED slider -->
   <section class="reveal">
     <div class="container">
       <h2 style="margin-bottom:14px;">Featured</h2>
 
-      <div class="cards" style="grid-template-columns:repeat(12,1fr); gap:16px;">
-        <!-- Card 1 -->
-        <article class="card" style="grid-column:span 12;">
-          <h3 style="margin:0 0 6px;">
-            <a href="https://doi.org/10.1093/aje/kwad219" target="_blank" rel="noopener">
-              Iterative Causal Forest: A Novel Algorithm for Subgroup Identification
-            </a>
-          </h3>
-          <p class="subtitle" style="margin:0 0 10px;"><em>American Journal of Epidemiology</em>, 2024</p>
-          <div class="figure-card" style="margin-top:8px;">
-            <img src="/images/figures/FIGURE1_all_Panels_AB.jpg" alt="iCF workflow">
-            <div class="caption">Workflow for iterative estimation and subgroup discovery.</div>
-          </div>
-        </article>
+      <div class="feature-hero">
+        <button class="feature-nav prev" aria-label="Previous">⟨</button>
 
-        <!-- Card 2 -->
-        <article class="card" style="grid-column:span 12;">
-          <h3 style="margin:0 0 6px;">
-            <a href="https://doi.org/10.1093/aje/kwae322" target="_blank" rel="noopener">
-              High-dimensional Iterative Causal Forest (hdiCF)
-            </a>
-          </h3>
-          <p class="subtitle" style="margin:0 0 10px;"><em>American Journal of Epidemiology</em>, 2024</p>
-          <div class="figure-card" style="margin-top:8px;">
-            <img src="/images/figures/FIGURE1_hdiCF_3KEYsteps.jpg" alt="hdiCF steps">
-            <div class="caption">Extending iCF to claims-scale feature spaces.</div>
-          </div>
-        </article>
+        <div class="feature-track" id="featureTrack" aria-live="polite">
+          <!-- Slide 1 -->
+          <article class="feature-slide active">
+            <div class="feature-media">
+              <img src="/images/figures/FIGURE1_all_Panels_AB.jpg" alt="iCF workflow">
+            </div>
+            <div class="feature-meta">
+              <h3 class="feature-title">
+                <a href="https://doi.org/10.1093/aje/kwad219" target="_blank" rel="noopener">
+                  Iterative Causal Forest: A Novel Algorithm for Subgroup Identification
+                </a>
+              </h3>
+              <p class="subtitle"><em>American Journal of Epidemiology</em>, 2024</p>
+              <p class="feature-caption">Workflow for iterative estimation and subgroup discovery in observational data.</p>
+            </div>
+          </article>
 
-        <!-- Card 3 -->
-        <article class="card" style="grid-column:span 12;">
-          <h3 style="margin:0 0 6px;">
-            <a href="https://doi.org/10.1093/aje/kwaf166" target="_blank" rel="noopener">
-              Developing A Novel Algorithm to Identify Incident and Prevalent Dementia in Medicare Claims (ARIC)
-            </a>
-          </h3>
-          <p class="subtitle" style="margin:0 0 10px;"><em>American Journal of Epidemiology</em>, 2025</p>
-          <div class="figure-card" style="margin-top:8px;">
-            <img src="/images/figures/Fig3_StudyDesignTimeline_Dementia.jpg" alt="ADRD identification timeline">
-            <div class="caption">Claims-based ADRD phenotyping pipeline.</div>
-          </div>
-        </article>
+          <!-- Slide 2 -->
+          <article class="feature-slide">
+            <div class="feature-media">
+              <img src="/images/figures/FIGURE1_hdiCF_3KEYsteps.jpg" alt="hdiCF steps">
+            </div>
+            <div class="feature-meta">
+              <h3 class="feature-title">
+                <a href="https://doi.org/10.1093/aje/kwae322" target="_blank" rel="noopener">
+                  High-dimensional Iterative Causal Forest (hdiCF)
+                </a>
+              </h3>
+              <p class="subtitle"><em>American Journal of Epidemiology</em>, 2024</p>
+              <p class="feature-caption">Extending iCF to claims-scale feature spaces.</p>
+            </div>
+          </article>
+
+          <!-- Slide 3 -->
+          <article class="feature-slide">
+            <div class="feature-media">
+              <img src="/images/figures/Fig3_StudyDesignTimeline_Dementia.jpg" alt="ADRD identification timeline">
+            </div>
+            <div class="feature-meta">
+              <h3 class="feature-title">
+                <a href="https://doi.org/10.1093/aje/kwaf166" target="_blank" rel="noopener">
+                  A Novel Algorithm to Identify Incident and Prevalent Dementia in Medicare Claims (ARIC)
+                </a>
+              </h3>
+              <p class="subtitle"><em>American Journal of Epidemiology</em>, 2025</p>
+              <p class="feature-caption">Claims-based ADRD phenotyping pipeline.</p>
+            </div>
+          </article>
+        </div>
+
+        <button class="feature-nav next" aria-label="Next">⟩</button>
       </div>
     </div>
   </section>
 
-  <!-- Full list (grouped) -->
+  <!-- Full list -->
   <section class="reveal">
     <div class="container">
       <h2>All Publications (selected)</h2>
@@ -158,7 +179,6 @@
   </section>
 </main>
 
-<!-- Contact + footer (matches index) -->
 <section id="contact" class="reveal">
   <div class="container">
     <h2>Contact</h2>
@@ -169,8 +189,37 @@
 
 <button id="toTop" class="toTop" aria-label="Back to top">↑</button>
 
-<!-- Shared JS -->
+<!-- Shared + page JS -->
 <script defer src="/assets/site.js"></script>
+<script>
+  // Simple feature slider (no external deps)
+  (()=>{
+    const slides = Array.from(document.querySelectorAll('.feature-slide'));
+    if (!slides.length) return;
+    let i = 0;
+
+    const setActive = idx => {
+      slides.forEach((s, k) => s.classList.toggle('active', k === idx));
+    };
+
+    const prev = document.querySelector('.feature-nav.prev');
+    const next = document.querySelector('.feature-nav.next');
+
+    prev?.addEventListener('click', () => {
+      i = (i - 1 + slides.length) % slides.length; setActive(i);
+    });
+    next?.addEventListener('click', () => {
+      i = (i + 1) % slides.length; setActive(i);
+    });
+
+    // Optional keyboard support
+    document.addEventListener('keydown', (e)=>{
+      if (e.key === 'ArrowLeft') { i = (i - 1 + slides.length) % slides.length; setActive(i); }
+      else if (e.key === 'ArrowRight') { i = (i + 1) % slides.length; setActive(i); }
+    });
+  })();
+</script>
 </body>
 </html>
+
 
