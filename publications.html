@@ -241,6 +241,53 @@
 
 <!-- Shared + page JS -->
 <script defer src="/assets/site.js"></script>
+  <script>
+  (()=>{
+    const slides = Array.from(document.querySelectorAll('.feature-slide'));
+    if (!slides.length) return;
+
+    let i = 0;
+
+    // Init: show the first slide
+    slides.forEach(s => s.classList.remove('active'));
+    slides[0].classList.add('active');
+    slides.forEach((s, idx) => s.setAttribute('aria-hidden', idx === 0 ? 'false' : 'true'));
+
+    const setActive = (idx) => {
+      slides.forEach((s, k) => {
+        const on = (k === idx);
+        s.classList.toggle('active', on);
+        s.setAttribute('aria-hidden', on ? 'false' : 'true');
+      });
+    };
+
+    const prevBtn = document.querySelector('.feature-nav.prev');
+    const nextBtn = document.querySelector('.feature-nav.next');
+
+    prevBtn?.addEventListener('click', () => { i = (i - 1 + slides.length) % slides.length; setActive(i); });
+    nextBtn?.addEventListener('click', () => { i = (i + 1) % slides.length; setActive(i); });
+
+    // Keyboard support
+    document.addEventListener('keydown', (e)=>{
+      if (e.key === 'ArrowLeft') { i = (i - 1 + slides.length) % slides.length; setActive(i); }
+      if (e.key === 'ArrowRight') { i = (i + 1) % slides.length; setActive(i); }
+    });
+
+    // Optional: touch swipe for mobile
+    let startX = null;
+    document.querySelector('.feature-hero')?.addEventListener('touchstart', (e)=>{ startX = e.touches[0].clientX; }, {passive:true});
+    document.querySelector('.feature-hero')?.addEventListener('touchend', (e)=>{
+      if (startX === null) return;
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) {
+        i = dx > 0 ? (i - 1 + slides.length) % slides.length : (i + 1) % slides.length;
+        setActive(i);
+      }
+      startX = null;
+    }, {passive:true});
+  })();
+</script>
+
 <script>
   // Simple feature slider (no external deps)
   (()=>{
