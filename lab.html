@@ -6,7 +6,7 @@
   <title>Join the CausalRx Lab — Tiansheng (Tian) Wang</title>
   <meta name="description" content="CausalRx Lab at the University of Houston. We develop machine learning–powered causal inference methods and apply them to real-world data." />
 
-  <!-- Fonts + shared site styles (consistent with other pages) -->
+  <!-- Fonts + shared site styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,24 +18,23 @@
 </head>
 <body>
 
-<header>
-  <div class="container">
-    <nav>
-      <div class="brand"><a href="/index.html">Tiansheng (Tian) Wang</a></div>
-      <div class="nav">
-        <a href="/index.html#home">Home</a>
-        <a href="/lab.html" class="active" aria-current="page">Lab</a>
-        <a href="/software.html">Software</a>
-        <a href="/publications.html">Publications</a>
-        <a href="/gallery.html">Gallery</a>
-        <button id="themeToggle" class="toggle" aria-label="Toggle light/dark">🌙</button>
-      </div>
+<!-- HEADER (copy this structure verbatim across pages for consistency) -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/index.html">Tiansheng (Tian) Wang</a>
+    <nav class="nav">
+      <a href="/index.html#home">Home</a>
+      <a href="/lab.html" class="active" aria-current="page">Lab</a>
+      <a href="/software.html">Software</a>
+      <a href="/publications.html">Publications</a>
+      <a href="/gallery.html">Gallery</a>
+      <button id="themeToggle" class="toggle" aria-label="Toggle light/dark">🌙</button>
     </nav>
   </div>
 </header>
 
 <main>
-  <!-- Hero -->
+  <!-- HERO -->
   <section class="hero reveal">
     <div class="blob b1"></div>
     <div class="blob b2"></div>
@@ -52,7 +51,7 @@
     </div>
   </section>
 
-  <!-- Open Positions -->
+  <!-- OPEN POSITIONS -->
   <section id="open" class="reveal">
     <div class="container">
       <h2>Open Positions</h2>
@@ -80,7 +79,7 @@
     </div>
   </section>
 
-  <!-- What We Look For -->
+  <!-- WHAT WE LOOK FOR -->
   <section class="reveal">
     <div class="container">
       <h2>What We Look For</h2>
@@ -118,7 +117,7 @@
     </div>
   </section>
 
-  <!-- Research Areas -->
+  <!-- RESEARCH AREAS -->
   <section class="reveal">
     <div class="container">
       <h2>Research Areas</h2>
@@ -126,7 +125,7 @@
         <div class="card half">
           <h3>Methods</h3>
           <ul>
-            <li>Machine learning for heterogeneous treatment effects (e.g., iterative causal forest)</li>
+            <li>ML for heterogeneous treatment effects (e.g., iterative causal forest)</li>
             <li>Target trial emulation and bias reduction</li>
             <li>Proximal causal inference and negative controls</li>
             <li>Trajectory modeling and longitudinal causal estimands</li>
@@ -145,7 +144,7 @@
     </div>
   </section>
 
-  <!-- How to Apply -->
+  <!-- HOW TO APPLY -->
   <section id="apply" class="reveal">
     <div class="container">
       <h2>How to Apply</h2>
@@ -163,23 +162,22 @@
   </section>
 </main>
 
+<!-- CONTACT FOOTER -->
 <section id="contact" class="reveal">
   <div class="container">
     <h2>Contact</h2>
     <p><strong>Email:</strong> <a href="mailto:tianwang@uh.edu">tianwang@uh.edu</a> · <strong>GitHub:</strong> <a href="https://github.com/tianshengwang" target="_blank" rel="noopener">@tianshengwang</a></p>
-    <p class="muted">© <span id="year"></span> Tiansheng (Tian) Wang — Built with vanilla HTML/CSS, animated blobs, and scroll-reveal ✦ Hosted on GitHub Pages.</p>
+    <p>© <span id="year"></span> Tiansheng (Tian) Wang — Built with vanilla HTML/CSS, animated blobs, and scroll-reveal ✦ Hosted on GitHub Pages.</p>
   </div>
 </section>
 
 <button id="toTop" class="toTop" aria-label="Back to top">↑</button>
 
-<!-- Shared JS (unchanged) -->
+<!-- Shared JS -->
 <script defer src="/assets/site.js"></script>
 
-<!-- Page-specific minimal helper (no global style changes) -->
+<!-- Page-local helper only (safe/no globals) -->
 <script>
-  // Only small page-local tweaks here if needed; avoid touching global CSS.
-  // Ensure current year fills in the footer if site.js doesn't already do it.
   (function () {
     var y = document.getElementById('year');
     if (y && !y.textContent) y.textContent = new Date().getFullYear();
