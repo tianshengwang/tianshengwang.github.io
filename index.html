@@ -3,181 +3,101 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Join the CausalRx Lab — Tiansheng (Tian) Wang</title>
-  <meta name="description" content="CausalRx Lab at the University of Houston. We develop machine learning–powered causal inference methods and apply them to real-world data." />
+  <title>Tiansheng (Tian) Wang — Pharmacoepidemiology • Causal Inference • ML</title>
+  <meta name="description" content="Assistant Professor (PHOP, UH). Pharmacoepidemiology, AI-powered causal inference, machine learning, real-world data." />
 
   <!-- Fonts + shared CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com
-
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/styles.css" />
+
+  <!-- Favicon -->
   <link rel="icon" href="/images/favicon.png" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-  <style>
-    /* Mobile-friendly header/nav: keep links top-right, wrap neatly on small screens */
-    .site-header .header-inner{display:flex;align-items:center;gap:12px}
-    .site-header .nav{margin-left:auto;display:flex;gap:12px;align-items:center;flex-wrap:nowrap}
-    .site-header .nav a{white-space:nowrap}
-    @media (max-width: 640px){
-      .site-header .nav{flex-wrap:wrap;row-gap:8px;justify-content:flex-end}
-      .site-header .nav a{padding:6px 8px}
-      .brand-text{font-size:14px}
-    }
-  </style>
 </head>
 <body>
-  <!-- Site Header / Nav (kept simple to match existing pages) -->
-  <header class="site-header reveal">
-    <div class="container header-inner">
-      <a class="brand" href="/">
-        <img src="/images/favicon.svg" alt="Logo" class="brand-mark" />
-        <span class="brand-text">Tiansheng (Tian) Wang</span>
-      </a>
-      <nav class="nav">
-        <a href="/index.html" class="ghost">Home</a>
-        <a href="/publications.html" class="ghost">Publications</a>
-        <a href="/software.html" class="ghost">Software</a>
-        <a href="/gallery.html" class="ghost">Gallery</a>
-        <a href="/lab.html" class="ghost active">Lab</a>
-      </nav>
-    </div>
-  </header>
 
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/index.html">
+      <img src="/images/favicon.svg" alt="Logo" class="brand-mark" />
+      <span class="brand-text">Tiansheng (Tian) Wang</span>
+    </a>
+    <nav class="nav">
+      <a href="/index.html" class="active" aria-current="page">Home</a>
+      <a href="/publications.html">Publications</a>
+      <a href="/software.html">Software</a>
+      <a href="/gallery.html">Gallery</a>
+      <a href="/lab.html">Lab</a>
+      <button id="themeToggle" class="toggle" aria-label="Toggle light/dark">🌙</button>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
   <!-- Hero -->
-  <section class="reveal hero">
+  <section class="hero reveal">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
     <div class="container">
-      <h1 style="margin-bottom:8px;">Join the CausalRx.ai Lab</h1>
-      <p class="subtitle" style="margin-top:0; max-width:70ch;">
-        We develop and apply <strong>machine learning–powered causal inference</strong> methods to evaluate drug effects using real‑world data.
-        The lab will be based at the University of Houston (starting <strong>September 1, 2025</strong>), collaborating across epidemiology, biostatistics, computer science, and clinical domains.
+      <h1 class="title">Pharmacoepidemiology • Causal Inference • Machine Learning</h1>
+      <p class="subtitle">
+        I develop and apply <strong>AI-powered causal inference</strong> methods to evaluate drug effects using real-world data.
+        I’m joining the University of Houston (PHOP) as Assistant Professor on <strong>September&nbsp;1, 2025</strong>.
       </p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;">
-        <a class="btn" href="#open">See open positions</a>
-        <a class="ghost" href="#apply">How to apply</a>
+      <div class="actions">
+        <a class="btn" href="/publications.html">Publications</a>
+        <a class="ghost" href="/software.html">Software</a>
       </div>
     </div>
   </section>
 
-  <!-- Open Positions -->
-  <section id="open" class="reveal" style="border-top:1px solid var(--border);">
-    <div class="container">
-      <h2 style="margin-bottom:10px;">Open Positions</h2>
-      <div class="grid two">
-        <div class="card">
-          <h3 style="margin-top:0;">Postdoctoral Fellow (Causal Inference & ML)</h3>
-          <p><strong>Start:</strong> Sep 2025 (flexible) · <strong>Duration:</strong> 1–2 years (renewable) · <strong>Location:</strong> Houston, TX (hybrid possible)</p>
-          <ul>
-            <li>Assessing causal effects of drug repurposing candidates on dementia outcome.</li>
-            <li>Publish in peer‑reviewed journals; contribute to software (R/Python).</li>
-            <li>Mentor students; collaborate with clinical and data partners.</li>
-          </ul>
-          <p><em>Qualifications:</em> PhD/ScD in Epidemiology, Biostatistics, CS, or related field; strong quantitative background; experience in R/Python/SAS.</p>
-        </div>
-        <div class="card">
-          <h3 style="margin-top:0;">Graduate Students (PhD / MS)</h3>
-          <ul>
-            <li>Projects in causal ML, target trial emulation, bias analysis, and scalable computation.</li>
-            <li>Opportunities to lead papers and present at conferences (ISPE, ASA, ICML‑Health, etc.).</li>
-          </ul>
-          <p><em>Qualifications:</em> Background in epidemiology, biostatistics, data science, or related fields. Coding experience recommended (R or Python); SAS a plus.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- What we look for -->
+  <!-- Highlights -->
   <section class="reveal">
     <div class="container">
-      <h2 style="margin-bottom:10px;">What We Look For</h2>
-      <div class="grid two">
-        <div class="card">
-          <ul class="checklist">
-            <li>Passion for research and curiosity about causality</li>
-            <li>Effective written and verbal communication</li>
-            <li>Skills in (or eagerness to learn) <strong>mathematics</strong> and <strong>coding</strong> (R, Python, or SAS)</li>
-            <li>Integrity, teamwork, and commitment to open, reproducible science</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3 style="margin-top:0;">Desired Skills</h3>
-          <div class="grid two">
-            <ul>
-              <li>R / Python</li>
-              <li>SAS for claims data</li>
-              <li>Statistical learning</li>
-              <li>Causal inference</li>
-            </ul>
-            <ul>
-              <li>Data wrangling & QC</li>
-              <li>Scientific writing</li>
-              <li>Version control (Git)</li>
-              <li>Reproducible research</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Research Areas -->
-  <section class="reveal">
-    <div class="container">
-      <h2 style="margin-bottom:10px;">Research Areas</h2>
-      <div class="grid two">
-        <div class="card">
-          <h3 style="margin-top:0;">Methods</h3>
+      <h2>Highlights</h2>
+      <div class="cards">
+        <div class="card half">
+          <h3>Methodology</h3>
           <ul>
-            <li>Machine learning for heterogeneous treatment effects (e.g., iterative causal forest)</li>
-            <li>Target trial emulation and bias reduction</li>
-            <li>Proximal causal inference and negative controls</li>
-            <li>Trajectory modeling and longitudinal causal estimands</li>
+            <li>High-dimensional Iterative Causal Forest (hdiCF)</li>
+            <li>Target Trial Emulation at scale</li>
+            <li>Proximal Causal Inference, negative controls</li>
+            <li>Trajectory modeling for longitudinal estimands</li>
           </ul>
         </div>
-        <div class="card">
-          <h3 style="margin-top:0;">Applications</h3>
+        <div class="card half">
+          <h3>Applications</h3>
           <ul>
-            <li>Drug safety and effectiveness using real‑world data</li>
-            <li>Cardiometabolic and neurologic outcomes</li>
-            <li>Vaccines and respiratory disease</li>
-            <li>Health equity and external validity</li>
+            <li>Drug safety & effectiveness</li>
+            <li>Cardiometabolic & neurologic outcomes</li>
+            <li>Vaccines & respiratory disease</li>
+            <li>Health equity & transportability</li>
           </ul>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- How to Apply -->
-  <section id="apply" class="reveal">
-    <div class="container">
-      <h2 style="margin-bottom:10px;">How to Apply</h2>
-      <div class="card">
-        <p>I am seeking postdoctoral fellows and graduate students to join the CausalRx Lab. Successful candidates will be passionate about research, effective communicators, and skilled in (or eager to learn) mathematics and coding.</p>
-        <p>Please email <a href="mailto:tianshengwang@uh.edu">tianshengwang@uh.edu</a> with:</p>
-        <ul>
-          <li>CV or résumé</li>
-          <li>Short statement of interests (≤ 1 page)</li>
-          <li>Links to papers, code, or a writing sample (optional)</li>
-        </ul>
-        <p>If you are at UH and interested in rotations or research credit, reach out—there are multiple entry points.</p>
+      <div class="actions">
+        <a class="ghost" href="/lab.html">Join the CausalRx Lab</a>
       </div>
     </div>
   </section>
+</main>
 
-  <!-- Footer -->
-  <footer class="site-footer reveal">
-    <div class="container">
-      <div class="foot-inner">
-        <span>© <span id="year"></span> Tiansheng Wang</span>
-        <span>•</span>
-        <a href="mailto:tianshengwang@uh.edu">Contact</a>
-      </div>
-    </div>
-  </footer>
+<section id="contact" class="reveal">
+  <div class="container">
+    <h2>Contact</h2>
+    <p><strong>Email:</strong> <a href="mailto:tianwang@uh.edu">tianwang@uh.edu</a> · <strong>GitHub:</strong> <a href="https://github.com/tianshengwang" target="_blank" rel="noopener">@tianshengwang</a></p>
+    <p class="muted">© <span id="year"></span> Tiansheng (Tian) Wang — Built with vanilla HTML/CSS, animated blobs, and scroll-reveal ✦ Hosted on GitHub Pages.</p>
+  </div>
+</section>
 
-  <script src="/assets/site.js"></script>
-  <script>
-    // Set year in footer if your site.js doesn't already do this
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<button id="toTop" class="toTop" aria-label="Back to top">↑</button>
+
+<script defer src="/assets/site.js"></script>
+<script>
+  // Fill year if site.js doesn’t already
+  (function(){var y=document.getElementById('year'); if(y&&!y.textContent){y.textContent=new Date().getFullYear();}})();
+</script>
 </body>
 </html>
