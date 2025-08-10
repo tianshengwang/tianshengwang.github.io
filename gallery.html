@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery — Places · Tiansheng (Tian) Wang</title>
+  <meta name="description" content="A map of places with photo albums (like iPhone Places).">
+
+  <!-- Fonts + shared site styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css?v=13">
+
+  <!-- Leaflet (map) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous">
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
+
+  <!-- Page-specific styles -->
+  <style>
+    /* Map container */
+    #map { height: 70vh; width: 100%; border:1px solid var(--border); border-radius:16px; overflow:hidden; background:var(--card); }
+    .map-wrap { padding: 12px; background: var(--card); border:1px solid var(--border); border-radius:16px; }
+
+    /* Leaflet dark theme tweak */
+    .leaflet-container { background: var(--card); color: var(--fg); }
+    .leaflet-popup-content-wrapper, .leaflet-tooltip {
+      background: var(--card); color: var(--fg); border:1px solid var(--border);
+    }
+    .leaflet-tooltip { border-radius:10px; padding:6px 8px; }
+    .leaflet-popup-content-wrapper { border-radius:12px; }
+    .leaflet-popup-tip { background: var(--card); }
+
+    /* Hover preview in tooltip */
+    .thumb-preview { display:flex; align-items:center; gap:8px; }
+    .thumb-preview img {
+      width:72px; height:48px; object-fit:cover; border-radius:6px; border:1px solid var(--border);
+    }
+    .thumb-preview .loc { font-weight:700; margin:0; }
+    .thumb-preview .count { color: var(--muted); font-size:.9rem; }
+
+    /* Lightbox modal */
+    .lightbox {
+      position:fixed; inset:0; backdrop-filter: blur(4px);
+      background: color-mix(in srgb, var(--bg) 65%, transparent);
+      display:none; align-items:center; justify-content:center; z-index:9999;
+    }
+    .lightbox.show { display:flex; }
+    .lightbox-inner {
+      max-width:min(1200px, 96vw);
+      max-height:min(90vh, 900px);
+      width:96vw; height:auto;
+      background: var(--card); border:1px solid var(--border); border-radius:16px; padding:10px;
+      display:grid; grid-template-rows: auto 1fr auto; gap:8px;
+      box-shadow:0 24px 80px rgba(0,0,0,.45);
+    }
+    .lb-head { display:flex; justify-content:space-between; align-items:center; gap:10px; }
+    .lb-title { font-weight:700; margin:0; }
+    .lb-close {
+      border:1px solid var(--border); background:var(--card); color:var(--fg);
+      border-radius:10px; padding:6px 10px; cursor:pointer;
+    }
+    .lb-stage { position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+    .lb-stage img {
+      max-width:100%; max-height:70vh; object-fit:contain; border-radius:12px; border:1px solid var(--border);
+    }
+    .lb-nav {
+      position:absolute; top:50%; transform:translateY(-50%); z-index:2;
+      width:42px; height:42px; border-radius:999px; border:1px solid var(--border);
+      background:var(--card); color:var(--fg); display:flex; align-items:center; justify-content:center; cursor:pointer;
+      box-shadow:0 8px 24px rgba(0,0,0,.25);
+    }
+    .lb-prev { left:10px; }
+    .lb-next { right:10px; }
+    .lb-caption { color: var(--muted); font-size:.95rem; text-align:center; }
+    @media (max-width: 900px){
+      #map { height: 60vh; }
+      .lb-stage img { max-height:60vh; }
+    }
+  </style>
+
+  <link rel="icon" href="/images/favicon.jpg" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="brand"><a href="/index.html">Tiansheng (Tian) Wang</a></div>
+      <div class="nav">
+        <a href="/index.html#home">Home</a>
+        <a href="/index.html#lab">Lab</a>
+        <a href="/software.html">Software</a>
+        <a href="/publications.html">Publications</a>
+        <a href="/gallery.html" class="active">Gallery</a>
+        <button id="themeToggle" class="toggle" aria-label="Toggle light/dark">🌙</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="reveal">
+    <div class="container">
+      <h1 style="margin-bottom:8px;">Gallery — Places</h1>
+      <p class="subtitle" style="margin-top:0;">Hover markers to preview; click to open the album. Use ←/→ in the lightbox.</p>
+
+      <div class="map-wrap">
+        <div id="map" aria-label="World map with photo locations"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<section id="contact" class="reveal">
+  <div class="container">
+    <h2>Contact</h2>
+    <p><strong>Email:</strong> <a href="mailto:tianwang@uh.edu">tianwang@uh.edu</a> · <strong>GitHub:</strong> <a href="https://github.com/tianshengwang" target="_blank">@tianshengwang</a></p>
+    <p style="color:#7c869a">© <span id="year"></span> Tiansheng (Tian) Wang — Built with vanilla HTML/CSS, animated blobs, and scroll-reveal ✦ Hosted on GitHub Pages.</p>
+  </div>
+</section>
+
+<button id="toTop" class="toTop" aria-label="Back to top">↑</button>
+
+<!-- Shared JS -->
+<script defer src="/assets/site.js"></script>
+
+<!-- Page JS -->
+<script>
+  // === 1) Define albums here (folder-based) ===
+  // Put your images in /gallery/<FolderName>/...  (jpg recommended)
+  // Example files you upload:
+  //   /gallery/Berlin/1.jpg, /gallery/Berlin/2.jpg, ...
+  //   /gallery/Washington/1.jpg, /gallery/Washington/2.jpg, ...
+  const ALBUMS = [
+    {
+      name: "Berlin",
+      coords: [52.5200, 13.4050],
+      folder: "/gallery/Berlin/",
+      photos: ["1.jpg","2.jpg","3.jpg"],
+      caption: "Talks and visits in Berlin."
+    },
+    {
+      name: "Washington, DC",
+      coords: [38.9072, -77.0369],
+      folder: "/gallery/Washington/",
+      photos: ["1.jpg","2.jpg"],
+      caption: "ICPE and other DC moments."
+    },
+    // Add more:
+    // { name:"Houston", coords:[29.7604,-95.3698], folder:"/gallery/Houston/", photos:["1.jpg"], caption:"..." }
+  ];
+
+  // Helper to build full URLs
+  const full = (album, idx) => album.folder + album.photos[idx];
+
+  // === 2) Init Leaflet map ===
+  const map = L.map('map', {
+    worldCopyJump: true,
+    scrollWheelZoom: true
+  }).setView([20, 0], 2);
+
+  // Tile layer (Carto Voyager – looks good on dark/light)
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap & Carto'
+  }).addTo(map);
+
+  // === 3) Create markers with hover thumbnail + click to open lightbox ===
+  const markers = [];
+  ALBUMS.forEach(album => {
+    const marker = L.marker(album.coords).addTo(map);
+
+    // Tooltip on hover with small thumbnail + meta
+    const thumb = full(album, 0);
+    const tipHtml = `
+      <div class="thumb-preview">
+        <img src="${thumb}" alt="${album.name} thumbnail" />
+        <div>
+          <p class="loc">${album.name}</p>
+          <p class="count">${album.photos.length} photo${album.photos.length>1?'s':''}</p>
+        </div>
+      </div>`;
+    marker.bindTooltip(tipHtml, { direction:'top', sticky:true, opacity: 0.95 });
+
+    // Click → popup with "Open album"
+    marker.on('click', () => openLightbox(album, 0));
+
+    markers.push(marker);
+  });
+
+  // Fit bounds to markers if we have enough
+  if (markers.length > 1) {
+    const group = L.featureGroup(markers);
+    map.fitBounds(group.getBounds().pad(0.25));
+  }
+
+  // === 4) Lightbox / album viewer ===
+  // Build DOM once
+  const lb = document.createElement('div');
+  lb.className = 'lightbox';
+  lb.innerHTML = `
+    <div class="lightbox-inner" role="dialog" aria-modal="true" aria-label="Album viewer">
+      <div class="lb-head">
+        <h3 class="lb-title">Album</h3>
+        <button class="lb-close" aria-label="Close">Close ✕</button>
+      </div>
+      <div class="lb-stage">
+        <button class="lb-nav lb-prev" aria-label="Previous">⟨</button>
+        <img alt="Album image" />
+        <button class="lb-nav lb-next" aria-label="Next">⟩</button>
+      </div>
+      <div class="lb-caption"></div>
+    </div>`;
+  document.body.appendChild(lb);
+
+  const lbTitle = lb.querySelector('.lb-title');
+  const lbImg   = lb.querySelector('.lb-stage img');
+  const lbPrev  = lb.querySelector('.lb-prev');
+  const lbNext  = lb.querySelector('.lb-next');
+  const lbClose = lb.querySelector('.lb-close');
+  const lbCap   = lb.querySelector('.lb-caption');
+
+  let currentAlbum = null;
+  let currentIndex = 0;
+
+  function renderLightbox() {
+    if (!currentAlbum) return;
+    lbTitle.textContent = currentAlbum.name;
+    lbImg.src = full(currentAlbum, currentIndex);
+    lbImg.alt = `${currentAlbum.name} – image ${currentIndex+1}`;
+    lbCap.textContent = `${currentAlbum.caption || ''}  (${currentIndex+1}/${currentAlbum.photos.length})`;
+  }
+
+  function openLightbox(album, startIndex) {
+    currentAlbum = album;
+    currentIndex = startIndex || 0;
+    renderLightbox();
+    lb.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lb.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+
+  function nextImg() {
+    if (!currentAlbum) return;
+    currentIndex = (currentIndex + 1) % currentAlbum.photos.length;
+    renderLightbox();
+  }
+
+  function prevImg() {
+    if (!currentAlbum) return;
+    currentIndex = (currentIndex - 1 + currentAlbum.photos.length) % currentAlbum.photos.length;
+    renderLightbox();
+  }
+
+  lbNext.addEventListener('click', nextImg);
+  lbPrev.addEventListener('click', prevImg);
+  lbClose.addEventListener('click', closeLightbox);
+  lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
+
+  // Keyboard controls
+  document.addEventListener('keydown', (e) => {
+    if (!lb.classList.contains('show')) return;
+    if (e.key === 'Escape') closeLightbox();
+    else if (e.key === 'ArrowRight') nextImg();
+    else if (e.key === 'ArrowLeft') prevImg();
+  });
+
+  // Simple swipe on the image
+  let startX = null;
+  lbImg.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive:true });
+  lbImg.addEventListener('touchend', e => {
+    if (startX === null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) (dx > 0 ? prevImg() : nextImg());
+    startX = null;
+  }, { passive:true });
+</script>
+</body>
+</html>
