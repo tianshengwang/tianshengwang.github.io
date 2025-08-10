@@ -10,48 +10,25 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/styles.css?v=4">
 
   <!-- Favicon -->
   <link rel="icon" href="/images/favicon.jpg" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 
-  <!-- Force 3-up layout for Research Areas -->
+  <!-- Tiny scoped helpers (everything else is inline in-section to overrule old styles) -->
   <style>
     .title a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
-
-    .research-panels .research-grid {
-      display: grid !important; /* override any flex rules */
-      grid-template-columns: repeat(3, 1fr) !important;
-      gap: 24px;
+    /* Card visuals (safe to keep global) */
+    .research-card { position: relative; border-radius: 16px; display: flex; flex-direction: column; }
+    .research-card .img-wrap {
+      width: 100%; aspect-ratio: 16/9; border-radius: 16px; overflow: hidden;
+      box-shadow: 0 6px 24px rgba(0,0,0,.08); margin-bottom: 12px; background: #f2f5f9;
     }
-    .research-panels .card {
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      border-radius: 16px;
-    }
-    .research-panels .img-wrap {
-      width: 100%;
-      aspect-ratio: 16/9;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
-      margin-bottom: 12px;
-      background: #f2f5f9;
-    }
-    .research-panels .img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    /* Make card clickable */
-    .research-panels .card-link {
-      position: absolute;
-      inset: 0;
-      border-radius: 16px;
-    }
+    .research-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .research-card h3 { margin-top: 6px; }
+    .research-card p { margin: 6px 0 0; color: var(--muted, #5e6b85); }
+    .research-card a.card-link { position: absolute; inset: 0; border-radius: 16px; }
   </style>
 </head>
 <body>
@@ -84,12 +61,145 @@
     </div>
   </section>
 
+  <!-- Research Areas: FORCE one row, 3 equal columns on any non-phone width -->
+  <section class="reveal research-panels">
+    <div class="container">
+      <h2>Research Areas</h2>
 
+      <!-- Inline styles below override any legacy flex/2-col rules from /assets/styles.css -->
+      <div class="research-grid"
+           style="
+             display:grid !important;
+             grid-auto-flow:column !important;
+             grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+             gap:24px !important;
+             align-items:stretch !important;
+             width:100%;
+           ">
 
-  
+        <!-- Precision Medicine -->
+        <article class="research-card" id="precision-medicine">
+          <div class="img-wrap">
+            <img src="/images/HTE.jpg" alt="Precision Medicine" loading="lazy">
+          </div>
+          <h3>Precision Medicine</h3>
+          <p>Subgroup identification with iCF/high-dim iCF to quantify who benefits, who is harmed, and by how much.</p>
+          <a class="card-link" href="/hte.html" aria-label="Read more about Precision Medicine"></a>
+        </article>
 
-  <!-- You can keep your Join Us, Postdoc sections here (unchanged) -->
+        <!-- Confounding -->
+        <article class="research-card" id="confounding">
+          <div class="img-wrap">
+            <img src="/images/confounding.jpg" alt="Confounding and Bias Reduction" loading="lazy">
+          </div>
+          <h3>Confounding &amp; Bias Reduction</h3>
+          <p>Target trial emulation, proximal causal inference, negative controls, and trajectory modeling.</p>
+          <a class="card-link" href="/confounding.html" aria-label="Read more about Confounding and Bias Reduction"></a>
+        </article>
 
+        <!-- ADRD -->
+        <article class="research-card" id="adrd">
+          <div class="img-wrap">
+            <img src="/images/ADRD.jpg" alt="Alzheimer’s Disease and Related Dementias" loading="lazy">
+          </div>
+          <h3>Alzheimer’s Disease &amp; Related Dementias</h3>
+          <p>Comparative effectiveness/safety, drug repurposing, and mAb therapies using EHR/claims pipelines.</p>
+          <!-- linking to add.html per your request -->
+          <a class="card-link" href="/add.html" aria-label="Read more about ADRD research"></a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Us -->
+  <section class="reveal">
+    <div class="container">
+      <h2>Join Us</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>Postdoctoral Fellow</h3>
+          <p>Start: Sep 2025 · Duration: up to 2 years · Location: Houston, TX (hybrid possible)</p>
+          <ul>
+            <li>Causal inference &amp; ML for dementia treatment strategies</li>
+            <li>Lead analyses, publish, and present at national/international meetings</li>
+            <li>Build an independent research agenda</li>
+          </ul>
+          <p><strong>How to apply:</strong> Email <a href="mailto:tianshengwang@uh.edu">tianshengwang@uh.edu</a> with a single PDF (preferred) including
+            CV, cover letter, three writing samples (e.g., publications/working papers), and contact info for three references.
+            Use the subject line: <em>“CausalRx.AI Postdoc Application.”</em>
+          </p>
+          <p><a href="#postdoc" class="button">See full description</a></p>
+        </div>
+
+        <div class="card">
+          <h3>Graduate Students</h3>
+          <p>PhD/MS projects in causal ML, target trial emulation, bias analysis, and scalable computation.</p>
+          <ul>
+            <li>Lead papers and present at major conferences</li>
+            <li>Gain coding and methodological expertise</li>
+          </ul>
+          <p><strong>How to apply:</strong> Email <a href="mailto:tianshengwang@uh.edu">tianshengwang@uh.edu</a> with your CV/résumé and a ≤1-page statement of interests.
+            Optional: links to papers/code. UH students interested in rotations or research credit are welcome to inquire.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full Postdoc Description -->
+  <section id="postdoc" class="reveal">
+    <div class="container">
+      <h2>Postdoctoral Fellowship in Causal Inference &amp; Dementia Research</h2>
+      <div class="card">
+        <p>
+          The <strong>CausalRx.AI Lab</strong> in the <strong>Population Health Outcomes and Pharmacoepidemiology Education and Research Center (P-HOPER Center)</strong> and the
+          <strong>Department of Pharmaceutical Health Outcomes and Policy (PHOP)</strong> at the <strong>University of Houston College of Pharmacy</strong> invites applications for a
+          <strong>full-time postdoctoral fellow</strong> focused on the development and application of methods for estimating the causal effects of treatment strategies on
+          Alzheimer’s disease and related dementias (ADRD).
+        </p>
+        <p>
+          The mission of the P-HOPER Center is to conduct innovative population health outcomes research and offer educational programs and population practices that impact the
+          region and the nation. The University of Houston is a Carnegie-designated Tier One public research university and a member of the world-renowned Texas Medical Center,
+          which houses major clinical and academic programs. With over 40,000 students, UH is one of the most culturally and ethnically diverse public universities in the United States.
+        </p>
+        <p>
+          This fellowship offers a unique opportunity to work with complex, real-world data and modern causal inference methodology to inform clinical decision-making in dementia care.
+          Current projects focus on evaluating the comparative effectiveness of drug repurposing candidates and FDA-approved monoclonal antibody therapies on dementia outcomes.
+          The fellow will contribute to ongoing drug repurposing pipelines, pursue independent dementia-focused research interests, and develop their own research program.
+          Work will involve large-scale analyses of observational electronic health records (EHR) and locally sourced clinical datasets.
+        </p>
+        <p>
+          The position is for up to <strong>two years</strong> with competitive compensation and the potential for renewal based on performance and funding availability.
+          Funds will be available for travel to present research and to build collaborations in the field.
+        </p>
+        <h3>Primary Responsibilities</h3>
+        <ul>
+          <li>Conduct advanced analyses using large-scale EHR and administrative claims data (e.g., Medicare).</li>
+          <li>Lead manuscript preparation and present findings at national and international conferences.</li>
+          <li>Collaborate with investigators across neuroscience, (pharmaco)epidemiology, biostatistics, and computer science.</li>
+          <li>Optional: mentor junior trainees and contribute to grant development.</li>
+        </ul>
+        <h3>Required Qualifications</h3>
+        <ul>
+          <li>Ph.D. in Pharmaceutical Outcomes, (Pharmaco)epidemiology, Biostatistics, Computer Science, Bioinformatics, Health Informatics, or a related field.</li>
+          <li>Expertise in—or strong interest in learning—machine learning and deep learning algorithms.</li>
+          <li>Proficiency in Python and familiarity with relevant libraries (e.g., PyTorch).</li>
+          <li>Excellent communication skills and ability to work collaboratively in a multidisciplinary environment.</li>
+        </ul>
+        <h3>Application Materials</h3>
+        <ul>
+          <li>Curriculum Vitae (CV)</li>
+          <li>Cover Letter</li>
+          <li>Three writing samples (e.g., publications or working papers)</li>
+          <li>Contact information for three references</li>
+        </ul>
+        <p><strong>How to apply:</strong> Email <a href="mailto:tianshengwang@uh.edu">tianshengwang@uh.edu</a> with the materials above (single PDF preferred).
+           Please include the subject line: <em>“CausalRx.AI Postdoc Application.”</em>
+        </p>
+      </div>
+    </div>
+  </section>
 </main>
 
 <!-- Contact -->
