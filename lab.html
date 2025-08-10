@@ -16,42 +16,52 @@
   <link rel="icon" href="/images/favicon.jpg" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 
-  <!-- Scoped layout overrides to guarantee 3-up panels on desktop (stack on mobile) -->
+  <!-- Scoped overrides: force 1→2→3 columns and make whole card clickable -->
   <style>
     .title a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 
-    /* Use CSS Grid for predictable 1/2/3-up across breakpoints */
-    .research-panels .research-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
+    /* Research panels grid */
+    .research-panels .research-grid{
+      display:grid !important;            /* override any old flex rules */
+      grid-template-columns:1fr;          /* phones */
+      gap:24px;
     }
-    @media (min-width: 768px) {
-      .research-panels .research-grid { grid-template-columns: repeat(2, 1fr); }
+    @media (min-width:640px){             /* small tablets */
+      .research-panels .research-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
     }
-    @media (min-width: 1024px) {
-      .research-panels .research-grid { grid-template-columns: repeat(3, 1fr); }
+    @media (min-width:900px){             /* laptops/desktop */
+      .research-panels .research-grid{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+      }
     }
 
-    .research-panels .card {
-      display: flex;
-      flex-direction: column;
+    .research-panels .card{
+      display:flex;
+      flex-direction:column;
+      position:relative;
+      border-radius:16px;
     }
-    .research-panels .img-wrap {
-      width: 100%;
-      aspect-ratio: 16/9;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
-      margin-bottom: 12px;
-      background: #f2f5f9;
+    .research-panels .img-wrap{
+      width:100%;
+      aspect-ratio:16/9;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 6px 24px rgba(0,0,0,.08);
+      margin-bottom:12px;
+      background:#f2f5f9;
     }
-    .research-panels .img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+    .research-panels .img-wrap img{
+      width:100%; height:100%; object-fit:cover; display:block;
     }
+
+    /* Make entire card clickable */
+    .research-panels .card-link{
+      position:absolute; inset:0; border-radius:16px;
+    }
+    .research-panels .card h3{ margin-top:6px; }
+    .research-panels .card p{ margin:6px 0 0; color:var(--muted, #5e6b85); }
   </style>
 </head>
 <body>
@@ -84,43 +94,41 @@
     </div>
   </section>
 
-  <!-- Research Areas: now 3 panels (HTE, Confounding, ADRD) -->
+  <!-- Research Areas: 3-up row -->
   <section class="reveal research-panels">
     <div class="container">
       <h2>Research Areas</h2>
       <div class="research-grid">
         <!-- HTE -->
-        <div class="card" id="hte">
+        <article class="card" id="hte">
           <div class="img-wrap">
             <img src="/images/HTE.jpg" alt="Heterogeneous Treatment Effects" loading="lazy">
           </div>
           <h3>Heterogeneous Treatment Effects</h3>
-          <p>
-            Subgroup identification and effect moderation using iterative causal forest (iCF) and high-dimensional iCF to map who benefits, who harms, and by how much.
-          </p>
-        </div>
+          <p>Subgroup identification with iCF/high-dim iCF to quantify who benefits, who is harmed, and by how much.</p>
+          <a class="card-link" href="/hte.html" aria-label="Read more about Heterogeneous Treatment Effects"></a>
+        </article>
 
         <!-- Confounding -->
-        <div class="card" id="confounding">
+        <article class="card" id="confounding">
           <div class="img-wrap">
             <img src="/images/confounding.jpg" alt="Confounding and Bias Reduction" loading="lazy">
           </div>
           <h3>Confounding &amp; Bias Reduction</h3>
-          <p>
-            Target trial emulation; proximal causal inference and negative controls; trajectory modeling and longitudinal estimands to handle measured and unmeasured confounding.
-          </p>
-        </div>
+          <p>Target trial emulation, proximal causal inference, negative controls, and trajectory modeling.</p>
+          <a class="card-link" href="/confounding.html" aria-label="Read more about Confounding and Bias Reduction"></a>
+        </article>
 
         <!-- ADRD -->
-        <div class="card" id="adrd">
+        <article class="card" id="adrd">
           <div class="img-wrap">
             <img src="/images/ADRD.jpg" alt="Alzheimer’s Disease and Related Dementias" loading="lazy">
           </div>
           <h3>Alzheimer’s Disease &amp; Related Dementias</h3>
-          <p>
-            Comparative effectiveness and safety for drug repurposing candidates and monoclonal antibodies; scalable pipelines on EHR and claims to inform ADRD care.
-          </p>
-        </div>
+          <p>Comparative effectiveness/safety, drug repurposing, and mAb therapies using EHR/claims pipelines.</p>
+          <!-- You requested add.html for this panel -->
+          <a class="card-link" href="/add.html" aria-label="Read more about ADRD research"></a>
+        </article>
       </div>
     </div>
   </section>
@@ -237,6 +245,7 @@
 <script defer src="/assets/site.js"></script>
 </body>
 </html>
+
 
 
 
