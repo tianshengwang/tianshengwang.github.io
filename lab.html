@@ -16,16 +16,23 @@
   <link rel="icon" href="/images/favicon.jpg" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 
-  <!-- Scoped layout overrides to guarantee 2-up panels on desktop -->
+  <!-- Scoped layout overrides to guarantee 3-up panels on desktop (stack on mobile) -->
   <style>
     .title a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 
-    /* Research panels: force two columns on medium+ screens, stack on mobile */
+    /* Use CSS Grid for predictable 1/2/3-up across breakpoints */
     .research-panels .research-grid {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr;
       gap: 24px;
     }
+    @media (min-width: 768px) {
+      .research-panels .research-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .research-panels .research-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
     .research-panels .card {
       display: flex;
       flex-direction: column;
@@ -44,15 +51,6 @@
       height: 100%;
       object-fit: cover;
       display: block;
-    }
-    @media (min-width: 768px) {
-      .research-panels .research-grid {
-        flex-direction: row;
-        align-items: stretch;
-      }
-      .research-panels .card {
-        flex: 1 1 calc(50% - 12px);
-      }
     }
   </style>
 </head>
@@ -86,32 +84,41 @@
     </div>
   </section>
 
-  <!-- Research Areas (top row: Methods left, Applications right, each with image) -->
+  <!-- Research Areas: now 3 panels (HTE, Confounding, ADRD) -->
   <section class="reveal research-panels">
     <div class="container">
       <h2>Research Areas</h2>
       <div class="research-grid">
-        <!-- Methods -->
-        <div class="card" id="methods">
+        <!-- HTE -->
+        <div class="card" id="hte">
           <div class="img-wrap">
-            <img src="/images/methods.jpg" alt="Methods: causal inference diagrams and modeling" loading="lazy">
+            <img src="/images/HTE.jpg" alt="Heterogeneous Treatment Effects" loading="lazy">
           </div>
-          <h3>Methods</h3>
+          <h3>Heterogeneous Treatment Effects</h3>
           <p>
-            Heterogeneous treatment effects (e.g., iterative causal forest); target trial emulation &amp; bias reduction;
-            proximal causal inference &amp; negative controls; trajectory modeling &amp; longitudinal estimands.
+            Subgroup identification and effect moderation using iterative causal forest (iCF) and high-dimensional iCF to map who benefits, who harms, and by how much.
           </p>
         </div>
 
-        <!-- Applications -->
-        <div class="card" id="applications">
+        <!-- Confounding -->
+        <div class="card" id="confounding">
           <div class="img-wrap">
-            <img src="/images/apps.jpg" alt="Applications: clinical and population health outcomes" loading="lazy">
+            <img src="/images/confounding.jpg" alt="Confounding and Bias Reduction" loading="lazy">
           </div>
-          <h3>Applications</h3>
+          <h3>Confounding &amp; Bias Reduction</h3>
           <p>
-            Drug safety &amp; effectiveness; cardiometabolic &amp; neurologic outcomes; vaccines &amp; respiratory disease;
-            health equity &amp; external validity.
+            Target trial emulation; proximal causal inference and negative controls; trajectory modeling and longitudinal estimands to handle measured and unmeasured confounding.
+          </p>
+        </div>
+
+        <!-- ADRD -->
+        <div class="card" id="adrd">
+          <div class="img-wrap">
+            <img src="/images/ADRD.jpg" alt="Alzheimer’s Disease and Related Dementias" loading="lazy">
+          </div>
+          <h3>Alzheimer’s Disease &amp; Related Dementias</h3>
+          <p>
+            Comparative effectiveness and safety for drug repurposing candidates and monoclonal antibodies; scalable pipelines on EHR and claims to inform ADRD care.
           </p>
         </div>
       </div>
@@ -230,5 +237,6 @@
 <script defer src="/assets/site.js"></script>
 </body>
 </html>
+
 
 
