@@ -1,13 +1,15 @@
-<style>
-    :root{ /* dark theme (default) */
-      --bg:#0b0f19; --fg:#e6e8ee; --muted:#9aa3b2; --card:#0f1627; --border:#20293a; --accent:#60a5fa; --accent2:#22d3ee;
-      --link:#93c5fd; --link-hover:#ffffff;
-    }
-    html:not([data-theme]),
-    [data-theme="dark"]{ /* light theme */
-      --bg:#ffffff; --fg:#0b1220; --muted:#5b6476; --card:#f7f9fc; --border:#e5e7eb; --accent:#2563eb; --accent2:#06b6d4;
-      --link:#1d4ed8; --link-hover:#0b1220;
-    }
+/* Dark is the default */
+:root {
+  --bg:#0b0f19; --fg:#e6e8ee; --muted:#9aa3b2; --card:#0f1627; --border:#20293a; --accent:#60a5fa; --accent2:#22d3ee;
+  --link:#93c5fd; --link-hover:#ffffff;
+}
+
+/* Light overrides ONLY when explicitly set */
+html[data-theme="light"] {
+  --bg:#ffffff; --fg:#0b1220; --muted:#5b6476; --card:#f7f9fc; --border:#e5e7eb; --accent:#2563eb; --accent2:#06b6d4;
+  --link:#1d4ed8; --link-hover:#0b1220;
+}
+
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.65}
     a{color:var(--link);text-decoration:none}
@@ -108,4 +110,3 @@
       .grid{grid-template-columns:1fr}
       .title{font-size:28px}
     }
-  </style>
