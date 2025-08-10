@@ -12,6 +12,55 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/styles.css?v=4">
 
+  /* === Featured slider === */
+.feature-hero{
+  position: relative;
+  border:1px solid var(--border);
+  background: var(--card);
+  border-radius: 16px;
+  padding: 12px;
+  overflow: hidden;
+}
+.feature-track{
+  position: relative;
+  min-height: 360px;
+}
+.feature-slide{
+  display: none;
+  gap: 16px;
+  align-items: start;
+}
+.feature-slide.active{
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+}
+.feature-media img{
+  width:100%; height:auto; border-radius:12px; border:1px solid var(--border);
+  box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+.feature-meta .feature-title{ margin:0 0 6px; }
+.feature-meta .feature-caption{ color:var(--muted); margin-top:6px; }
+
+/* Nav buttons */
+.feature-nav{
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:44px; height:44px; border-radius:999px;
+  border:1px solid var(--border); background:var(--card); color:var(--fg);
+  display:flex; align-items:center; justify-content:center; cursor:pointer;
+  box-shadow:0 8px 24px rgba(0,0,0,.25);
+  z-index: 10; /* ensure above image */
+}
+.feature-nav.prev{ left:10px; }
+.feature-nav.next{ right:10px; }
+.feature-nav:hover{ filter:brightness(1.05); }
+
+/* Mobile */
+@media (max-width: 900px){
+  .feature-slide.active{ grid-template-columns: 1fr; }
+  .feature-track{ min-height: unset; }
+}
+
+  
   <link rel="icon" href="/images/favicon.jpg" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 </head>
@@ -66,66 +115,67 @@
 
   <!-- FEATURED slider -->
   <section class="reveal">
-    <div class="container">
-      <h2 style="margin-bottom:14px;">Featured</h2>
+  <div class="container">
+    <h2 style="margin-bottom:14px;">Featured</h2>
 
-      <div class="feature-hero">
-        <button class="feature-nav prev" aria-label="Previous">⟨</button>
+    <div class="feature-hero">
+      <button class="feature-nav prev" aria-label="Previous">⟨</button>
 
-        <div class="feature-track" id="featureTrack" aria-live="polite">
-          <!-- Slide 1 -->
-          <article class="feature-slide active">
-            <div class="feature-media">
-              <img src="/images/figures/FIGURE1_all_Panels_AB.jpg" alt="iCF workflow">
-            </div>
-            <div class="feature-meta">
-              <h3 class="feature-title">
-                <a href="https://doi.org/10.1093/aje/kwad219" target="_blank" rel="noopener">
-                  Iterative Causal Forest: A Novel Algorithm for Subgroup Identification
-                </a>
-              </h3>
-              <p class="subtitle"><em>American Journal of Epidemiology</em>, 2024</p>
-              <p class="feature-caption">Workflow for iterative estimation and subgroup discovery in observational data.</p>
-            </div>
-          </article>
+      <div class="feature-track" id="featureTrack" aria-live="polite">
+        <!-- Slide 1 -->
+        <article class="feature-slide">
+          <div class="feature-media">
+            <img src="/images/figures/FIGURE1_all_Panels_AB.jpg" alt="iCF workflow">
+          </div>
+          <div class="feature-meta">
+            <h3 class="feature-title">
+              <a href="https://doi.org/10.1093/aje/kwad219" target="_blank" rel="noopener">
+                Iterative Causal Forest: A Novel Algorithm for Subgroup Identification
+              </a>
+            </h3>
+            <p class="subtitle"><em>American Journal of Epidemiology</em>, 2024</p>
+            <p class="feature-caption">Workflow for iterative estimation and subgroup discovery in observational data.</p>
+          </div>
+        </article>
 
-          <!-- Slide 2 -->
-          <article class="feature-slide">
-            <div class="feature-media">
-              <img src="/images/figures/FIGURE1_hdiCF_3KEYsteps.jpg" alt="hdiCF steps">
-            </div>
-            <div class="feature-meta">
-              <h3 class="feature-title">
-                <a href="https://doi.org/10.1093/aje/kwae322" target="_blank" rel="noopener">
-                  High-dimensional Iterative Causal Forest (hdiCF)
-                </a>
-              </h3>
-              <p class="subtitle"><em>American Journal of Epidemiology</em>, 2024</p>
-              <p class="feature-caption">Extending iCF to claims-scale feature spaces.</p>
-            </div>
-          </article>
+        <!-- Slide 2 -->
+        <article class="feature-slide">
+          <div class="feature-media">
+            <img src="/images/figures/FIGURE1_hdiCF_3KEYsteps.jpg" alt="hdiCF steps">
+          </div>
+          <div class="feature-meta">
+            <h3 class="feature-title">
+              <a href="https://doi.org/10.1093/aje/kwae322" target="_blank" rel="noopener">
+                High-dimensional Iterative Causal Forest (hdiCF)
+              </a>
+            </h3>
+            <p class="subtitle"><em>American Journal of Epidemiology</em>, 2024</p>
+            <p class="feature-caption">Extending iCF to claims-scale feature spaces.</p>
+          </div>
+        </article>
 
-          <!-- Slide 3 -->
-          <article class="feature-slide">
-            <div class="feature-media">
-              <img src="/images/figures/Fig3_StudyDesignTimeline_Dementia.jpg" alt="ADRD identification timeline">
-            </div>
-            <div class="feature-meta">
-              <h3 class="feature-title">
-                <a href="https://doi.org/10.1093/aje/kwaf166" target="_blank" rel="noopener">
-                  A Novel Algorithm to Identify Incident and Prevalent Dementia in Medicare Claims (ARIC)
-                </a>
-              </h3>
-              <p class="subtitle"><em>American Journal of Epidemiology</em>, 2025</p>
-              <p class="feature-caption">Claims-based ADRD phenotyping pipeline.</p>
-            </div>
-          </article>
-        </div>
-
-        <button class="feature-nav next" aria-label="Next">⟩</button>
+        <!-- Slide 3 -->
+        <article class="feature-slide">
+          <div class="feature-media">
+            <img src="/images/figures/Fig3_StudyDesignTimeline_Dementia.jpg" alt="ADRD identification timeline">
+          </div>
+          <div class="feature-meta">
+            <h3 class="feature-title">
+              <a href="https://doi.org/10.1093/aje/kwaf166" target="_blank" rel="noopener">
+                A Novel Algorithm to Identify Incident and Prevalent Dementia in Medicare Claims (ARIC)
+              </a>
+            </h3>
+            <p class="subtitle"><em>American Journal of Epidemiology</em>, 2025</p>
+            <p class="feature-caption">Claims-based ADRD phenotyping pipeline.</p>
+          </div>
+        </article>
       </div>
+
+      <button class="feature-nav next" aria-label="Next">⟩</button>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Full list -->
   <section class="reveal">
