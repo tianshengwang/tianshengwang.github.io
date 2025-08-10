@@ -10,57 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css?v=4">
+  <link rel="stylesheet" href="/assets/styles.css?v=6">
 
-  /* === Featured slider === */
-.feature-hero{
-  position: relative;
-  border:1px solid var(--border);
-  background: var(--card);
-  border-radius: 16px;
-  padding: 12px;
-  overflow: hidden;
-}
-.feature-track{
-  position: relative;
-  min-height: 360px;
-}
-.feature-slide{
-  display: none;
-  gap: 16px;
-  align-items: start;
-}
-.feature-slide.active{
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-}
-.feature-media img{
-  width:100%; height:auto; border-radius:12px; border:1px solid var(--border);
-  box-shadow:0 20px 60px rgba(0,0,0,.35);
-}
-.feature-meta .feature-title{ margin:0 0 6px; }
-.feature-meta .feature-caption{ color:var(--muted); margin-top:6px; }
-
-/* Nav buttons */
-.feature-nav{
-  position:absolute; top:50%; transform:translateY(-50%);
-  width:44px; height:44px; border-radius:999px;
-  border:1px solid var(--border); background:var(--card); color:var(--fg);
-  display:flex; align-items:center; justify-content:center; cursor:pointer;
-  box-shadow:0 8px 24px rgba(0,0,0,.25);
-  z-index: 10; /* ensure above image */
-}
-.feature-nav.prev{ left:10px; }
-.feature-nav.next{ right:10px; }
-.feature-nav:hover{ filter:brightness(1.05); }
-
-/* Mobile */
-@media (max-width: 900px){
-  .feature-slide.active{ grid-template-columns: 1fr; }
-  .feature-track{ min-height: unset; }
-}
-
-  
   <link rel="icon" href="/images/favicon.jpg" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 </head>
@@ -91,10 +42,10 @@
       <p class="subtitle" style="margin-top:0;">Peer-reviewed articles and selected conference presentations.</p>
 
       <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:14px;">
-        <!-- Precise PubMed: author + (UNC OR UH) + PDAT >= 2022-09-01 -->
+        <!-- Precise PubMed: author + (UNC OR UH) + PDAT >= 2006-08-01 -->
         <a class="ghost" target="_blank" rel="noopener"
-           href="https://pubmed.ncbi.nlm.nih.gov/?term=%28Wang%20Tiansheng%5BAuthor%5D%20OR%20Wang%20T%5BAuthor%5D%29%20AND%20%28%22University%20of%20North%20Carolina%22%5BAffiliation%5D%20OR%20%22University%20of%20Houston%22%5BAffiliation%5D%29%20AND%20%282022%2F09%2F01%5BDate%20-%20Publication%5D%20%3A%203000%5BDate%20-%20Publication%5D%29">
-          🔎 PubMed (UNC/UH since 2022)
+           href="https://pubmed.ncbi.nlm.nih.gov/?term=%28Wang%20Tiansheng%5BAuthor%5D%20OR%20Wang%20T%5BAuthor%5D%29%20AND%20%28%22University%20of%20North%20Carolina%22%5BAffiliation%5D%20OR%20%22University%20of%20Houston%22%5BAffiliation%5D%29%20AND%20%282006%2F08%2F01%5BDate%20-%20Publication%5D%20%3A%203000%5BDate%20-%20Publication%5D%29">
+          🔎 PubMed (UNC/UH since 2006)
         </a>
 
         <!-- Broader PubMed author search (all years) -->
@@ -115,67 +66,66 @@
 
   <!-- FEATURED slider -->
   <section class="reveal">
-  <div class="container">
-    <h2 style="margin-bottom:14px;">Featured</h2>
+    <div class="container">
+      <h2 style="margin-bottom:14px;">Featured</h2>
 
-    <div class="feature-hero">
-      <button class="feature-nav prev" aria-label="Previous">⟨</button>
+      <div class="feature-hero">
+        <button class="feature-nav prev" aria-label="Previous">⟨</button>
 
-      <div class="feature-track" id="featureTrack" aria-live="polite">
-        <!-- Slide 1 -->
-        <article class="feature-slide">
-          <div class="feature-media">
-            <img src="/images/figures/FIGURE1_all_Panels_AB.jpg" alt="iCF workflow">
-          </div>
-          <div class="feature-meta">
-            <h3 class="feature-title">
-              <a href="https://doi.org/10.1093/aje/kwad219" target="_blank" rel="noopener">
-                Iterative Causal Forest: A Novel Algorithm for Subgroup Identification
-              </a>
-            </h3>
-            <p class="subtitle"><em>American Journal of Epidemiology</em>, 2024</p>
-            <p class="feature-caption">Workflow for iterative estimation and subgroup discovery in observational data.</p>
-          </div>
-        </article>
+        <div class="feature-track" id="featureTrack" aria-live="polite">
+          <!-- Slide 1 -->
+          <article class="feature-slide">
+            <div class="feature-media">
+              <img src="/images/figures/FIGURE1_all_Panels_AB.jpg" alt="iCF workflow">
+            </div>
+            <div class="feature-meta">
+              <h3 class="feature-title">
+                <a href="https://doi.org/10.1093/aje/kwad219" target="_blank" rel="noopener">
+                  Iterative Causal Forest: A Novel Algorithm for Subgroup Identification
+                </a>
+              </h3>
+              <p class="subtitle"><em>American Journal of Epidemiology</em>, 2024</p>
+              <p class="feature-caption">Workflow for iterative estimation and subgroup discovery in observational data.</p>
+            </div>
+          </article>
 
-        <!-- Slide 2 -->
-        <article class="feature-slide">
-          <div class="feature-media">
-            <img src="/images/figures/FIGURE1_hdiCF_3KEYsteps.jpg" alt="hdiCF steps">
-          </div>
-          <div class="feature-meta">
-            <h3 class="feature-title">
-              <a href="https://doi.org/10.1093/aje/kwae322" target="_blank" rel="noopener">
-                High-dimensional Iterative Causal Forest (hdiCF)
-              </a>
-            </h3>
-            <p class="subtitle"><em>American Journal of Epidemiology</em>, 2024</p>
-            <p class="feature-caption">Extending iCF to claims-scale feature spaces.</p>
-          </div>
-        </article>
+          <!-- Slide 2 -->
+          <article class="feature-slide">
+            <div class="feature-media">
+              <img src="/images/figures/FIGURE1_hdiCF_3KEYsteps.jpg" alt="hdiCF steps">
+            </div>
+            <div class="feature-meta">
+              <h3 class="feature-title">
+                <a href="https://doi.org/10.1093/aje/kwae322" target="_blank" rel="noopener">
+                  High-dimensional Iterative Causal Forest (hdiCF)
+                </a>
+              </h3>
+              <p class="subtitle"><em>American Journal of Epidemiology</em>, 2024</p>
+              <p class="feature-caption">Extending iCF to claims-scale feature spaces.</p>
+            </div>
+          </article>
 
-        <!-- Slide 3 -->
-        <article class="feature-slide">
-          <div class="feature-media">
-            <img src="/images/figures/Fig3_StudyDesignTimeline_Dementia.jpg" alt="ADRD identification timeline">
-          </div>
-          <div class="feature-meta">
-            <h3 class="feature-title">
-              <a href="https://doi.org/10.1093/aje/kwaf166" target="_blank" rel="noopener">
-                A Novel Algorithm to Identify Incident and Prevalent Dementia in Medicare Claims (ARIC)
-              </a>
-            </h3>
-            <p class="subtitle"><em>American Journal of Epidemiology</em>, 2025</p>
-            <p class="feature-caption">Claims-based ADRD phenotyping pipeline.</p>
-          </div>
-        </article>
+          <!-- Slide 3 -->
+          <article class="feature-slide">
+            <div class="feature-media">
+              <img src="/images/figures/Fig3_StudyDesignTimeline_Dementia.jpg" alt="ADRD identification timeline">
+            </div>
+            <div class="feature-meta">
+              <h3 class="feature-title">
+                <a href="https://doi.org/10.1093/aje/kwaf166" target="_blank" rel="noopener">
+                  A Novel Algorithm to Identify Incident and Prevalent Dementia in Medicare Claims (ARIC)
+                </a>
+              </h3>
+              <p class="subtitle"><em>American Journal of Epidemiology</em>, 2025</p>
+              <p class="feature-caption">Claims-based ADRD phenotyping pipeline.</p>
+            </div>
+          </article>
+        </div>
+
+        <button class="feature-nav next" aria-label="Next">⟩</button>
       </div>
-
-      <button class="feature-nav next" aria-label="Next">⟩</button>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Full list -->
   <section class="reveal">
@@ -241,7 +191,8 @@
 
 <!-- Shared + page JS -->
 <script defer src="/assets/site.js"></script>
-  <script>
+<script>
+  // Simple feature slider (no external deps)
   (()=>{
     const slides = Array.from(document.querySelectorAll('.feature-slide'));
     if (!slides.length) return;
@@ -273,10 +224,11 @@
       if (e.key === 'ArrowRight') { i = (i + 1) % slides.length; setActive(i); }
     });
 
-    // Optional: touch swipe for mobile
+    // Touch swipe for mobile
     let startX = null;
-    document.querySelector('.feature-hero')?.addEventListener('touchstart', (e)=>{ startX = e.touches[0].clientX; }, {passive:true});
-    document.querySelector('.feature-hero')?.addEventListener('touchend', (e)=>{
+    const hero = document.querySelector('.feature-hero');
+    hero?.addEventListener('touchstart', (e)=>{ startX = e.touches[0].clientX; }, {passive:true});
+    hero?.addEventListener('touchend', (e)=>{
       if (startX === null) return;
       const dx = e.changedTouches[0].clientX - startX;
       if (Math.abs(dx) > 40) {
@@ -287,36 +239,8 @@
     }, {passive:true});
   })();
 </script>
-
-<script>
-  // Simple feature slider (no external deps)
-  (()=>{
-    const slides = Array.from(document.querySelectorAll('.feature-slide'));
-    if (!slides.length) return;
-    let i = 0;
-
-    const setActive = idx => {
-      slides.forEach((s, k) => s.classList.toggle('active', k === idx));
-    };
-
-    const prev = document.querySelector('.feature-nav.prev');
-    const next = document.querySelector('.feature-nav.next');
-
-    prev?.addEventListener('click', () => {
-      i = (i - 1 + slides.length) % slides.length; setActive(i);
-    });
-    next?.addEventListener('click', () => {
-      i = (i + 1) % slides.length; setActive(i);
-    });
-
-    // Optional keyboard support
-    document.addEventListener('keydown', (e)=>{
-      if (e.key === 'ArrowLeft') { i = (i - 1 + slides.length) % slides.length; setActive(i); }
-      else if (e.key === 'ArrowRight') { i = (i + 1) % slides.length; setActive(i); }
-    });
-  })();
-</script>
 </body>
 </html>
+
 
 
