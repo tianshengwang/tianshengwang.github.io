@@ -1,20 +1,18 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Publications — Tiansheng (Tian) Wang</title>
   <meta name="description" content="Publications by Tiansheng (Tian) Wang — Pharmacoepidemiology, causal inference, machine learning." />
 
-  <!-- Fonts -->
+  <!-- Fonts + Shared CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css?v=3">
 
-  <!-- Use the SAME repo’s assets to avoid cross-site issues -->
-  <link rel="stylesheet" href="/assets/styles.css">
-
-  <!-- Favicons (optional to keep from apex) -->
+  <!-- Favicon (optional) -->
   <link rel="icon" href="/images/favicon.jpg" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 </head>
@@ -37,23 +35,130 @@
 </header>
 
 <main>
-  <section class="container reveal">
-    <h1>Publications</h1>
-    <p>Here is a list of selected publications and conference presentations.</p>
+  <!-- Quick links row (PubMed / Scholar / ORCID) -->
+  <section class="reveal" style="border-bottom:1px solid var(--border);">
+    <div class="container">
+      <h1 style="margin-bottom:8px;">Publications</h1>
+      <p class="subtitle" style="margin-top:0;">Peer-reviewed articles and selected conference presentations.</p>
 
-    <h2>Peer-Reviewed Journal Articles</h2>
-    <ul class="pub">
-      <li>Wang T, et al. <a href="https://doi.org/10.1093/aje/kwad219" target="_blank" rel="noopener"><strong>Iterative Causal Forest</strong></a>. <em>Am J Epidemiol.</em> 2024.</li>
-      <li>Wang T, et al. <a href="https://doi.org/10.1093/aje/kwae322" target="_blank" rel="noopener"><strong>High-dimensional Iterative Causal Forest</strong></a>. <em>Am J Epidemiol.</em> 2024.</li>
-    </ul>
+      <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:14px;">
+        <a class="ghost" href="https://pubmed.ncbi.nlm.nih.gov/?term=Tiansheng%20Wang%5BAuthor%5D" target="_blank" rel="noopener">
+          🔎 PubMed (author search)
+        </a>
+        <a class="ghost" href="https://scholar.google.com/citations?user=JYtT5K8AAAAJ&hl=en" target="_blank" rel="noopener">
+          G Google Scholar
+        </a>
+        <a class="ghost" href="https://orcid.org/0000-0002-0980-8896" target="_blank" rel="noopener">
+          🆔 ORCID
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <h2>Conference Presentations</h2>
-    <ul>
-      <li>ICPE 2025 — Temporal High Dimensional Propensity Score and Statin Utilization Trajectories</li>
-    </ul>
+  <!-- Featured publications -->
+  <section class="reveal">
+    <div class="container">
+      <h2 style="margin-bottom:14px;">Featured</h2>
+
+      <div class="cards" style="grid-template-columns:repeat(12,1fr); gap:16px;">
+        <!-- Card 1 -->
+        <article class="card" style="grid-column:span 12;">
+          <h3 style="margin:0 0 6px;">
+            <a href="https://doi.org/10.1093/aje/kwad219" target="_blank" rel="noopener">
+              Iterative Causal Forest: A Novel Algorithm for Subgroup Identification
+            </a>
+          </h3>
+          <p class="subtitle" style="margin:0 0 10px;"><em>American Journal of Epidemiology</em>, 2024</p>
+          <div class="figure-card" style="margin-top:8px;">
+            <img src="/images/figures/FIGURE1_all_Panels_AB.jpg" alt="iCF workflow">
+            <div class="caption">Workflow for iterative estimation and subgroup discovery.</div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card" style="grid-column:span 12;">
+          <h3 style="margin:0 0 6px;">
+            <a href="https://doi.org/10.1093/aje/kwae322" target="_blank" rel="noopener">
+              High-dimensional Iterative Causal Forest (hdiCF)
+            </a>
+          </h3>
+          <p class="subtitle" style="margin:0 0 10px;"><em>American Journal of Epidemiology</em>, 2024</p>
+          <div class="figure-card" style="margin-top:8px;">
+            <img src="/images/figures/FIGURE1_hdiCF_3KEYsteps.jpg" alt="hdiCF steps">
+            <div class="caption">Extending iCF to claims-scale feature spaces.</div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card" style="grid-column:span 12;">
+          <h3 style="margin:0 0 6px;">
+            <a href="https://doi.org/10.1093/aje/kwaf166" target="_blank" rel="noopener">
+              Developing A Novel Algorithm to Identify Incident and Prevalent Dementia in Medicare Claims (ARIC)
+            </a>
+          </h3>
+          <p class="subtitle" style="margin:0 0 10px;"><em>American Journal of Epidemiology</em>, 2025</p>
+          <div class="figure-card" style="margin-top:8px;">
+            <img src="/images/figures/Fig3_StudyDesignTimeline_Dementia.jpg" alt="ADRD identification timeline">
+            <div class="caption">Claims-based ADRD phenotyping pipeline.</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full list (grouped) -->
+  <section class="reveal">
+    <div class="container">
+      <h2>All Publications (selected)</h2>
+
+      <h3 style="margin-top:18px;">2025</h3>
+      <ul class="pub">
+        <li>
+          Wang T, et al. <a href="https://doi.org/10.1093/aje/kwaf166" target="_blank" rel="noopener"><strong>Developing A Novel Algorithm to Identify Incident and Prevalent Dementia in Medicare Claims. The ARIC Study.</strong></a>
+          <em>Am J Epidemiol</em>. 2025.
+        </li>
+        <li>
+          Wang T, et al. <a href="https://doi.org/10.1093/aje/kwaf127" target="_blank" rel="noopener"><strong>A Novel High Dimensional Approach to Assess Heterogeneous Treatment Effect in Claims Data.</strong></a>
+          <em>Am J Epidemiol</em>. 2025.
+        </li>
+        <li>
+          Wang T, et al. <a href="https://onlinelibrary.wiley.com/doi/10.1002/pds.70192" target="_blank" rel="noopener"><strong>GLP-1 Receptor Agonists in Asthma Exacerbations: an Application of hdiCF to Identify Subgroups.</strong></a>
+          <em>Pharmacoepidemiol Drug Saf</em>. 2025.
+        </li>
+      </ul>
+
+      <h3>2024</h3>
+      <ul class="pub">
+        <li>
+          Wang T, et al. <a href="https://doi.org/10.1093/aje/kwad219" target="_blank" rel="noopener"><strong>Iterative Causal Forest: A Novel Algorithm for Subgroup Identification.</strong></a>
+          <em>Am J Epidemiol</em>. 2024.
+        </li>
+        <li>
+          Wang T, et al. <a href="https://doi.org/10.1093/aje/kwae322" target="_blank" rel="noopener"><strong>High-dimensional Iterative Causal Forest (hdiCF).</strong></a>
+          <em>Am J Epidemiol</em>. 2024.
+        </li>
+        <li>
+          Wang T, et al. <a href="https://www.atsjournals.org/doi/abs/10.1513/AnnalsATS.202309-836OC" target="_blank" rel="noopener"><strong>GLP-1 Receptor Agonists and Asthma Exacerbations: Which Patients Benefit Most?</strong></a>
+          <em>Ann Am Thorac Soc</em>. 2024.
+        </li>
+      </ul>
+
+      <h3>Earlier</h3>
+      <ul class="pub">
+        <li>
+          Wang T, et al. <a href="https://diabetesjournals.org/care/article/41/9/1998/40738/Incretin-Based-Therapies-and-Diabetic-Retinopathy" target="_blank" rel="noopener"><strong>Incretin-based Therapies and Diabetic Retinopathy.</strong></a>
+          <em>Diabetes Care</em>. 2018.
+        </li>
+        <li>
+          Wang T, et al. <a href="https://diabetesjournals.org/care/article/42/11/2065/36360/Dipeptidyl-Peptidase-4-Inhibitors-and-Risk-of" target="_blank" rel="noopener"><strong>DPP-4 Inhibitors and Risk of Inflammatory Bowel Disease.</strong></a>
+          <em>Diabetes Care</em>. 2019.
+        </li>
+      </ul>
+    </div>
   </section>
 </main>
 
+<!-- Contact + footer (matches index) -->
 <section id="contact" class="reveal">
   <div class="container">
     <h2>Contact</h2>
@@ -64,7 +169,8 @@
 
 <button id="toTop" class="toTop" aria-label="Back to top">↑</button>
 
-<!-- Same repo’s JS -->
+<!-- Shared JS -->
 <script defer src="/assets/site.js"></script>
 </body>
 </html>
+
