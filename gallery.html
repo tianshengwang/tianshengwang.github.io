@@ -140,7 +140,10 @@
   //   photos: ["1.jpg","2.jpg","3.jpg"],
   //   caption: "Talks and visits in Berlin."
   // }
-  const ALBUMS = [];
+  const ALBUMS = [
+  { name:"Berlin", coords:[52.52,13.405], folder:"/gallery/Berlin/", photos:["lunch.jpg","2.jpg"], caption:"Talks and visits in Berlin." },
+  { name:"Copenhagen", coords:[38.9072,-77.0369], folder:"/gallery/Copenhagen/", photos:["mermaid.jpg","2.jpg"], caption:"ICPE." }
+];
 
   // Helper to build full image path
   const full = (album, idx) => album.folder + album.photos[idx];
