@@ -10,36 +10,26 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css?v=10">
+  <link rel="stylesheet" href="/assets/styles.css?v=11">
 
-  <!-- Featured slider styles (inline to guarantee behavior) -->
+  <!-- Featured slider styles (reliable version) -->
   <style>
     .feature-hero{
       position:relative;border:1px solid var(--border);background:var(--card);
       border-radius:16px;padding:12px;overflow:hidden;max-width:100%
     }
-    .feature-track{position:relative;min-height:auto}
-    .feature-slide{
-      display:grid !important; /* we’ll hide via opacity/visibility for animation */
-      grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
-      gap:16px; align-items:start;
-      opacity:0; visibility:hidden; transform:translateX(24px);
-      transition:opacity .35s ease, transform .35s ease, visibility 0s linear .35s;
-      position:absolute; inset:0; /* stack slides */
-      padding:12px; box-sizing:border-box;
-    }
-    .feature-slide .feature-media{display:flex;align-items:center;justify-content:center}
-    .feature-slide .feature-media img{
+    .feature-track{position:relative}
+    /* Core: show exactly one slide */
+    .feature-slide{display:none !important; gap:16px; align-items:start}
+    .feature-slide.active{display:grid !important; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+    .feature-media{display:flex;align-items:center;justify-content:center}
+    .feature-media img{
       width:100%; height:auto; max-height:55vh; object-fit:contain;
       border-radius:12px; border:1px solid var(--border);
       box-shadow:0 20px 60px rgba(0,0,0,.35)
     }
-    .feature-slide .feature-title{margin:0 0 6px}
-    .feature-slide .feature-caption{color:var(--muted);margin-top:6px}
-    .feature-slide.active{
-      opacity:1; visibility:visible; transform:translateX(0);
-      transition:opacity .35s ease, transform .35s ease
-    }
+    .feature-title{margin:0 0 6px}
+    .feature-caption{color:var(--muted);margin-top:6px}
 
     .feature-nav{
       position:absolute;top:50%;transform:translateY(-50%);
@@ -52,8 +42,8 @@
     .feature-nav:hover{filter:brightness(1.05)}
 
     @media (max-width:900px){
-      .feature-slide{grid-template-columns:1fr}
-      .feature-slide .feature-media img{max-height:45vh}
+      .feature-slide.active{grid-template-columns:1fr}
+      .feature-media img{max-height:45vh}
     }
 
     /* Collapsible years */
@@ -218,11 +208,13 @@
 <script defer src="/assets/site.js"></script>
 <script>
   (() => {
-    const slides = Array.from(document.querySelectorAll('.feature-slide'));
+    const hero = document.getElementById('featureHero');
+    if (!hero) return;
+
+    const slides = Array.from(hero.querySelectorAll('.feature-slide'));
     if (!slides.length) return;
 
     let i = 0;
-    const hero = document.getElementById('featureHero');
     const prev = hero.querySelector('.feature-nav.prev');
     const next = hero.querySelector('.feature-nav.next');
 
@@ -240,13 +232,13 @@
     prev?.addEventListener('click', goPrev);
     next?.addEventListener('click', goNext);
 
-    // Keyboard support
+    // Keyboard
     document.addEventListener('keydown', (e)=>{
       if (e.key === 'ArrowLeft') goPrev();
-      if (e.key === 'ArrowRight') goNext();
+      else if (e.key === 'ArrowRight') goNext();
     });
 
-    // Swipe support
+    // Swipe
     let startX = null;
     hero.addEventListener('touchstart', (e)=>{ startX = e.touches[0].clientX; }, {passive:true});
     hero.addEventListener('touchend', (e)=>{
@@ -256,7 +248,7 @@
       startX = null;
     }, {passive:true});
 
-    // Auto-play with pause on hover & when page hidden
+    // Auto-play with pause on hover & visibility
     let timer = null;
     const intervalMs = 6000;
     const start = () => { stop(); timer = setInterval(goNext, intervalMs); };
@@ -264,10 +256,7 @@
 
     hero.addEventListener('mouseenter', stop);
     hero.addEventListener('mouseleave', start);
-
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) stop(); else start();
-    });
+    document.addEventListener('visibilitychange', () => { document.hidden ? stop() : start(); });
 
     setActive(0);
     start();
@@ -275,4 +264,5 @@
 </script>
 </body>
 </html>
+
 
