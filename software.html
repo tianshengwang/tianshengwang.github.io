@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Software — Tiansheng (Tian) Wang</title>
+  <meta name="description" content="Open-source software by Tiansheng (Tian) Wang — iCF, hdiCF, HDsetting, IdentifyADRD." />
+
+  <!-- Fonts + Shared CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css?v=12">
+
+  <!-- Page-specific card grid styles (kept small) -->
+  <style>
+    .soft-grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:16px;
+    }
+    /* 3 cards per row on desktop */
+    .soft-card{
+      grid-column: span 4;
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .soft-card:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 16px 48px rgba(0,0,0,.28);
+      border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+    }
+    .soft-media{
+      position:relative;
+      aspect-ratio: 16/9;
+      background: color-mix(in srgb, var(--card) 85%, transparent);
+      border-bottom:1px solid var(--border);
+      display:flex; align-items:center; justify-content:center;
+    }
+    .soft-media img{
+      max-width:100%;
+      max-height:100%;
+      object-fit:contain;
+      display:block;
+    }
+    .soft-body{ padding:14px 14px 16px; display:flex; flex-direction:column; gap:8px; }
+    .soft-title{ margin:0; font-size:18px; line-height:1.25; }
+    .soft-desc{ margin:0; color: var(--muted); }
+    .soft-actions{ margin-top:8px; display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+    .chip{
+      display:inline-flex; align-items:center; gap:6px;
+      border:1px solid var(--border); border-radius:999px; padding:6px 10px;
+      color:var(--fg); background: color-mix(in srgb, var(--card) 92%, transparent);
+      font-size:.92rem;
+    }
+    .chip:hover{ text-decoration:none; filter: brightness(1.05); }
+    .chip svg{ width:16px; height:16px; }
+
+    /* Tablet: 2 per row */
+    @media (max-width: 900px){
+      .soft-card{ grid-column: span 6; }
+    }
+    /* Mobile: 1 per row */
+    @media (max-width: 600px){
+      .soft-card{ grid-column: span 12; }
+    }
+  </style>
+
+  <link rel="icon" href="/images/favicon.jpg" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="brand"><a href="/index.html">Tiansheng (Tian) Wang</a></div>
+      <div class="nav">
+        <a href="/index.html#home">Home</a>
+        <a href="/index.html#lab">Lab</a>
+        <a href="/software.html" class="active">Software</a>
+        <a href="/publications.html">Publications</a>
+        <a href="/index.html#gallery">Gallery</a>
+        <button id="themeToggle" class="toggle" aria-label="Toggle light/dark">🌙</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="reveal">
+    <div class="container">
+      <h1 style="margin-bottom:8px;">Software</h1>
+      <p class="subtitle" style="margin-top:0;">Open-source tools for causal inference and real-world data analysis.</p>
+
+      <div class="soft-grid" style="margin-top:16px;">
+        <!-- iCF -->
+        <article class="soft-card">
+          <a class="soft-media" href="https://github.com/tianshengwang/iCF" target="_blank" rel="noopener">
+            <img src="/images/figures/FIGURE1_all_Panels_AB.jpg" alt="iCF key figure" loading="lazy">
+          </a>
+          <div class="soft-body">
+            <h2 class="soft-title"><a href="https://github.com/tianshengwang/iCF" target="_blank" rel="noopener">iCF</a></h2>
+            <p class="soft-desc">Iterative Causal Forest for subgroup identification in observational data (predefined variables).</p>
+            <div class="soft-actions">
+              <a class="chip" href="https://github.com/tianshengwang/iCF" target="_blank" rel="noopener" aria-label="GitHub repository">
+                <!-- GitHub icon -->
+                <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .2a8 8 0 0 0-2.53 15.6c.4.07.55-.18.55-.39v-1.35c-2.24.49-2.71-1.08-2.71-1.08-.36-.9-.88-1.14-.88-1.14-.72-.5.05-.49.05-.49.8.06 1.23.82 1.23.82.71 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.79-.2-3.67-.89-3.67-3.98 0-.88.31-1.6.82-2.16-.08-.2-.36-1.02.08-2.13 0 0 .68-.22 2.22.82a7.7 7.7 0 0 1 4.04 0c1.54-1.04 2.22-.82 2.22-.82.44 1.11.16 1.93.08 2.13.51.56.82 1.28.82 2.16 0 3.1-1.88 3.77-3.67 3.98.29.25.54.74.54 1.5v2.23c0 .22.15.47.55.39A8 8 0 0 0 8 .2z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- hdiCF -->
+        <article class="soft-card">
+          <a class="soft-media" href="https://github.com/tianshengwang/hdiCF" target="_blank" rel="noopener">
+            <img src="/images/figures/FIGURE1_hdiCF_3KEYsteps.jpg" alt="hdiCF key figure" loading="lazy">
+          </a>
+          <div class="soft-body">
+            <h2 class="soft-title"><a href="https://github.com/tianshengwang/hdiCF" target="_blank" rel="noopener">hdiCF</a></h2>
+            <p class="soft-desc">High-dimensional Iterative Causal Forest for subgrouping directly from raw codes.</p>
+            <div class="soft-actions">
+              <a class="chip" href="https://github.com/tianshengwang/hdiCF" target="_blank" rel="noopener" aria-label="GitHub repository">
+                <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .2a8 8 0 0 0-2.53 15.6c.4.07.55-.18.55-.39v-1.35c-2.24.49-2.71-1.08-2.71-1.08-.36-.9-.88-1.14-.88-1.14-.72-.5.05-.49.05-.49.8.06 1.23.82 1.23.82.71 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.79-.2-3.67-.89-3.67-3.98 0-.88.31-1.6.82-2.16-.08-.2-.36-1.02.08-2.13 0 0 .68-.22 2.22.82a7.7 7.7 0 0 1 4.04 0c1.54-1.04 2.22-.82 2.22-.82.44 1.11.16 1.93.08 2.13.51.56.82 1.28.82 2.16 0 3.1-1.88 3.77-3.67 3.98.29.25.54.74.54 1.5v2.23c0 .22.15.47.55.39A8 8 0 0 0 8 .2z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- HDsetting -->
+        <article class="soft-card">
+          <a class="soft-media" href="https://github.com/tianshengwang/HDsetting" target="_blank" rel="noopener">
+            <img src="/images/figures/FIG2_HDsetting_comparison.jpg" alt="HDsetting key figure" loading="lazy">
+          </a>
+          <div class="soft-body">
+            <h2 class="soft-title"><a href="https://github.com/tianshengwang/HDsetting" target="_blank" rel="noopener">HDsetting</a></h2>
+            <p class="soft-desc">A novel high-dimensional setting (one ordinal per code) for reliable HTE assessment.</p>
+            <div class="soft-actions">
+              <a class="chip" href="https://github.com/tianshengwang/HDsetting" target="_blank" rel="noopener" aria-label="GitHub repository">
+                <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .2a8 8 0 0 0-2.53 15.6c.4.07.55-.18.55-.39v-1.35c-2.24.49-2.71-1.08-2.71-1.08-.36-.9-.88-1.14-.88-1.14-.72-.5.05-.49.05-.49.8.06 1.23.82 1.23.82.71 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.79-.2-3.67-.89-3.67-3.98 0-.88.31-1.6.82-2.16-.08-.2-.36-1.02.08-2.13 0 0 .68-.22 2.22.82a7.7 7.7 0 0 1 4.04 0c1.54-1.04 2.22-.82 2.22-.82.44 1.11.16 1.93.08 2.13.51.56.82 1.28.82 2.16 0 3.1-1.88 3.77-3.67 3.98.29.25.54.74.54 1.5v2.23c0 .22.15.47.55.39A8 8 0 0 0 8 .2z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- IdentifyADRD (new row starts automatically because 4th card) -->
+        <article class="soft-card">
+          <a class="soft-media" href="https://github.com/tianshengwang/IdentifyADRD" target="_blank" rel="noopener">
+            <img src="/images/figures/Fig3_StudyDesignTimeline_Dementia.jpg" alt="IdentifyADRD key figure" loading="lazy">
+          </a>
+          <div class="soft-body">
+            <h2 class="soft-title"><a href="https://github.com/tianshengwang/IdentifyADRD" target="_blank" rel="noopener">IdentifyADRD</a></h2>
+            <p class="soft-desc">Claims-based algorithm to identify incident & prevalent dementia (ARIC/Medicare).</p>
+            <div class="soft-actions">
+              <a class="chip" href="https://github.com/tianshengwang/IdentifyADRD" target="_blank" rel="noopener" aria-label="GitHub repository">
+                <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .2a8 8 0 0 0-2.53 15.6c.4.07.55-.18.55-.39v-1.35c-2.24.49-2.71-1.08-2.71-1.08-.36-.9-.88-1.14-.88-1.14-.72-.5.05-.49.05-.49.8.06 1.23.82 1.23.82.71 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.79-.2-3.67-.89-3.67-3.98 0-.88.31-1.6.82-2.16-.08-.2-.36-1.02.08-2.13 0 0 .68-.22 2.22.82a7.7 7.7 0 0 1 4.04 0c1.54-1.04 2.22-.82 2.22-.82.44 1.11.16 1.93.08 2.13.51.56.82 1.28.82 2.16 0 3.1-1.88 3.77-3.67 3.98.29.25.54.74.54 1.5v2.23c0 .22.15 .47.55 .39A8 8 0 0 0 8 .2z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Add more cards later; the grid will automatically make new rows (3 per row on desktop). -->
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<section id="contact" class="reveal">
+  <div class="container">
+    <h2>Contact</h2>
+    <p><strong>Email:</strong> <a href="mailto:tianwang@uh.edu">tianwang@uh.edu</a> · <strong>GitHub:</strong> <a href="https://github.com/tianshengwang" target="_blank">@tianshengwang</a></p>
+    <p style="color:#7c869a">© <span id="year"></span> Tiansheng (Tian) Wang — Built with vanilla HTML/CSS, animated blobs, and scroll-reveal ✦ Hosted on GitHub Pages.</p>
+  </div>
+</section>
+
+<button id="toTop" class="toTop" aria-label="Back to top">↑</button>
+
+<!-- Shared JS -->
+<script defer src="/assets/site.js"></script>
+</body>
+</html>
