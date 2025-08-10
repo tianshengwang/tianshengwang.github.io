@@ -10,7 +10,27 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css?v=6">
+  <link rel="stylesheet" href="/assets/styles.css?v=8">
+
+  <!-- Featured slider hotfix -->
+  <style>
+    .feature-hero{position:relative;border:1px solid var(--border);background:var(--card);border-radius:16px;padding:12px;overflow:hidden;max-width:100%}
+    .feature-track{position:relative;min-height:auto}
+    .feature-slide{display:none !important;gap:16px;align-items:start}
+    .feature-slide.active{display:grid !important;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+    .feature-media{display:flex;align-items:center;justify-content:center}
+    .feature-media img{width:100%;height:auto;max-height:55vh;object-fit:contain;border-radius:12px;border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+    .feature-meta .feature-title{margin:0 0 6px}
+    .feature-meta .feature-caption{color:var(--muted);margin-top:6px}
+    .feature-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:999px;border:1px solid var(--border);background:var(--card);color:var(--fg);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:10}
+    .feature-nav.prev{left:10px}
+    .feature-nav.next{right:10px}
+    .feature-nav:hover{filter:brightness(1.05)}
+    @media (max-width:900px){
+      .feature-slide.active{grid-template-columns:1fr}
+      .feature-media img{max-height:45vh}
+    }
+  </style>
 
   <link rel="icon" href="/images/favicon.jpg" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
@@ -42,18 +62,14 @@
       <p class="subtitle" style="margin-top:0;">Peer-reviewed articles and selected conference presentations.</p>
 
       <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:14px;">
-        <!-- Precise PubMed: author + (UNC OR UH) + PDAT >= 2006-08-01 -->
         <a class="ghost" target="_blank" rel="noopener"
            href="https://pubmed.ncbi.nlm.nih.gov/?term=%28Wang%20Tiansheng%5BAuthor%5D%20OR%20Wang%20T%5BAuthor%5D%29%20AND%20%28%22University%20of%20North%20Carolina%22%5BAffiliation%5D%20OR%20%22University%20of%20Houston%22%5BAffiliation%5D%29%20AND%20%282006%2F08%2F01%5BDate%20-%20Publication%5D%20%3A%203000%5BDate%20-%20Publication%5D%29">
           🔎 PubMed (UNC/UH since 2006)
         </a>
-
-        <!-- Broader PubMed author search (all years) -->
         <a class="ghost" target="_blank" rel="noopener"
            href="https://pubmed.ncbi.nlm.nih.gov/?term=Wang%20Tiansheng%5BAuthor%5D%20OR%20Wang%20T%5BAuthor%5D">
           🔎 PubMed (all)
         </a>
-
         <a class="ghost" href="https://scholar.google.com/citations?user=JYtT5K8AAAAJ&hl=en" target="_blank" rel="noopener">
           G Google Scholar
         </a>
@@ -68,13 +84,10 @@
   <section class="reveal">
     <div class="container">
       <h2 style="margin-bottom:14px;">Featured</h2>
-
       <div class="feature-hero">
         <button class="feature-nav prev" aria-label="Previous">⟨</button>
-
         <div class="feature-track" id="featureTrack" aria-live="polite">
-          <!-- Slide 1 -->
-          <article class="feature-slide">
+          <article class="feature-slide active">
             <div class="feature-media">
               <img src="/images/figures/FIGURE1_all_Panels_AB.jpg" alt="iCF workflow">
             </div>
@@ -88,8 +101,6 @@
               <p class="feature-caption">Workflow for iterative estimation and subgroup discovery in observational data.</p>
             </div>
           </article>
-
-          <!-- Slide 2 -->
           <article class="feature-slide">
             <div class="feature-media">
               <img src="/images/figures/FIGURE1_hdiCF_3KEYsteps.jpg" alt="hdiCF steps">
@@ -104,8 +115,6 @@
               <p class="feature-caption">Extending iCF to claims-scale feature spaces.</p>
             </div>
           </article>
-
-          <!-- Slide 3 -->
           <article class="feature-slide">
             <div class="feature-media">
               <img src="/images/figures/Fig3_StudyDesignTimeline_Dementia.jpg" alt="ADRD identification timeline">
@@ -121,7 +130,6 @@
             </div>
           </article>
         </div>
-
         <button class="feature-nav next" aria-label="Next">⟩</button>
       </div>
     </div>
@@ -131,49 +139,22 @@
   <section class="reveal">
     <div class="container">
       <h2>All Publications (selected)</h2>
-
       <h3 style="margin-top:18px;">2025</h3>
       <ul class="pub">
-        <li>
-          Wang T, et al. <a href="https://doi.org/10.1093/aje/kwaf166" target="_blank" rel="noopener"><strong>Developing A Novel Algorithm to Identify Incident and Prevalent Dementia in Medicare Claims. The ARIC Study.</strong></a>
-          <em>Am J Epidemiol</em>. 2025.
-        </li>
-        <li>
-          Wang T, et al. <a href="https://doi.org/10.1093/aje/kwaf127" target="_blank" rel="noopener"><strong>A Novel High Dimensional Approach to Assess Heterogeneous Treatment Effect in Claims Data.</strong></a>
-          <em>Am J Epidemiol</em>. 2025.
-        </li>
-        <li>
-          Wang T, et al. <a href="https://onlinelibrary.wiley.com/doi/10.1002/pds.70192" target="_blank" rel="noopener"><strong>GLP-1 Receptor Agonists in Asthma Exacerbations: an Application of hdiCF to Identify Subgroups.</strong></a>
-          <em>Pharmacoepidemiol Drug Saf</em>. 2025.
-        </li>
+        <li>Wang T, et al. <a href="https://doi.org/10.1093/aje/kwaf166" target="_blank"><strong>Developing A Novel Algorithm to Identify Incident and Prevalent Dementia in Medicare Claims. The ARIC Study.</strong></a> <em>Am J Epidemiol</em>. 2025.</li>
+        <li>Wang T, et al. <a href="https://doi.org/10.1093/aje/kwaf127" target="_blank"><strong>A Novel High Dimensional Approach to Assess Heterogeneous Treatment Effect in Claims Data.</strong></a> <em>Am J Epidemiol</em>. 2025.</li>
+        <li>Wang T, et al. <a href="https://onlinelibrary.wiley.com/doi/10.1002/pds.70192" target="_blank"><strong>GLP-1 Receptor Agonists in Asthma Exacerbations: an Application of hdiCF to Identify Subgroups.</strong></a> <em>Pharmacoepidemiol Drug Saf</em>. 2025.</li>
       </ul>
-
       <h3>2024</h3>
       <ul class="pub">
-        <li>
-          Wang T, et al. <a href="https://doi.org/10.1093/aje/kwad219" target="_blank" rel="noopener"><strong>Iterative Causal Forest: A Novel Algorithm for Subgroup Identification.</strong></a>
-          <em>Am J Epidemiol</em>. 2024.
-        </li>
-        <li>
-          Wang T, et al. <a href="https://doi.org/10.1093/aje/kwae322" target="_blank" rel="noopener"><strong>High-dimensional Iterative Causal Forest (hdiCF).</strong></a>
-          <em>Am J Epidemiol</em>. 2024.
-        </li>
-        <li>
-          Wang T, et al. <a href="https://www.atsjournals.org/doi/abs/10.1513/AnnalsATS.202309-836OC" target="_blank" rel="noopener"><strong>GLP-1 Receptor Agonists and Asthma Exacerbations: Which Patients Benefit Most?</strong></a>
-          <em>Ann Am Thorac Soc</em>. 2024.
-        </li>
+        <li>Wang T, et al. <a href="https://doi.org/10.1093/aje/kwad219" target="_blank"><strong>Iterative Causal Forest: A Novel Algorithm for Subgroup Identification.</strong></a> <em>Am J Epidemiol</em>. 2024.</li>
+        <li>Wang T, et al. <a href="https://doi.org/10.1093/aje/kwae322" target="_blank"><strong>High-dimensional Iterative Causal Forest (hdiCF).</strong></a> <em>Am J Epidemiol</em>. 2024.</li>
+        <li>Wang T, et al. <a href="https://www.atsjournals.org/doi/abs/10.1513/AnnalsATS.202309-836OC" target="_blank"><strong>GLP-1 Receptor Agonists and Asthma Exacerbations: Which Patients Benefit Most?</strong></a> <em>Ann Am Thorac Soc</em>. 2024.</li>
       </ul>
-
       <h3>Earlier</h3>
       <ul class="pub">
-        <li>
-          Wang T, et al. <a href="https://diabetesjournals.org/care/article/41/9/1998/40738/Incretin-Based-Therapies-and-Diabetic-Retinopathy" target="_blank" rel="noopener"><strong>Incretin-based Therapies and Diabetic Retinopathy.</strong></a>
-          <em>Diabetes Care</em>. 2018.
-        </li>
-        <li>
-          Wang T, et al. <a href="https://diabetesjournals.org/care/article/42/11/2065/36360/Dipeptidyl-Peptidase-4-Inhibitors-and-Risk-of" target="_blank" rel="noopener"><strong>DPP-4 Inhibitors and Risk of Inflammatory Bowel Disease.</strong></a>
-          <em>Diabetes Care</em>. 2019.
-        </li>
+        <li>Wang T, et al. <a href="https://diabetesjournals.org/care/article/41/9/1998/40738/Incretin-Based-Therapies-and-Diabetic-Retinopathy" target="_blank"><strong>Incretin-based Therapies and Diabetic Retinopathy.</strong></a> <em>Diabetes Care</em>. 2018.</li>
+        <li>Wang T, et al. <a href="https://diabetesjournals.org/care/article/42/11/2065/36360/Dipeptidyl-Peptidase-4-Inhibitors-and-Risk-of" target="_blank"><strong>DPP-4 Inhibitors and Risk of Inflammatory Bowel Disease.</strong></a> <em>Diabetes Care</em>. 2019.</li>
       </ul>
     </div>
   </section>
@@ -182,53 +163,43 @@
 <section id="contact" class="reveal">
   <div class="container">
     <h2>Contact</h2>
-    <p><strong>Email:</strong> <a href="mailto:tianwang@uh.edu">tianwang@uh.edu</a> · <strong>GitHub:</strong> <a href="https://github.com/tianshengwang" target="_blank" rel="noopener">@tianshengwang</a></p>
+    <p><strong>Email:</strong> <a href="mailto:tianwang@uh.edu">tianwang@uh.edu</a> · <strong>GitHub:</strong> <a href="https://github.com/tianshengwang" target="_blank">@tianshengwang</a></p>
     <p style="color:#7c869a">© <span id="year"></span> Tiansheng (Tian) Wang — Built with vanilla HTML/CSS, animated blobs, and scroll-reveal ✦ Hosted on GitHub Pages.</p>
   </div>
 </section>
 
 <button id="toTop" class="toTop" aria-label="Back to top">↑</button>
 
-<!-- Shared + page JS -->
+<!-- Shared + slider JS -->
 <script defer src="/assets/site.js"></script>
 <script>
-  // Simple feature slider (no external deps)
-  (()=>{
+  (() => {
     const slides = Array.from(document.querySelectorAll('.feature-slide'));
     if (!slides.length) return;
-
     let i = 0;
 
-    // Init: show the first slide
-    slides.forEach(s => s.classList.remove('active'));
-    slides[0].classList.add('active');
-    slides.forEach((s, idx) => s.setAttribute('aria-hidden', idx === 0 ? 'false' : 'true'));
-
-    const setActive = (idx) => {
+    const setActive = idx => {
       slides.forEach((s, k) => {
-        const on = (k === idx);
+        const on = k === idx;
         s.classList.toggle('active', on);
         s.setAttribute('aria-hidden', on ? 'false' : 'true');
       });
     };
 
-    const prevBtn = document.querySelector('.feature-nav.prev');
-    const nextBtn = document.querySelector('.feature-nav.next');
+    const prev = document.querySelector('.feature-nav.prev');
+    const next = document.querySelector('.feature-nav.next');
 
-    prevBtn?.addEventListener('click', () => { i = (i - 1 + slides.length) % slides.length; setActive(i); });
-    nextBtn?.addEventListener('click', () => { i = (i + 1) % slides.length; setActive(i); });
+    prev?.addEventListener('click', () => { i = (i - 1 + slides.length) % slides.length; setActive(i); });
+    next?.addEventListener('click', () => { i = (i + 1) % slides.length; setActive(i); });
 
-    // Keyboard support
-    document.addEventListener('keydown', (e)=>{
+    document.addEventListener('keydown', e => {
       if (e.key === 'ArrowLeft') { i = (i - 1 + slides.length) % slides.length; setActive(i); }
       if (e.key === 'ArrowRight') { i = (i + 1) % slides.length; setActive(i); }
     });
 
-    // Touch swipe for mobile
     let startX = null;
-    const hero = document.querySelector('.feature-hero');
-    hero?.addEventListener('touchstart', (e)=>{ startX = e.touches[0].clientX; }, {passive:true});
-    hero?.addEventListener('touchend', (e)=>{
+    document.querySelector('.feature-hero')?.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+    document.querySelector('.feature-hero')?.addEventListener('touchend', e => {
       if (startX === null) return;
       const dx = e.changedTouches[0].clientX - startX;
       if (Math.abs(dx) > 40) {
@@ -236,7 +207,9 @@
         setActive(i);
       }
       startX = null;
-    }, {passive:true});
+    }, { passive: true });
+
+    setActive(0);
   })();
 </script>
 </body>
