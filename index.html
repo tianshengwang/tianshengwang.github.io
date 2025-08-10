@@ -6,98 +6,202 @@
   <title>Tiansheng (Tian) Wang — Pharmacoepidemiology • Causal Inference • ML</title>
   <meta name="description" content="Assistant Professor (PHOP, UH). Pharmacoepidemiology, AI-powered causal inference, machine learning, real-world data." />
 
-  <!-- Fonts + shared CSS -->
+  <!-- Fonts + shared styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css" />
+  <link rel="stylesheet" href="/assets/styles.css">
 
   <!-- Favicon -->
-  <link rel="icon" href="/images/favicon.png" sizes="32x32">
+  <link rel="icon" href="/images/favicon.jpg" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="/index.html">
-      <img src="/images/favicon.svg" alt="Logo" class="brand-mark" />
-      <span class="brand-text">Tiansheng (Tian) Wang</span>
-    </a>
-    <nav class="nav">
-      <a href="/index.html" class="active" aria-current="page">Home</a>
-      <a href="/publications.html">Publications</a>
-      <a href="/software.html">Software</a>
-      <a href="/gallery.html">Gallery</a>
-      <a href="/lab.html">Lab</a>
-      <button id="themeToggle" class="toggle" aria-label="Toggle light/dark">🌙</button>
+<header>
+  <div class="container">
+    <nav>
+      <div class="brand">Tiansheng (Tian) Wang</div>
+      <div class="nav">
+        <a href="#home">Home</a>
+        <a href="/lab.html">Lab</a>
+        <a href="/software.html">Software</a>
+        <a href="/publications.html">Publications</a>
+        <a href="/gallery.html">Gallery</a>
+        <button id="themeToggle" class="toggle" aria-label="Toggle light/dark">🌙</button>
+      </div>
     </nav>
   </div>
 </header>
 
-<main id="home">
+<main>
   <!-- Hero -->
-  <section class="hero reveal">
+  <section class="hero reveal" id="home">
     <div class="blob b1"></div>
     <div class="blob b2"></div>
-    <div class="container">
-      <h1 class="title">Pharmacoepidemiology • Causal Inference • Machine Learning</h1>
-      <p class="subtitle">
-        I develop and apply <strong>AI-powered causal inference</strong> methods to evaluate drug effects using real-world data.
-        I’m joining the University of Houston (PHOP) as Assistant Professor on <strong>September&nbsp;1, 2025</strong>.
-      </p>
-      <div class="actions">
-        <a class="btn" href="/publications.html">Publications</a>
-        <a class="ghost" href="/software.html">Software</a>
+    <div class="container grid">
+      <div>
+        <h1 class="title">Tiansheng Wang, PharmD, PhD</h1>
+
+        <!-- Social icons -->
+        <div style="margin:8px 0;">
+          <a href="mailto:tianwang@uh.edu" target="_blank"><img src="/images/icons/mail.jpg" alt="Email" style="width:24px;height:24px;margin-right:8px;"></a>
+          <a href="https://github.com/tianshengwang" target="_blank"><img src="/images/icons/github.jpg" alt="GitHub" style="width:24px;height:24px;margin-right:8px;"></a>
+          <a href="https://www.linkedin.com/in/tiansheng-wang-194a3460" target="_blank"><img src="/images/icons/linkedin.jpg" alt="LinkedIn" style="width:24px;height:24px;margin-right:8px;"></a>
+          <a href="https://x.com/_tianshengwang" target="_blank"><img src="/images/icons/x.jpg" alt="X" style="width:24px;height:24px;margin-right:8px;"></a>
+          <a href="https://scholar.google.com/citations?user=JYtT5K8AAAAJ&hl=en" target="_blank"><img src="/images/icons/google-scholar.jpg" alt="Google Scholar" style="width:24px;height:24px;"></a>
+        </div>
+
+        <!-- Affiliations -->
+        <table style="margin-top:16px;border-collapse:collapse;">
+          <tr>
+            <td style="padding:4px 8px;font-weight:bold;">Assistant Professor</td>
+            <td style="padding:4px 8px;">University of Houston College of Pharmacy<br>Department of Pharmaceutical Health Outcomes and Policy</td>
+          </tr>
+          <tr>
+            <td style="padding:4px 8px;font-weight:bold;">Adjunct Assistant Professor</td>
+            <td style="padding:4px 8px;">...</td>
+          </tr>
+        </table>
+
+        <p class="subtitle" style="margin-top:16px;">
+          I develop and apply <strong>AI-powered causal inference</strong> methods to assess drug effects in real-world data.
+        </p>
+      </div>
+      <div class="avatarWrap">
+        <img class="avatar" src="/images/Tian_UHAP23.jpg" alt="Tiansheng (Tian) Wang portrait" />
       </div>
     </div>
   </section>
 
-  <!-- Highlights -->
-  <section class="reveal">
+  <!-- Latest News -->
+  <section id="latest-news" class="reveal">
     <div class="container">
-      <h2>Highlights</h2>
-      <div class="cards">
-        <div class="card half">
-          <h3>Methodology</h3>
-          <ul>
-            <li>High-dimensional Iterative Causal Forest (hdiCF)</li>
-            <li>Target Trial Emulation at scale</li>
-            <li>Proximal Causal Inference, negative controls</li>
-            <li>Trajectory modeling for longitudinal estimands</li>
-          </ul>
-        </div>
-        <div class="card half">
-          <h3>Applications</h3>
-          <ul>
-            <li>Drug safety & effectiveness</li>
-            <li>Cardiometabolic & neurologic outcomes</li>
-            <li>Vaccines & respiratory disease</li>
-            <li>Health equity & transportability</li>
-          </ul>
+      <h2>Latest News</h2>
+      <ul>
+        <li><strong>Sep 2025:</strong> Start tenure track assistant professor position at Dept. of Pharmaceutical Health Outcomes and Policy, University of Houston College of Pharmacy.</li>
+        <li><strong>Aug 2025:</strong> Present longitudinal pattern for confounding control (preventative drug use trajectories, thdPS) at ICPE, Washington DC.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Active Research Areas -->
+  <section id="active-research" class="reveal">
+    <div class="container">
+      <h2>Active Research Areas</h2>
+
+      <!-- Panel 1 -->
+      <div class="panel">
+        <h3>Precision Medicine</h3>
+        <div class="panel-items">
+          <article class="paper">
+            <div class="meta">
+              <ul>
+                <li><a href="https://doi.org/10.1093/aje/kwad219" target="_blank"><strong>Iterative Causal Forest</strong></a> — <em>Am J Epidemiol</em>, 2024</li>
+                <li>Key idea: alternating subgroup discovery & effect re-estimation.</li>
+              </ul>
+            </div>
+            <figure class="figure-card">
+              <img src="/images/figures/FIGURE1_all_Panels_AB.jpg" alt="iCF / hdiCF workflow">
+              <figcaption class="caption">Workflow for iCF / hdiCF</figcaption>
+            </figure>
+          </article>
+
+          <article class="paper">
+            <div class="meta">
+              <ul>
+                <li><a href="https://doi.org/10.1093/aje/kwae322" target="_blank"><strong>High-dimensional iCF (hdiCF)</strong></a> — <em>Am J Epidemiol</em>, 2024</li>
+                <li>Extends iCF to raw codes via high-dimensional feature engineering.</li>
+              </ul>
+            </div>
+            <figure class="figure-card">
+              <img src="/images/figures/FIGURE1_hdiCF_3KEYsteps.jpg" alt="hdiCF schematic">
+              <figcaption class="caption">High-dimensional extension</figcaption>
+            </figure>
+          </article>
+
+          <article class="paper">
+            <div class="meta">
+              <ul>
+                <li><a href="https://doi.org/10.1093/aje/kwaf127" target="_blank"><strong>High-dimensional HTE in Claims</strong></a> — <em>Am J Epidemiol</em>, 2025</li>
+                <li>Application of hdiCF to large administrative claims.</li>
+              </ul>
+            </div>
+            <figure class="figure-card">
+              <img src="/images/figures/FIG2_HDsetting_comparison.jpg" alt="High-dimensional blocks">
+              <figcaption class="caption">HD setting blocks</figcaption>
+            </figure>
+          </article>
         </div>
       </div>
-      <div class="actions">
-        <a class="ghost" href="/lab.html">Join the CausalRx Lab</a>
+
+      <!-- Panel 2 -->
+      <div class="panel">
+        <h3>Confounding Control</h3>
+        <div class="panel-items">
+          <article class="paper">
+            <div class="meta">
+              <ul>
+                <li><a href="https://doi.org/10.1093/aje/kwaf044" target="_blank"><strong>Handling Switchers in Treatment Effect Estimation</strong></a> — <em>Am J Epidemiol</em>, 2025</li>
+                <li>Guidance for switch/crossover handling in observational analyses.</li>
+              </ul>
+            </div>
+            <figure class="figure-card">
+              <img src="/images/figures/Fig1_ACNUvsTVE_v3.jpg" alt="Switchers vs strategies">
+              <figcaption class="caption">Estimands & switchers</figcaption>
+            </figure>
+          </article>
+
+          <article class="paper">
+            <div class="meta">
+              <ul>
+                <li><strong>Temporal high-dimensional PS (thdPS)</strong> — work in progress</li>
+                <li>Leverages temporal patterns for stronger confounding control.</li>
+              </ul>
+            </div>
+            <figure class="figure-card">
+              <img src="/images/figures/thdps_timeline.jpg" alt="thdPS timeline">
+              <figcaption class="caption">thdPS timeline patterns</figcaption>
+            </figure>
+          </article>
+        </div>
+      </div>
+
+      <!-- Panel 3 -->
+      <div class="panel">
+        <h3>Drug Repurposing for ADRD</h3>
+        <div class="panel-items">
+          <article class="paper">
+            <div class="meta">
+              <ul>
+                <li><a href="https://doi.org/10.1093/aje/kwaf166" target="_blank"><strong>Claims-based Dementia Algorithm (ARIC/Medicare)</strong></a> — <em>Am J Epidemiol</em>, 2025</li>
+                <li>Validated incident & prevalent ADRD identification.</li>
+              </ul>
+            </div>
+            <figure class="figure-card">
+              <img src="/images/figures/Fig3_StudyDesignTimeline_Dementia.jpg" alt="ADRD algorithm timeline">
+              <figcaption class="caption">ADRD identification timeline</figcaption>
+            </figure>
+          </article>
+        </div>
       </div>
     </div>
   </section>
 </main>
 
+<!-- Contact -->
 <section id="contact" class="reveal">
   <div class="container">
     <h2>Contact</h2>
-    <p><strong>Email:</strong> <a href="mailto:tianwang@uh.edu">tianwang@uh.edu</a> · <strong>GitHub:</strong> <a href="https://github.com/tianshengwang" target="_blank" rel="noopener">@tianshengwang</a></p>
-    <p class="muted">© <span id="year"></span> Tiansheng (Tian) Wang — Built with vanilla HTML/CSS, animated blobs, and scroll-reveal ✦ Hosted on GitHub Pages.</p>
+    <p><strong>Email:</strong> <a href="mailto:tianwang@uh.edu">tianwang@uh.edu</a> · <strong>GitHub:</strong> <a href="https://github.com/tianshengwang" target="_blank">@tianshengwang</a></p>
+    <p style="color:#7c869a">© <span id="year"></span> Tiansheng (Tian) Wang — Built with vanilla HTML/CSS, animated blobs, and scroll-reveal ✦ Hosted on GitHub Pages.</p>
   </div>
 </section>
 
 <button id="toTop" class="toTop" aria-label="Back to top">↑</button>
 
+<!-- Shared JS -->
 <script defer src="/assets/site.js"></script>
-<script>
-  // Fill year if site.js doesn’t already
-  (function(){var y=document.getElementById('year'); if(y&&!y.textContent){y.textContent=new Date().getFullYear();}})();
-</script>
 </body>
 </html>
+
