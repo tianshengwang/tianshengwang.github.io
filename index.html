@@ -102,7 +102,10 @@
             <div class="meta">
               <ul>
                 <li><a href="https://doi.org/10.1093/aje/kwad219" target="_blank"><strong>Iterative Causal Forest</strong></a> — <em>Am J Epidemiol</em>, 2024</li>
-                <li>We've developed a machine learning subgrouping algorithm to better identify subpopulation who will benefit (or be harmed) more from a specific treatment, showing promising results in real-world scenarios.</li>
+                <li>We've developed a machine learning subgrouping algorithm based on causal forest to better identify subpopulation who will benefit (or be harmed) more from a specific treatment.
+                  The iCF algorithm itertively develop shallow causal forest at different depth to obtain a family of subgroup decisions, 
+                  then pick the cross-validated subgroup decision that best predicts causal treatment effect as the final output (subgroup decision). 
+                  We have shown promising results in both simulaiton and real-world scenarios.</li>
               </ul>
             </div>
             <figure class="figure-card">
@@ -116,7 +119,7 @@
               <ul>
                 <li><a href="https://doi.org/10.1093/aje/kwae322" target="_blank"><strong>High-dimensional iCF (hdiCF)</strong></a> — <em>Am J Epidemiol</em>, 2024</li>
                 <li>We have developed hdiCF, the high-dimensional extension of our iterative Causal Forest (iCF) algorithm, hdiCF uses diagnosis/procedure/prescription codes (ie, does not require predefined covariates) to identify subgroups with heterogeneous treatment effects in claims data. 
-                  We demonstrate its utility using a case study of SGLT2I treatment and hospitalized heart failure..</li>
+                  We demonstrate its utility using a case study of SGLT2i and hospitalized heart failure.</li>
               </ul>
             </div>
             <figure class="figure-card">
