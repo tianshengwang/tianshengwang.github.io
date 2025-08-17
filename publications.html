@@ -12,48 +12,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/styles.css?v=11">
 
-  <!-- Featured slider styles (reliable version) -->
+  <!-- Featured slider styles -->
   <style>
-    .feature-hero{
-      position:relative;border:1px solid var(--border);background:var(--card);
-      border-radius:16px;padding:12px;overflow:hidden;max-width:100%
-    }
+    .feature-hero{position:relative;border:1px solid var(--border);background:var(--card);
+      border-radius:16px;padding:12px;overflow:hidden;max-width:100%}
     .feature-track{position:relative}
-    /* Core: show exactly one slide */
-    .feature-slide{display:none !important; gap:16px; align-items:start}
-    .feature-slide.active{display:grid !important; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+    .feature-slide{display:none !important;gap:16px;align-items:start}
+    .feature-slide.active{display:grid !important;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
     .feature-media{display:flex;align-items:center;justify-content:center}
-    .feature-media img{
-      width:100%; height:auto; max-height:55vh; object-fit:contain;
-      border-radius:12px; border:1px solid var(--border);
-      box-shadow:0 20px 60px rgba(0,0,0,.35)
-    }
+    .feature-media img{width:100%;height:auto;max-height:55vh;object-fit:contain;border-radius:12px;border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,.35)}
     .feature-title{margin:0 0 6px}
     .feature-caption{color:var(--muted);margin-top:6px}
-
-    .feature-nav{
-      position:absolute;top:50%;transform:translateY(-50%);
-      width:44px;height:44px;border-radius:999px;border:1px solid var(--border);
-      background:var(--card);color:var(--fg);display:flex;align-items:center;justify-content:center;
-      cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:10
-    }
-    .feature-nav.prev{left:10px}
-    .feature-nav.next{right:10px}
-    .feature-nav:hover{filter:brightness(1.05)}
-
-    @media (max-width:900px){
-      .feature-slide.active{grid-template-columns:1fr}
-      .feature-media img{max-height:45vh}
-    }
+    .feature-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:999px;border:1px solid var(--border);
+      background:var(--card);color:var(--fg);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:10}
+    .feature-nav.prev{left:10px}.feature-nav.next{right:10px}.feature-nav:hover{filter:brightness(1.05)}
+    @media (max-width:900px){.feature-slide.active{grid-template-columns:1fr}.feature-media img{max-height:45vh}}
 
     /* Collapsible years */
     details.pub-year{border:1px solid var(--border);border-radius:12px;background:var(--card);padding:12px;margin:10px 0}
-    details.pub-year summary{
-      list-style:none;cursor:pointer;font-weight:700;display:flex;align-items:center;gap:8px
-    }
+    details.pub-year summary{list-style:none;cursor:pointer;font-weight:700;display:flex;align-items:center;gap:8px}
     details.pub-year summary::before{content:"▸";transition:transform .2s ease}
     details.pub-year[open] summary::before{transform:rotate(90deg)}
     details.pub-year ul{margin:12px 0 0 18px}
+    .pub li{margin:8px 0}
   </style>
 
   <link rel="icon" href="/images/favicon.jpg" sizes="32x32">
@@ -76,7 +57,7 @@
     </nav>
   </div>
 </header>
-  
+
 <main>
 
 <!-- Quick links -->
@@ -85,7 +66,7 @@
     <h1 style="margin-bottom:8px;">Publications</h1>
     <p class="subtitle" style="margin-top:0;">Peer-reviewed articles and selected conference presentations.</p>
 
-    <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:14px;">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;">
       <a class="ghost" target="_blank" rel="noopener"
          href="https://pubmed.ncbi.nlm.nih.gov/?term=%28Tiansheng%20Wang%5BAuthor%5D%29%20AND%20%28%22Peking%20University%22%5BAffiliation%5D%20OR%20%22North%20Dakota%20State%20University%22%5BAffiliation%5D%20OR%20%22University%20of%20North%20Carolina%22%5BAffiliation%5D%20OR%20%22University%20of%20Houston%22%5BAffiliation%5D%29%20AND%20%282011%2F08%2F01%5BDate%20-%20Publication%5D%20%3A%203000%5BDate%20-%20Publication%5D%29">
         🔎 PubMed (since 2011)
@@ -100,103 +81,255 @@
   </div>
 </section>
 
-
-
-  <!-- FEATURED slider -->
-  <section class="reveal">
-    <div class="container">
-      <h2 style="margin-bottom:14px;">Featured</h2>
-      <div class="feature-hero" id="featureHero">
-        <button class="feature-nav prev" aria-label="Previous">⟨</button>
-        <div class="feature-track" id="featureTrack" aria-live="polite">
-          <article class="feature-slide active" aria-hidden="false">
-            <div class="feature-media">
-              <img src="/images/figures/FIGURE1_all_Panels_AB.jpg" alt="iCF workflow">
-            </div>
-            <div class="feature-meta">
-              <h3 class="feature-title">
-                <a href="https://doi.org/10.1093/aje/kwad219" target="_blank" rel="noopener">
-                  Iterative Causal Forest: A Novel Algorithm for Subgroup Identification
-                </a>
-              </h3>
-              <p class="subtitle"><em>American Journal of Epidemiology</em>, 2024</p>
-              <p class="feature-caption">We've developed a machine learning subgrouping algorithm based on causal forest to better identify subpopulation who will benefit (or be harmed) more from a specific treatment. 
-                The iCF algorithm itertively develop shallow causal forest at different depth to obtain a family of subgroup decisions, 
-                then pick the cross-validated subgroup decision that best predicts causal treatment effect as the final output (subgroup decision). 
-                We have shown promising results in both simulaiton and real-world scenarios..</p>
-            </div>
-          </article>
-          <article class="feature-slide" aria-hidden="true">
-            <div class="feature-media">
-              <img src="/images/figures/FIGURE1_hdiCF_3KEYsteps.jpg" alt="hdiCF steps">
-            </div>
-            <div class="feature-meta">
-              <h3 class="feature-title">
-                <a href="https://doi.org/10.1093/aje/kwae322" target="_blank" rel="noopener">
-                  High-dimensional Iterative Causal Forest (hdiCF)
-                </a>
-              </h3>
-              <p class="subtitle"><em>American Journal of Epidemiology</em>, 2024</p>
-              <p class="feature-caption">We have developed hdiCF, the high-dimensional extension of our iterative Causal Forest (iCF) algorithm. 
-                hdiCF uses diagnosis/procedure/prescription codes (ie, does not require predefined covariates) to identify subgroups with heterogeneous treatment effects in claims data. 
-                We demonstrate its utility using a case study of SGLT2i and hospitalized heart failure.</p>
-            </div>
-          </article>
-          <article class="feature-slide" aria-hidden="true">
-            <div class="feature-media">
-              <img src="/images/figures/Fig3_StudyDesignTimeline_Dementia.jpg" alt="ADRD identification timeline">
-            </div>
-            <div class="feature-meta">
-              <h3 class="feature-title">
-                <a href="https://doi.org/10.1093/aje/kwaf166" target="_blank" rel="noopener">
-                  A Novel Algorithm to Identify Incident and Prevalent Dementia in Medicare Claims (ARIC)
-                </a>
-              </h3>
-              <p class="subtitle"><em>American Journal of Epidemiology</em>, 2025</p>
-              <p class="feature-caption">Using Medicare claims from participants of the Atherosclerosis Risk in Communities (ARIC) Study and ARIC’s rigorous syndromic dementia classification, 
-                we developed and validated algorithms using Medicare claims to identify incident and prevalent dementia, addresseing a key need in pharmacoepidemiology and aging research. 
-                It is an important step for improving the accuracy of real-world data studies assessing drug effects on preventing dementia.</p>
-            </div>
-          </article>
-        </div>
-        <button class="feature-nav next" aria-label="Next">⟩</button>
+<!-- FEATURED slider (unchanged) -->
+<section class="reveal">
+  <div class="container">
+    <h2 style="margin-bottom:14px;">Featured</h2>
+    <div class="feature-hero" id="featureHero">
+      <button class="feature-nav prev" aria-label="Previous">⟨</button>
+      <div class="feature-track" id="featureTrack" aria-live="polite">
+        <article class="feature-slide active" aria-hidden="false">
+          <div class="feature-media">
+            <img src="/images/figures/FIGURE1_all_Panels_AB.jpg" alt="iCF workflow">
+          </div>
+          <div class="feature-meta">
+            <h3 class="feature-title">
+              <a href="https://doi.org/10.1093/aje/kwad219" target="_blank" rel="noopener">
+                Iterative Causal Forest: A Novel Algorithm for Subgroup Identification
+              </a>
+            </h3>
+            <p class="subtitle"><em>American Journal of Epidemiology</em>, 2024</p>
+            <p class="feature-caption">We've developed a machine learning subgrouping algorithm based on causal forest to better identify subpopulation who will benefit (or be harmed) more from a specific treatment. 
+              The iCF algorithm iteratively develops shallow causal forests at different depths to obtain a family of subgroup decisions, then selects the cross-validated decision that best predicts causal treatment effect.</p>
+          </div>
+        </article>
+        <article class="feature-slide" aria-hidden="true">
+          <div class="feature-media">
+            <img src="/images/figures/FIGURE1_hdiCF_3KEYsteps.jpg" alt="hdiCF steps">
+          </div>
+          <div class="feature-meta">
+            <h3 class="feature-title">
+              <a href="https://doi.org/10.1093/aje/kwae322" target="_blank" rel="noopener">
+                High-dimensional Iterative Causal Forest (hdiCF)
+              </a>
+            </h3>
+            <p class="subtitle"><em>American Journal of Epidemiology</em>, 2024</p>
+            <p class="feature-caption">hdiCF extends iCF to high-dimensional claims data, using diagnosis/procedure/prescription codes to identify subgroups with heterogeneous treatment effects.</p>
+          </div>
+        </article>
+        <article class="feature-slide" aria-hidden="true">
+          <div class="feature-media">
+            <img src="/images/figures/Fig3_StudyDesignTimeline_Dementia.jpg" alt="ADRD identification timeline">
+          </div>
+          <div class="feature-meta">
+            <h3 class="feature-title">
+              <a href="https://doi.org/10.1093/aje/kwaf166" target="_blank" rel="noopener">
+                A Novel Algorithm to Identify Incident and Prevalent Dementia in Medicare Claims (ARIC)
+              </a>
+            </h3>
+            <p class="subtitle"><em>American Journal of Epidemiology</em>, 2025</p>
+            <p class="feature-caption">Using Medicare claims from ARIC participants and ARIC’s syndromic dementia classification, we developed and validated claims-based algorithms to identify incident and prevalent dementia.</p>
+          </div>
+        </article>
       </div>
-      <p class="subtitle" style="margin-top:8px;color:var(--muted)">Tip: use ← / → or swipe to navigate. Auto-plays and pauses on hover.</p>
+      <button class="feature-nav next" aria-label="Next">⟩</button>
     </div>
-  </section>
+    <p class="subtitle" style="margin-top:8px;color:var(--muted)">Tip: use ← / → or swipe to navigate. Auto-plays and pauses on hover.</p>
+  </div>
+</section>
 
-  <!-- Collapsible list by year -->
-  <section class="reveal">
-    <div class="container">
-      <h2>Selected Publications</h2>
+<!-- Full publications by year (collapsible) -->
+<section class="reveal">
+  <div class="container">
+    <h2>Publications by Year</h2>
 
-      <details class="pub-year" open>
-        <summary>2025</summary>
-        <ul class="pub">
-          <li>Wang T, et al. <a href="https://doi.org/10.1093/aje/kwaf166" target="_blank"><strong>Developing A Novel Algorithm to Identify Incident and Prevalent Dementia in Medicare Claims. The ARIC Study.</strong></a> <em>Am J Epidemiol</em>. 2025.</li>
-          <li>Wang T, et al. <a href="https://doi.org/10.1093/aje/kwaf127" target="_blank"><strong>A Novel High Dimensional Approach to Assess Heterogeneous Treatment Effect in Claims Data.</strong></a> <em>Am J Epidemiol</em>. 2025.</li>
-          <li>Wang T, et al. <a href="https://onlinelibrary.wiley.com/doi/10.1002/pds.70192" target="_blank"><strong>GLP-1 Receptor Agonists in Asthma Exacerbations: an Application of hdiCF to Identify Subgroups.</strong></a> <em>Pharmacoepidemiol Drug Saf</em>. 2025.</li>
-        </ul>
-      </details>
+    <!-- 2025 -->
+    <details class="pub-year" open>
+      <summary>2025</summary>
+      <ul class="pub">
+        <li><strong>80.</strong> Guo J, <strong>Wang T</strong>, Liu Z, Zeng W, Shen P, Sun Y, Zhan S, Xu Y. Estimating Cardiovascular Effects of Influenza Vaccination in Older Adults: A Target Trial Emulation Using Proximal Causal Inference. <em>eClinicalMedicine</em>. 2025 (In Press).</li>
+        <li><strong>79.</strong> Her QL, <strong>Wang T</strong>, Stürmer T, Buse JB, Jonsson-Funk M, Webster-Clark M. Suicidality among overweight and obese patients after semaglutide exposure in a United States commercial insurance population: a real-world study. <em>Diabetes Obes Metab</em>. 2025;1‐10. <a href="https://doi.org/10.1111/dom.70002" target="_blank" rel="noopener">https://doi.org/10.1111/dom.70002</a></li>
+        <li><strong>78.</strong> <strong>Wang T</strong>, Pate V, Kim DH, Power MC; Garden G, Palta P, Knopman D, Jonson-Funk M, Stürmer T, Kucharska-Newton AM. Developing A Novel Algorithm to Identify Incident and Prevalent Dementia in Medicare Claims for Pharmacoepidemiologic Studies. The ARIC Study. <em>Am J Epidemiol</em>. 2025 Aug 4:kwaf166. <a href="https://doi.org/10.1093/aje/kwaf166" target="_blank" rel="noopener">https://doi.org/10.1093/aje/kwaf166</a></li>
+        <li><strong>77.</strong> <strong>Wang T*</strong>, Wang J, Kinlaw AC, Wyss R, Pate V, Gou Z, Buse JB, Keet CA, Kosorok MR, Stürmer T. Glucagon-like Peptide 1 Receptor Agonists in Asthma Exacerbations: an Application of High-dimensional Iterative Causal Forest to Identify Subgroups. <em>Pharmacoepidemiol Drug Saf</em>. 2025;34:e70192. <a href="https://doi.org/10.1002/pds.70192" target="_blank" rel="noopener">https://doi.org/10.1002/pds.70192</a></li>
+        <li><strong>76.</strong> <strong>Wang T*</strong>, Pate V, Wyss R, Buse JB, Kosorok MR, Stürmer T. A Novel High Dimensional Approach to Assess Heterogeneous Treatment Effect in Claims Data. <em>Am J Epidemiol</em>. 2025. <a href="https://doi.org/10.1093/aje/kwaf127" target="_blank" rel="noopener">https://doi.org/10.1093/aje/kwaf127</a></li>
+        <li><strong>75.</strong> Zeng W, <strong>Wang T</strong>, Stürmer T, He N, Shen P, Lin H, Guan X, Xu Y. Comparative effectiveness of ACE inhibitors and ARBs on cardiovascular outcomes in older adults with T2DM: a target trial emulation study. <em>Cardiovasc Diabetol</em>. 2025;24:194.</li>
+        <li><strong>74.</strong> <strong>Wang T</strong>, Wang J, Song Z, Miller E, Pate V, Her Q, Yang J, Charlier SHR, Egger P, Barnes EL, Buse JB, Becker C, Sandler RS, Meier C, Jick S, Stürmer T. Caution in Handling Switchers in Pharmacoepidemiologic Studies Estimating Treatment Effects: The Example of DPP-4 Inhibitors and IBD. <em>Am J Epidemiol</em>. 2025. <a href="https://doi.org/10.1093/aje/kwaf044" target="_blank" rel="noopener">https://doi.org/10.1093/aje/kwaf044</a></li>
+        <li><strong>73.</strong> Guo J, <strong>Wang T</strong>, Cao H, Ma Q, Tang Y, Li T, Wang L, Xu Y, Zhan S. Application of methodological strategies to address unmeasured confounding in real-world vaccine safety and effectiveness study: a systematic review. <em>J Clin Epidemiol</em>. 2025. <a href="https://www.jclinepi.com/article/S0895-4356(25)00070-8/abstract" target="_blank" rel="noopener">Journal page</a></li>
+        <li><strong>72.</strong> Ji D, Dong S, <strong>Wang T</strong>, Wei J, Shen P, Lin H, Shi L, Guang X, Yang X. Statin Use and Risk of Intracerebral Hemorrhage in Chinese Population: A Target Trial Emulation Study. <em>Neurology</em>. 2025. <a href="https://www.neurology.org/doi/10.1212/WNL.0000000000213489" target="_blank" rel="noopener">Neurology</a></li>
+      </ul>
+    </details>
 
-      <details class="pub-year">
-        <summary>2024</summary>
-        <ul class="pub">
-          <li>Wang T, et al. <a href="https://doi.org/10.1093/aje/kwad219" target="_blank"><strong>Iterative Causal Forest: A Novel Algorithm for Subgroup Identification.</strong></a> <em>Am J Epidemiol</em>. 2024.</li>
-          <li>Wang T, et al. <a href="https://doi.org/10.1093/aje/kwae322" target="_blank"><strong>High-dimensional Iterative Causal Forest (hdiCF).</strong></a> <em>Am J Epidemiol</em>. 2024.</li>
-          <li>Wang T, et al. <a href="https://www.atsjournals.org/doi/abs/10.1513/AnnalsATS.202309-836OC" target="_blank"><strong>GLP-1 Receptor Agonists and Asthma Exacerbations: Which Patients Benefit Most?</strong></a> <em>Ann Am Thorac Soc</em>. 2024.</li>
-        </ul>
-      </details>
+    <!-- 2024 -->
+    <details class="pub-year">
+      <summary>2024</summary>
+      <ul class="pub">
+        <li><strong>71.</strong> <strong>Wang T</strong>, Ji D, Stürmer T, Ismail S, Dong S, Shen P, Lin H, Shi L, Guan X, Xu Y. The Effect of SGLT2 Inhibitors on Hemoglobin A1C Variability and Acute Kidney Injury: A Causal Mediation Analysis. <em>Pharmacoepidemiol Drug Saf</em>. 2024 Aug;33(8):e5876. (Cover Image: <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/pds.70039" target="_blank" rel="noopener">link</a>)</li>
+        <li><strong>70.</strong> <strong>Wang T*</strong>, Keil AP, Buse JB, Keet C, Kim S, Wyss R, Pate V, Jonsson-Funk M, Pratley RE, Kvist K, Kosorok MR, Stürmer T. GLP-1 Receptor Agonists and Asthma Exacerbations: Which Patients Benefit Most? <em>Ann Am Thorac Soc</em>. 2024 Jul 16. <a href="https://www.atsjournals.org/doi/abs/10.1513/AnnalsATS.202309-836OC" target="_blank" rel="noopener">journal</a></li>
+        <li><strong>69.</strong> <strong>Wang T*</strong>, Pate V, Wyss R, Buse JB, Kosorok MR, Stürmer T. High-dimensional Iterative Causal Forest (hdiCF): a Novel Algorithm for Subgroup Identification in Claims Data. <em>Am J Epidemiol</em>. 2024 Sep 5;194(7):2085–97. <a href="https://doi.org/10.1093/aje/kwae322" target="_blank" rel="noopener">https://doi.org/10.1093/aje/kwae322</a></li>
+        <li><strong>68.</strong> <strong>Wang T</strong>, Keil AP, Kim S, Wyss R, Htoo PT, Funk MJ, Buse JB, Kosorok MR, Stürmer T. Iterative Causal Forest: A Novel Algorithm for Subgroup Identification. <em>Am J Epidemiol</em>. 2024 May 7;193(5):764–776.</li>
+        <li><strong>67.</strong> Her QL, Dejene SZ, Ismail S, <strong>Wang T</strong>, Jonsson-Funk M, Pate V, Min JY, Flory J. Validation of an ICD-10-CM algorithm in identifying severe hypoglycemia events in large health care databases. <em>Diabetes Obes Metab</em>. 2024 Apr;26(4):1282–1290.</li>
+      </ul>
+    </details>
 
-      <details class="pub-year">
-        <summary>Earlier</summary>
-        <ul class="pub">
-          <li>Wang T, et al. <a href="https://diabetesjournals.org/care/article/41/9/1998/40738/Incretin-Based-Therapies-and-Diabetic-Retinopathy" target="_blank"><strong>Incretin-based Therapies and Diabetic Retinopathy.</strong></a> <em>Diabetes Care</em>. 2018.</li>
-          <li>Wang T, et al. <a href="https://diabetesjournals.org/care/article/42/11/2065/36360/Dipeptidyl-Peptidase-4-Inhibitors-and-Risk-of" target="_blank"><strong>DPP-4 Inhibitors and Risk of Inflammatory Bowel Disease.</strong></a> <em>Diabetes Care</em>. 2019.</li>
-        </ul>
-      </details>
-    </div>
-  </section>
+    <!-- 2023 -->
+    <details class="pub-year">
+      <summary>2023</summary>
+      <ul class="pub">
+        <li><strong>66.</strong> Wei J, Xu H, Zhang D, Tang H, <strong>Wang T</strong>, Steck SE, Divers J, Zhang J, Merchant AT. Initiation of Antihypertensive Medication from Midlife on Incident Dementia: The Health and Retirement Study. <em>J Alzheimers Dis</em>. 2023 Jul 5. doi:10.3233/JAD-230398.</li>
+        <li><strong>65.</strong> Wei J, Xu H, Liese A, Merchant A, Wang L, Yang CH, Lohman M, Brown M, <strong>Wang T</strong>, Friedman D. The 10-Year CVD Risk Score and Cognitive Function among Older Adults: NHANES 2011–2014. <em>J Am Heart Assoc</em>. 2023 Jun 6;12(11):e028527.</li>
+        <li><strong>64.</strong> Li X, Zhou L, Gaggl M, Kinlaw AC, Gou Z, Yang X, Wei J, <strong>Wang T*</strong>. Remdesivir for COVID-19 and AKI: FAERS disproportionality analysis. <em>Int J Clin Pharm</em>. 2023 Apr;45(2):509–514.</li>
+      </ul>
+    </details>
+
+    <!-- 2022 -->
+    <details class="pub-year">
+      <summary>2022</summary>
+      <ul class="pub">
+        <li><strong>63.</strong> Htoo PT, Buse JB, Cavender M, <strong>Wang T</strong>, Pate V, Edwards J, Stürmer T. Comparative cardiovascular effects of SGLT2i and GLP-1RA in older patients with diabetes across CV risk profiles: cohort study. <em>J Am Heart Assoc</em>. 2022 Feb 15;11(4):e022376.</li>
+        <li><strong>62.</strong> Zhao Y, Zhang J, Zheng K, Thai S, Simpson RJ, Kinlaw AC, Xu Y, Wei J, Cui X, Buse JB, Stürmer T, <strong>Wang T*</strong>. Serious CV adverse events with hydroxychloroquine/chloroquine ± azithromycin in COVID-19: FAERS analysis. <em>Drugs - Real World Outcomes</em>. 2022 Jun;9(2):231–241.</li>
+      </ul>
+    </details>
+
+    <!-- 2021 -->
+    <details class="pub-year">
+      <summary>2021</summary>
+      <ul class="pub">
+        <li><strong>61.</strong> Webster-Clark M, Stürmer T, <strong>Wang T</strong>, et al. Using propensity scores to estimate effects of treatment initiation decisions: State of the science. <em>Stat Med</em>. 2021 Mar 30;40(7):1718–1735.</li>
+        <li><strong>60.</strong> Guo M, Thai S, Zhou J, Wei J, Zhao Y, Xu W, <strong>Wang T*</strong>, Cui X. Evaluation of DOAC-associated hemorrhagic events using FAERS. <em>Int J Clin Pharm</em>. 2021 Jun 9.</li>
+        <li><strong>59.</strong> Tang H, Zhou L, Li X, Kinlaw AC, Yang JY, Moon AM, Barnes EL, <strong>Wang T</strong>. DILI with lopinavir-ritonavir in COVID-19: FAERS disproportionality. <em>Int J Clin Pharm</em>. 2021 Aug;43(4):1116–1122.</li>
+        <li><strong>58.</strong> Wei J, Ali MK, <strong>Wang T</strong>, Xu H. Abdominal aortic calcification and cognitive function among older adults. <em>Int J Geriatr Psychiatry</em>. 2021 Nov;36(11):1778–1784.</li>
+        <li><strong>57.</strong> Wei J, Hou R, Xie L, Chandrasekar EK, Lu H, <strong>Wang T</strong>, Li C, Xu H. Sleep, sedentary, physical activity, and cognitive function: NHANES 2011–2014. <em>J Sci Med Sport</em>. 2021 Feb;24(2):189–194.</li>
+      </ul>
+    </details>
+
+    <!-- 2020 -->
+    <details class="pub-year">
+      <summary>2020</summary>
+      <ul class="pub">
+        <li><strong>56.</strong> Stürmer T, <strong>Wang T</strong>, Golightly YM, et al. Methodological considerations for real-world data. <em>Rheumatology</em>. 2020;59:1425.</li>
+        <li><strong>55.</strong> Xu Y, <strong>Wang T</strong>, Yang Z, Lin H, Shen P, Zhan S. Sulfonylurea monotherapy and HF hospitalization risk in T2DM: China cohort. <em>PDS</em> 2020 Jun;29(6):635–643.</li>
+        <li><strong>54.</strong> Yang JY, <strong>Wang T</strong>, Pate V, Buse JB, Stürmer T. SGLT2i and Fournier’s gangrene: real-world evidence. <em>BMJ Open Diabetes Res Care</em>. 2020;8:e000985.</li>
+        <li><strong>53.</strong> Li D, Silvester JA, Crowley MJ, Yang JY, Alexopoulos AS, Xu Y, Zhan S, <strong>Wang T*</strong>. DPP-4 inhibitors use and celiac disease: FAERS analysis. <em>Ther Adv Chronic Dis</em>. 2020;11:1–3.</li>
+        <li><strong>52.</strong> Lu W, Sun S, Wei J, Thai S, Li D, Tang H, <strong>Wang T</strong>, Sun L. DPP-4 inhibitors and VTE: FAERS data mining. <em>Int J Clin Pharm</em>. 2020 Oct;42(5):1364–1368.</li>
+        <li><strong>51.</strong> Zhao M, Sun S, Huang Z, <strong>Wang T</strong>, Tang H. Network meta-analysis of novel glucose-lowering drugs on AKI risk. <em>CJASN</em>. 2020 Dec 31;16(1):70–78.</li>
+        <li><strong>50.</strong> Xin L, Sun S, Wang J, Lu W, <strong>Wang T</strong>, Tang H. DPP-4 inhibitors and VTE risk: CV outcomes trials meta-analysis. <em>Thromb Haemost</em>. 2020.</li>
+        <li><strong>49.</strong> Li D, Wu T, <strong>Wang T</strong>, et al. SGLT2i and dyslipidemia risk: RCT meta-analysis. <em>Pharmacoepidemiol Drug Saf</em>. 2020 May;29(5):582–590.</li>
+      </ul>
+    </details>
+
+    <!-- 2019 -->
+    <details class="pub-year">
+      <summary>2019</summary>
+      <ul class="pub">
+        <li><strong>48.</strong> <strong>Wang T</strong>, Yang YJ, Buse JB, Pate V, Tang H, Barnes EL, Sandler RS, Stürmer T. DPP-4 inhibitors and IBD risk: US adults real-world evidence. <em>Diabetes Care</em>. 2019 Nov;42(11):2065–2074.</li>
+        <li><strong>47.</strong> Yang JY, <strong>Wang T</strong>, et al. SGLT2i and lower-extremity amputation: evolving evidence. <em>Diabetes Obes Metab</em>. 2019 May;21(5):1223–1236.</li>
+        <li><strong>46.</strong> <strong>Wang T*</strong>, Lu W, Tang H, Buse JB, Stürmer T, Gower EW. GLP-1RA and diabetic retinopathy: FAERS analysis. <em>Diabetes Care</em>. 2019 Feb;42(2):e21–e23.</li>
+        <li><strong>45.</strong> <strong>Wang T*</strong>, Lu W, Li D, Yang JY, Tang H, Buse JB, Stürmer T. DPP-4 inhibitors and IBD: FAERS analysis. <em>Diabetes Care</em>. 2019 Jun;42(6):e89–e91.</li>
+        <li><strong>44.</strong> Wei J, Xie L, Song S, <strong>Wang T</strong>, Li C. Isotemporal substitution of sedentary behavior with PA and depressive symptoms in older adults: NHANES 2007–2016. <em>J Affect Disord</em>. 2019 Jul 5;257:257–262.</li>
+        <li><strong>43.</strong> Wei J, Ying M, Xie L, Chandrasekar EK, Lu H, <strong>Wang T</strong>, Li C. Late-life depression and cognitive function in older US adults: NHANES 2011–2014. <em>J Psychiatr Res</em>. 2019 Apr;111:30–35.</li>
+        <li><strong>42.</strong> Li G, Crowley M, Tang H, Yang JY, Sander RS, <strong>Wang T*</strong>. DPP-4 inhibitors and IBD risk: RCT meta-analysis. <em>Diabetes Care</em>. 2019 Jul;42(7):e119–e121.</li>
+        <li><strong>41.</strong> Wang A, Yang K, <strong>Wang T</strong>, et al. SGLT2i and VTE risk: systematic review and meta-analysis. <em>Diabetes Metab Res Rev</em>. 2019;e3174.</li>
+      </ul>
+    </details>
+
+    <!-- 2018 -->
+    <details class="pub-year">
+      <summary>2018</summary>
+      <ul class="pub">
+        <li><strong>40.</strong> Wei J, Hou R, Kowalski A, <strong>Wang T</strong>, et al. ALA intake and CHD risk: dose-response meta-analysis. <em>Br J Nutr</em>. 2018 Jan;119(1):83–89.</li>
+        <li><strong>39.</strong> <strong>Wang T</strong>, Hong J-L, Gower EW, Pate V, Garg S, Buse JB, Stürmer T. Incretin-based therapies and diabetic retinopathy: older US adults. <em>Diabetes Care</em>. 2018 Sep;41(9):1998–2009.</li>
+        <li><strong>38.</strong> Li X, Thai S, Lu W, Sun S, Tang H, Zhai S, <strong>Wang T*</strong>. TCM and drug-induced anaphylaxis: Beijing pharmacovigilance database. <em>Int J Clin Pharm</em>. 2018 Aug;40(4):921–927.</li>
+        <li><strong>37.</strong> Zhao Y, Lu H, Thai S, Li X, Tang H, Hui J, Zhai S, Sun L, <strong>Wang T*</strong>. Algorithm to identify drug-induced anaphylaxis: Beijing DB. <em>Int J Clin Pharm</em>. 2018 Aug;40(4):862–869.</li>
+        <li><strong>36.</strong> Xing Y, Zhang H, Sun S, Ma X, Pleasants R, Tang H, Zheng H, Zhai S, <strong>Wang T*</strong>. Pediatric drug-induced anaphylaxis: features & treatment. <em>Eur J Pediatr</em>. 2018 Jan;177(1):145–154.</li>
+        <li><strong>35.</strong> Zhao Y, Sun S, Li X, Ma X, Tang H, Sun L, Zhai S, <strong>Wang T*</strong>. Drug-induced anaphylaxis in China: 10-year analysis. <em>Int J Clin Pharm</em>. 2018 Oct;40(5):1349–1358.</li>
+        <li><strong>34.</strong> Zhao Y, <strong>Wang T</strong>, Li G, Sun S. Pharmacovigilance in China: development and challenges. <em>Int J Clin Pharm</em>. 2018 Aug;40(4):823–831.</li>
+        <li><strong>33.</strong> Tang H, Li G, Zhao Y, Wang F, Gower EW, Shi L, <strong>Wang T*</strong>. DR events across glucose-lowering drugs: network meta-analysis. <em>Diabetes Obes Metab</em>. 2018 May;20(5):1262–1279.</li>
+        <li><strong>32.</strong> Li D, Shi W, <strong>Wang T</strong>, Tang H. SGLT2i + DPP-4i combo therapy: systematic review & meta-analysis. <em>Diabetes Obes Metab</em>. 2018 Aug;20(8):1972–1976.</li>
+        <li><strong>31.</strong> Tang H, Shi W, Fu S, <strong>Wang T</strong>, Zhai S, Song Y, Han J. Pioglitazone and bladder cancer risk: systematic review & meta-analysis. <em>Cancer Med</em>. 2018 Apr;7(4):1070–1080.</li>
+        <li><strong>30.</strong> Li D, Yang JY, <strong>Wang T</strong>, Shen S, Tang H. SGLT2i and diabetic foot / amputation risk: meta-analysis. <em>Diabetes & Metabolism</em>. 2018 Nov;44(5):410–414.</li>
+        <li><strong>29.</strong> Pleasants RA, <strong>Wang T</strong>, Xu X, et al. Nebulized corticosteroids for COPD exacerbations: SR/MA & perspective. <em>Respir Care</em>. 2018 Oct;63(10):1302–1310.</li>
+        <li><strong>28.</strong> Cui JY, Zhou RR, Han S, <strong>Wang T</strong>, et al. Statin therapy and glycemic control in T2D: network meta-analysis. <em>J Clin Pharm Ther</em>. 2018 Aug;43(4):556–570.</li>
+        <li><strong>27.</strong> Wang X, Li M, Wang M, Cui S, Shi L, <strong>Wang T*</strong>. Mobile messaging-based case studies in pharmacotherapy class. <em>J Comput Assist Learn</em>. 2018;34:526–533.</li>
+      </ul>
+    </details>
+
+    <!-- 2017 -->
+    <details class="pub-year">
+      <summary>2017</summary>
+      <ul class="pub">
+        <li><strong>26.</strong> <strong>Wang T</strong>, Ma X, Xing Y, Sun S, Zhang H, Stürmer T, et al. Epinephrine use in drug-induced anaphylaxis: Beijing DB. <em>Int Arch Allergy Immunol</em>. 2017;173(1):51–60.</li>
+        <li><strong>25.</strong> Tang H, Li D, Zhang J, Li Y, <strong>Wang T</strong>, Zhai S, Song Y. SGLT2i and adverse renal outcomes: network & cumulative meta-analysis of RCTs. <em>Diabetes Obes Metab</em>. 2017 Aug;19(8):1106–1115.</li>
+        <li><strong>24.</strong> Liu Y, Li J, <strong>Wang T</strong>, Wang Y, Zhao L, Fang Y. Genistein and glucose/insulin sensitivity in postmenopausal women: meta-analysis. <em>Maturitas</em>. 2017 Mar;97:44–52.</li>
+        <li><strong>23.</strong> Li D, <strong>Wang T</strong>, Shen S, Fang Z, Dong Y, Tang H. UTI/genital infections with SGLT2i: RCT meta-analysis. <em>Diabetes Obes Metab</em>. 2017 Mar;19(3):348–355.</li>
+        <li><strong>22.</strong> Tang H, Cui W, Li D, <strong>Wang T</strong>, Zhang J, Zhai S, Song Y. SGLT2i added to insulin for T2D: RCT meta-analysis. <em>Diabetes Obes Metab</em>. 2017 Jan;19(1):142–147.</li>
+      </ul>
+    </details>
+
+    <!-- 2016 -->
+    <details class="pub-year">
+      <summary>2016</summary>
+      <ul class="pub">
+        <li><strong>21.</strong> Tang H, Li D, <strong>Wang T</strong>, Zhai S, Song Y. SGLT2i and DKA among T2D: RCT meta-analysis. <em>Diabetes Care</em>. 2016 Aug;39(8):e123–4.</li>
+        <li><strong>20.</strong> Tang H, Li D, Zhang J, Hsu Y, <strong>Wang T</strong>, Zhai S, Song Y. SGLT2i and fracture risk: network & cumulative meta-analysis. <em>Diabetes Obes Metab</em>. 2016 Dec;18(12):1199–1206.</li>
+        <li><strong>19.</strong> Liu F, Wang HM, <strong>Wang T</strong>, Zhang YM, Zhu X. Thymosin α1 for sepsis: SR of RCTs. <em>BMC Infect Dis</em>. 2016 Sep 15;16:488.</li>
+        <li><strong>18.</strong> Tang H, Fang Z, <strong>Wang T</strong>, Cui W, Zhai S, Song Y. SGLT2i on CV outcomes and all-cause mortality: meta-analysis. <em>Am J Cardiol</em>. 2016 Dec 1;118(11):1774–1780.</li>
+        <li><strong>17.</strong> Li X, Yu C, <strong>Wang T</strong>, Tang H. CYP2C19 polymorphisms and voriconazole outcomes: SR/MA. <em>Eur J Clin Pharmacol</em>. 2016 Oct;72(10):1185–1193.</li>
+        <li><strong>16.</strong> Zhou J, Ma X, <strong>Wang T</strong>, Zhai S. Bisphosphonates for short-term fracture prevention in primary osteoporosis: network MA. <em>Osteoporos Int</em>. 2016 Nov;27(11):3289–3300.</li>
+        <li><strong>15.</strong> Li J, Liu Y, <strong>Wang T</strong>, Zhao L, Feng W. Genistein and plasma lipids/homocysteine in postmenopausal women: meta-analysis. <em>Climacteric</em>. 2016 Oct;19(5):440–447.</li>
+        <li><strong>14.</strong> Zhou J, <strong>Wang T</strong>, Zhao X, Miller DR, Zhai S. Bisphosphonates to prevent fracture in men: SR with network MA. <em>Rheumatol Ther</em>. 2016 Jun;3(1):117–128.</li>
+        <li><strong>13.</strong> <strong>Wang T</strong>, Wang F, Zhou J, Tang H, Giovenale S. CV & arrhythmia events with incretin therapies: meta-analysis of RCTs. <em>Diabetes Metab Res Rev</em>. 2016 Nov;32(8):843–857.</li>
+        <li><strong>12.</strong> Jin H, <strong>Wang T*</strong>, Falcione B, et al. Voriconazole trough concentration vs efficacy/safety: SR/MA. <em>J Antimicrob Chemother</em>. 2016 Jul;71(7):1772–1785.</li>
+        <li><strong>11.</strong> Pleasants R, <strong>Wang T</strong>, Gao J, Tang HL, Donohue J. Inhaled umeclidinium in COPD: SR/MA. <em>Drugs</em>. 2016 Mar;76(3):343–361.</li>
+        <li><strong>10.</strong> <strong>Wang T</strong>, Wang F, Xin X, Pleasants R, Shi L. Using microblogs for health communication with a pharmacist-based account. <em>Patient Educ Couns</em>. 2016 Aug;99(8):1432–1437.</li>
+      </ul>
+    </details>
+
+    <!-- 2015 -->
+    <details class="pub-year">
+      <summary>2015</summary>
+      <ul class="pub">
+        <li><strong>9.</strong> <strong>Wang T</strong>, Wang F, Gou Z, Tang H, Li C, Shi L, Zhai SD. Incretin-based therapies & acute pancreatitis risk: meta-analysis of 1,324,515 pts from observational studies. <em>Diabetes Obes Metab</em>. 2015 Jan;17(1):32–41.</li>
+        <li><strong>8.</strong> <strong>Wang T</strong>, Benedict N, Olsen KM, et al. Critical care pharmacist’s interventions & medication errors: SR/MA of observational studies. <em>J Crit Care</em>. 2015 Oct;30(5):1101–1108.</li>
+        <li><strong>7.</strong> Li D, <strong>Wang T</strong>, Shen S, Yu J, Zhang Y, Zhang C, Tang H. Fluoroquinolones in newly diagnosed, sputum-positive TB therapy: SR & network MA. <em>PLoS ONE</em>. 2015 Dec 15;10(12):e0145066.</li>
+        <li><strong>6.</strong> Tang HL, Yan YY, <strong>Wang T</strong>, et al. FSHR Asn680Ser polymorphism and controlled ovarian hyperstimulation outcomes: updated meta-analysis. <em>J Assist Reprod Genet</em>. 2015 Dec;32(12):1801–1810.</li>
+      </ul>
+    </details>
+
+    <!-- 2014 -->
+    <details class="pub-year">
+      <summary>2014</summary>
+      <ul class="pub">
+        <li><strong>5.</strong> <strong>Wang T</strong>, Gou Z, Wang F, Ma M, Zhai SD. GLP-1 analogues vs sitagliptin in T2D: head-to-head SR/MA. <em>PLoS ONE</em>. 2014 Aug 4;9(8):e103798.</li>
+      </ul>
+    </details>
+
+    <!-- 2013 -->
+    <details class="pub-year">
+      <summary>2013</summary>
+      <ul class="pub">
+        <li><strong>4.</strong> <strong>Wang T</strong>, Wang F, Shi L. Microblog-based case studies in a pharmacotherapy intro class in China. <em>BMC Med Educ</em>. 2013 Sep 8;13:120.</li>
+      </ul>
+    </details>
+
+    <!-- 2012 -->
+    <details class="pub-year">
+      <summary>2012</summary>
+      <ul class="pub">
+        <li><strong>3.</strong> Yi ZM, Zhai SD, Huang S, <strong>Wang T</strong>, Liu F. Off-label prescriptions for adult neurological patients: pilot survey in China. <em>Int J Clin Pharm</em>. 2012 Feb;34(1):81–87.</li>
+        <li><strong>2.</strong> Natesan S, <strong>Wang T</strong>, Lukacova V, et al. Cell-QSAR: dissection of receptor binding & intracellular disposition in antifilarial activities of Selwood antimycins. <em>J Med Chem</em>. 2012 Apr 26;55(8):3699–3712.</li>
+      </ul>
+    </details>
+
+    <!-- 2011 -->
+    <details class="pub-year">
+      <summary>2011</summary>
+      <ul class="pub">
+        <li><strong>1.</strong> Natesan S, <strong>Wang T</strong>, Lukacova V, Bartus V, Khandelwal A, Balaz S. Multispecies multimode ligand-receptor interactions in 3D-QSAR: CoMFA of thyroxine analogs binding to transthyretin. <em>J Chem Inf Model</em>. 2011;51(5):1132–1150.</li>
+      </ul>
+    </details>
+
+  </div>
+</section>
 </main>
 
 <section id="contact" class="reveal">
@@ -212,13 +345,12 @@
 <!-- Shared + slider JS -->
 <script defer src="/assets/site.js"></script>
 <script>
+  // Featured slider (unchanged)
   (() => {
     const hero = document.getElementById('featureHero');
     if (!hero) return;
-
     const slides = Array.from(hero.querySelectorAll('.feature-slide'));
     if (!slides.length) return;
-
     let i = 0;
     const prev = hero.querySelector('.feature-nav.prev');
     const next = hero.querySelector('.feature-nav.next');
@@ -269,5 +401,4 @@
 </script>
 </body>
 </html>
-
 
