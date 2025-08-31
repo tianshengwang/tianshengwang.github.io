@@ -50,24 +50,36 @@
 </header>
 
 <main>
-<!-- Hero -->
-<section class="hero reveal" style="
-  background: url('https://tianshengwang.github.io/images/houstonskyline.jpg') no-repeat center center / cover;
-  color: white;
-  padding: 120px 0;
-  text-align: center;
-">
-  <div class="container" style="background: rgba(0,0,0,0.45); padding: 40px; border-radius: 12px;">
+  
+<!-- Top Banner Image (no overlay) -->
+<div class="hero-img">
+  <img src="/images/houstonskyline.jpg" alt="University of Houston skyline at sunset">
+</div>
+
+<!-- Title + Intro (sits below the image) -->
+<section class="hero reveal" style="background:none; color:inherit; padding:32px 0 0;">
+  <div class="container">
     <h1 class="title">CausalRx.AI Lab</h1>
     <br>
     <p class="subtitle">
       The CausalRx.AI lab at UH develops and applies <strong>AI–powered causal inference</strong> methods 
       to evaluate drug effects using real-world data. Focus areas include 
-      <strong>precision medicine</strong>, <strong>confounding control</strong>, 
-      and <strong>using multimodal data (genetics, imaging, real-world data) to assess drug effects</strong>.
+      <strong>precision medicine</strong>, <strong>confounding control</strong>, and 
+      <strong>using multimodal data (genetics, imaging, real-world data) to assess drug effects</strong>.
     </p>
   </div>
 </section>
+
+<style>
+  .hero-img { width:100%; line-height:0; }           /* removes gap below image */
+  .hero-img img { display:block; width:100%; height:auto; }
+  @media (min-width: 1024px) {                       /* optional: fixed banner height via object-fit */
+    /* If you prefer a fixed-height banner, use this instead of the <img> approach:
+    .hero-img { height: 420px; background:url('/images/houstonskyline.jpg') center/cover no-repeat; }
+    .hero-img img { display:none; } 
+    */
+  }
+</style>
 
 
 
