@@ -56,22 +56,23 @@
   <img src="/images/houstonskyline.jpg" alt="University of Houston skyline at sunset">
 </div>
 
-<!-- Title + Intro (domain name highlighted) -->
+<!-- Title + Intro -->
 <section class="hero reveal" style="background:none; color:inherit; padding:32px 0 0;">
   <div class="container">
 
-    <!-- Domain badge -->
-    <p style="margin-bottom:28px;">
+    <!-- Big Title -->
+    <h1 class="title">CausalRx.AI Lab</h1>
+
+    <!-- Small domain link under the title -->
+    <p class="subtitle" style="margin-top:-6px; margin-bottom:20px; font-size:0.95rem;">
       <a href="http://CausalRx.AI" target="_blank" 
-         style="display:inline-flex; align-items:center; gap:10px;
-                padding:14px 30px; border-radius:999px;
-                background:linear-gradient(135deg, var(--accent), var(--accent2));
-                color:#071426; font-weight:800; font-size:26px; text-decoration:none;
-                box-shadow:0 6px 18px rgba(0,0,0,0.35); transition:all .25s ease;">
-        <i class="fa-solid fa-globe"></i> Visit us at <span style="text-decoration:underline;">http://CausalRx.AI</span>
+         style="color:var(--link); font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+        <i class="fa-solid fa-globe globe-icon"></i> 
+        Visit us at <span style="text-decoration:underline;">http://CausalRx.AI</span>
       </a>
     </p>
 
+    <!-- Intro paragraph -->
     <p class="subtitle">
       The CausalRx.AI lab at UH develops and applies <strong>AI–powered causal inference</strong> methods 
       to evaluate drug effects. Focus areas include 
@@ -80,6 +81,17 @@
     </p>
   </div>
 </section>
+
+<!-- Spin animation -->
+<style>
+  .globe-icon {
+    transition: transform 0.6s ease;
+  }
+  a:hover .globe-icon {
+    transform: rotate(360deg);
+  }
+</style>
+
 
 
 
