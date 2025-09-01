@@ -118,16 +118,130 @@
     </div>
   </section>
 
-  <!-- Active Research Areas -->
+<!-- Active Research Areas -->
   <section id="active-research" class="reveal">
     <div class="container">
       <h2>Active Research Areas</h2>
-      <!-- keep your panels here exactly as before -->
-      <!-- ... -->
+
+      <!-- Panel 1 -->
+      <div class="panel">
+        <h3>Precision Medicine</h3>
+        <div class="panel-items">
+          <article class="paper">
+            <div class="meta">
+              <ul>
+                <li><a href="https://doi.org/10.1093/aje/kwad219" target="_blank"><strong>Iterative Causal Forest (iCF)</strong></a> — <em>Am J Epidemiol</em>, 2024</li>
+                We've developed a machine learning subgrouping algorithm based on causal forest to better identify subpopulation who will benefit (or be harmed) more from a specific treatment.
+                The iCF algorithm iteratively develops shallow causal forests at different depths to obtain a family of subgroup decisions, 
+                then picks the cross-validated subgroup decision that best predicts causal treatment effect as the final output (subgroup decision).
+              </ul>
+            </div>
+            <figure class="figure-card">
+              <img src="/images/figures/FIGURE1_all_Panels_AB.jpg" alt="iCF workflow">
+              <figcaption class="caption">iCF workflow</figcaption>
+            </figure>
+          </article>
+
+          <article class="paper">
+            <div class="meta">
+              <ul>
+                <li><a href="https://doi.org/10.1093/aje/kwae322" target="_blank"><strong>High-dimensional Iterative Causal Forest (hdiCF)</strong></a> — <em>Am J Epidemiol</em>, 2024</li>
+                We developed hdiCF, the high-dimensional extension of our iterative Causal Forest (iCF) algorithm. 
+                hdiCF uses diagnosis/procedure/prescription codes (i.e., does not require predefined covariates) to identify subgroups with heterogeneous treatment effects in claims data. 
+                We demonstrate its utility using a case study of SGLT2i and hospitalized heart failure.
+              </ul>
+            </div>
+            <figure class="figure-card">
+              <img src="/images/figures/FIGURE1_hdiCF_3KEYsteps.jpg" alt="hdiCF schematic">
+              <figcaption class="caption">hdiCF workflow</figcaption>
+            </figure>
+          </article>
+
+          <article class="paper">
+            <div class="meta">
+              <ul>
+                <li><a href="https://doi.org/10.1093/aje/kwaf127" target="_blank"><strong>High-dimensional method for assessing heterogeneous treatment effect in Claims</strong></a> — <em>Am J Epidemiol</em>, 2025</li>
+                We introduced a new high-dimensional setting (one ordinal variable per diagnosis/procedure/prescription code) to better identify and evaluate treatment effect heterogeneity in large real-world datasets.
+              </ul>
+            </div>
+            <figure class="figure-card">
+              <img src="/images/figures/FIG2_HDsetting_comparison.jpg" alt="High-dimensional blocks">
+              <figcaption class="caption">Comparing two HD settings</figcaption>
+            </figure>
+          </article>
+        </div>
+      </div>
+
+      <!-- Panel 2 -->
+      <div class="panel">
+        <h3>Confounding Control</h3>
+        <div class="panel-items">
+          <article class="paper">
+            <div class="meta">
+              <ul>
+                <li><a href="https://doi.org/10.1093/aje/kwaf044" target="_blank"><strong>Caution in Handling Switchers in Pharmacoepidemiologic Studies Estimating Treatment Effects</strong></a> — <em>Am J Epidemiol</em>, 2025</li>
+                We highlighted the study design flaw in a specific type of time-varying exposure design, 
+                which only allows individuals from the comparator group to switch to the treatment group but not the other way around (asymmetrical follow-up), inducing time-related bias.
+              </ul>
+            </div>
+            <figure class="figure-card">
+              <img src="/images/figures/Fig1_ACNUvsTVE_v3.jpg" alt="Switchers vs strategies">
+              <figcaption class="caption">Handling switchers by different study designs</figcaption>
+            </figure>
+          </article>
+
+          <article class="paper">
+            <div class="meta">
+              <ul>
+                <li><strong>Temporal pattern for confounding control</strong></li>
+                Work in progress, more coming soon.
+              </ul>
+            </div>
+            <figure class="figure-card">
+              <img src="/images/figures/trajectory.jpg" alt="thdPS timeline">
+              <figcaption class="caption">Longitudinal pattern for confounding control</figcaption>
+            </figure>
+          </article>
+        </div>
+      </div>
+
+      <!-- Panel 3 -->
+      <div class="panel">
+        <h3>Using multimodal data (genetics, imaging, real-world data) to assess drug effects.</h3>
+        <div class="panel-items">
+          <article class="paper">
+            <div class="meta">
+              <ul>
+                <li><a href="https://doi.org/10.1093/aje/kwaf166" target="_blank"><strong>Claims-based Dementia Identification Algorithm</strong></a> — <em>Am J Epidemiol</em>, 2025</li>
+                Using Medicare claims from participants of the ARIC Study and ARIC’s rigorous syndromic dementia classification, 
+                we developed and validated algorithms to identify incident and prevalent dementia,
+                addressing a key need in pharmacoepidemiology and aging research.
+              </ul>
+            </div>
+            <figure class="figure-card">
+              <img src="/images/figures/Fig3_StudyDesignTimeline_Dementia.jpg" alt="ADRD algorithm timeline">
+              <figcaption class="caption">ADRD identification timeline</figcaption>
+            </figure>
+          </article>
+
+          <article class="paper">
+            <div class="meta">
+              <ul>
+                <li><strong>Deep learning-powered neuroimaging analysis to assess drug effects on dementia</strong></li>
+                Work in progress, more coming soon.
+              </ul>
+            </div>
+            <figure class="figure-card">
+              <img src="/images/figures/imaging_ADRD.jpg" alt="Neuroimaging">
+              <figcaption class="caption">Neuroimaging data to assess drug effects</figcaption>
+            </figure>
+          </article>
+        </div>
+      </div>
     </div>
   </section>
 </main>
-
+  
 <!-- Contact -->
 <section id="contact" class="reveal">
   <div class="container">
