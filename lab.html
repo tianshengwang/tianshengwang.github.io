@@ -68,7 +68,7 @@
       <a href="http://CausalRx.AI" target="_blank" 
          style="color:var(--link); font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
         <i class="fa-solid fa-globe globe-icon"></i> 
-        Visit us at <span style="text-decoration:underline;">http://CausalRx.AI</span>
+        <span style="text-decoration:underline;">http://CausalRx.AI</span>
       </a>
     </p>
 
@@ -81,6 +81,22 @@
     </p>
   </div>
 </section>
+
+<!-- Spin animation -->
+<style>
+  @keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .globe-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+  a:hover .globe-icon {
+    animation: spin 1.5s linear infinite; /* continuous spin */
+  }
+</style>
+
 
 <!-- Spin animation -->
 <style>
