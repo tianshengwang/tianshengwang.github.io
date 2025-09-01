@@ -14,39 +14,12 @@
   <!-- Site CSS -->
   <link rel="stylesheet" href="/assets/styles.css">
 
-  <!-- Font Awesome (for News icons) -->
+  <!-- Font Awesome (for icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <!-- Favicon -->
   <link rel="icon" href="/images/favicon.jpg" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-
-  <!-- Page-specific tweaks -->
-  <style>
-    /* 2-column hero layout */
-    .hero .grid{
-      display:grid;
-      grid-template-columns:minmax(0,1fr) 360px; /* left text | right portrait */
-      gap:40px;
-      align-items:center;
-    }
-    .hero .avatarWrap{display:flex;justify-content:center}
-    .hero .avatar{width:100%;max-width:360px;border-radius:18px;display:block}
-
-    /* full-width intro under both columns */
-    .hero .intro-wide{grid-column:1 / -1; max-width:100%}
-    .hero .intro-wide .subtitle{max-width:1100px}
-
-    /* tidy table spacing on hero */
-    .hero table td{vertical-align:top}
-
-    /* responsive */
-    @media (max-width: 900px){
-      .hero .grid{grid-template-columns:1fr}
-      .hero .avatar{max-width:320px}
-      .hero .intro-wide{grid-column:auto}
-    }
-  </style>
 </head>
 <body>
 
@@ -69,81 +42,76 @@
 <main>
   <!-- Hero -->
   <section class="hero reveal" id="home">
-  <div class="blob b1"></div>
-  <div class="blob b2"></div>
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
 
-  <div class="container grid">
-    <!-- LEFT COLUMN -->
-    <div>
-      <h1 class="title">Tiansheng Wang, PharmD, PhD</h1>
-      <p class="subtitle" style="margin-top:16px;">Assistant Professor in Pharmacoepidemiology.</p>
+    <div class="container grid">
+      <!-- LEFT COLUMN -->
+      <div class="left">
+        <h1 class="title">Tiansheng Wang, PharmD, PhD</h1>
+        <p class="subtitle" style="margin-top:16px;">Assistant Professor in Pharmacoepidemiology.</p>
 
-      <!-- Social icons -->
-      <div style="margin:8px 0;">
-        <a href="mailto:tianwang@uh.edu" target="_blank"><img src="/images/icons/mail.jpg" alt="Email" style="width:24px;height:24px;margin-right:8px;"></a>
-        <a href="https://github.com/tianshengwang" target="_blank"><img src="/images/icons/github.jpg" alt="GitHub" style="width:24px;height:24px;margin-right:8px;"></a>
-        <a href="https://www.linkedin.com/in/tiansheng-wang-194a3460" target="_blank"><img src="/images/icons/linkedin.jpg" alt="LinkedIn" style="width:24px;height:24px;margin-right:8px;"></a>
-        <a href="https://x.com/_tianshengwang" target="_blank"><img src="/images/icons/x.jpg" alt="X" style="width:24px;height:24px;margin-right:8px;"></a>
-        <a href="https://scholar.google.com/citations?user=JYtT5K8AAAAJ&hl=en" target="_blank"><img src="/images/icons/google-scholar.jpg" alt="Google Scholar" style="width:24px;height:24px;"></a>
+        <!-- Social icons -->
+        <div style="margin:8px 0;">
+          <a href="mailto:tianwang@uh.edu" target="_blank"><img src="/images/icons/mail.jpg" alt="Email" style="width:24px;height:24px;margin-right:8px;"></a>
+          <a href="https://github.com/tianshengwang" target="_blank"><img src="/images/icons/github.jpg" alt="GitHub" style="width:24px;height:24px;margin-right:8px;"></a>
+          <a href="https://www.linkedin.com/in/tiansheng-wang-194a3460" target="_blank"><img src="/images/icons/linkedin.jpg" alt="LinkedIn" style="width:24px;height:24px;margin-right:8px;"></a>
+          <a href="https://x.com/_tianshengwang" target="_blank"><img src="/images/icons/x.jpg" alt="X" style="width:24px;height:24px;margin-right:8px;"></a>
+          <a href="https://scholar.google.com/citations?user=JYtT5K8AAAAJ&hl=en" target="_blank"><img src="/images/icons/google-scholar.jpg" alt="Google Scholar" style="width:24px;height:24px;"></a>
+        </div>
+
+        <!-- Affiliations -->
+        <table style="margin-top:16px;border-collapse:collapse;">
+          <tr>
+            <td style="padding:4px 8px;font-weight:bold;">Assistant Professor</td>
+            <td style="padding:4px 8px;">University of Houston College of Pharmacy<br>Department of Pharmaceutical Health Outcomes and Policy</td>
+          </tr>
+          <tr>
+            <td style="padding:4px 8px;font-weight:bold;">Adjunct Assistant Professor</td>
+            <td style="padding:4px 8px;">...</td>
+          </tr>
+        </table>
       </div>
 
-      <!-- Affiliations -->
-      <table style="margin-top:16px;border-collapse:collapse;">
-        <tr>
-          <td style="padding:4px 8px;font-weight:bold;">Assistant Professor</td>
-          <td style="padding:4px 8px;">University of Houston College of Pharmacy<br>Department of Pharmaceutical Health Outcomes and Policy</td>
-        </tr>
-        <tr>
-          <td style="padding:4px 8px;font-weight:bold;">Adjunct Assistant Professor</td>
-          <td style="padding:4px 8px;">...</td>
-        </tr>
-      </table>
+      <!-- RIGHT COLUMN -->
+      <div class="right avatarWrap">
+        <img class="avatar" src="/images/Tian_UHAP23.jpg" alt="Tiansheng (Tian) Wang portrait" />
+      </div>
+
+      <!-- FULL-WIDTH INTRO BELOW BOTH COLUMNS -->
+      <div class="intro-wide">
+        <p class="subtitle" style="margin-top:16px;">
+          I’m an Assistant Professor in the Department of Pharmaceutical Health Outcomes and Policy at the University of Houston College of Pharmacy. 
+          I develop and apply <strong>AI-powered causal inference</strong> methods to learn what works (or harms) from real-world data,
+          with emphasis on <strong>precision medicine</strong>, <strong>confounding control</strong>, and
+          <strong>using multimodal data (genetics, imaging, real-world data) to assess drug effects</strong>.
+          I earned my Ph.D. in Epidemiology and completed a postdoc training at University of North Carolina at Chapel Hill, working with
+          <a href="https://sph.unc.edu/adv_profile/til-sturmer-md-phd/" target="_blank" rel="noopener noreferrer">Dr. Til Stürmer</a>, 
+          <a href="https://sph.unc.edu/adv_profile/michael-r-kosorok-phd/" target="_blank" rel="noopener noreferrer">Dr. Michael Kosorok</a>,
+          <a href="https://www.med.unc.edu/medicine/endocrinology-metabolism/people/john-buse-md-phd/" target="_blank" rel="noopener noreferrer">Dr. John Buse</a>, and 
+          <a href="https://www.med.unc.edu/neurology/people/gwenn-a-garden-md-phd/" target="_blank" rel="noopener noreferrer">Dr. Gwenn Garden</a>.
+          Prior to my academic career in the U.S., I was a Lecturer at Peking University and also practiced as a pharmacist in the U.S..
+        </p>
+
+        <p class="subtitle" style="margin-top:16px;">
+          <strong>I have openings for postdocs to apply causal inference and machine learning methods assessing drug effects, 
+          supported by my recent UH new faculty and Alzheimer’s Association &amp; NACC new investigator award grants</strong>.
+        </p>
+      </div>
     </div>
-
-    <!-- RIGHT COLUMN -->
-    <div class="avatarWrap">
-      <img class="avatar" src="/images/Tian_UHAP23.jpg" alt="Tiansheng (Tian) Wang portrait" />
-    </div>
-
-    <!-- FULL-WIDTH UNDER BOTH COLUMNS -->
-    <div class="intro-wide">
-      <p class="subtitle" style="margin-top:16px;">
-        I’m an Assistant Professor in the Department of Pharmaceutical Health Outcomes and Policy at the University of Houston College of Pharmacy. 
-        I develop and apply <strong>AI-powered causal inference</strong> methods to learn what works (or harms) from real-world data,
-        with emphasis on <strong>precision medicine</strong>, <strong>confounding control</strong>, and <strong>using multimodal data (genetics, imaging, real-world data) to assess drug effects</strong>.
-        I earned my Ph.D. in Epidemiology and completed a postdoc training at University of North Carolina at Chapel Hill, working with
-        <a href="https://sph.unc.edu/adv_profile/til-sturmer-md-phd/" target="_blank" rel="noopener noreferrer">Dr. Til Stürmer</a>, 
-        <a href="https://sph.unc.edu/adv_profile/michael-r-kosorok-phd/" target="_blank" rel="noopener noreferrer">Dr. Michael Kosorok</a>,
-        <a href="https://www.med.unc.edu/medicine/endocrinology-metabolism/people/john-buse-md-phd/" target="_blank" rel="noopener noreferrer">Dr. John Buse</a>, and 
-        <a href="https://www.med.unc.edu/neurology/people/gwenn-a-garden-md-phd/" target="_blank" rel="noopener noreferrer">Dr. Gwenn Garden</a>.
-        Prior to my academic career in the U.S., I was a Lecturer at Peking University and also practiced as a pharmacist in the U.S..
-      </p>
-
-      <p class="subtitle" style="margin-top:16px;">
-        <strong>I have openings for postdocs to apply causal inference and machine learning methods assessing drug effects, 
-        supported by my recent UH new faculty and Alzheimer’s Association &amp; NACC new investigator award grants</strong>.
-      </p>
-    </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Latest News -->
   <section id="latest-news" class="reveal">
     <div class="container">
       <h2>Latest News</h2>
       <ul>
-        <li>
-          <strong>Sep 2025:</strong> Honored to receive the Alzheimer’s Association &amp; NACC New Investigators Award.
-        </li>
-        <li>
-          <strong>Sep 2025:</strong> Start tenure-track assistant professor position at Dept. of Pharmaceutical Health Outcomes and Policy, University of Houston College of Pharmacy.
-        </li>
-        <li>
-          <strong>Aug 2025:</strong>
+        <li><strong>Sep 2025:</strong> Honored to receive the Alzheimer’s Association &amp; NACC New Investigators Award.</li>
+        <li><strong>Sep 2025:</strong> Start tenure-track assistant professor position at Dept. of Pharmaceutical Health Outcomes and Policy, University of Houston College of Pharmacy.</li>
+        <li><strong>Aug 2025:</strong> 
           <i class="fa-solid fa-microphone" style="color:#c8102e; margin-right:6px;"></i>
-          Present at ISPE 2025 on developing novel methods for confounding control using longitudinal pattern at baseline period.
-          <strong>Talk 1</strong>: preventative drug trajectories for confounding control;
+          Present at ISPE 2025 on developing novel methods for confounding control using longitudinal pattern at baseline period. 
+          <strong>Talk 1</strong>: preventative drug trajectories for confounding control; 
           <strong>Talk 2</strong>: temporal high-dimensional propensity score.
         </li>
       </ul>
@@ -154,35 +122,25 @@
   <section id="active-research" class="reveal">
     <div class="container">
       <h2>Active Research Areas</h2>
+      <!-- keep your panels here exactly as before -->
+      <!-- ... -->
+    </div>
+  </section>
+</main>
 
-      <!-- Panel 1 -->
-      <div class="panel">
-        <h3>Precision Medicine</h3>
-        <div class="panel-items">
-          <article class="paper">
-            <div class="meta">
-              <ul>
-                <li><a href="https://doi.org/10.1093/aje/kwad219" target="_blank"><strong>Iterative Causal Forest (iCF)</strong></a> — <em>Am J Epidemiol</em>, 2024</li>
-                We've developed a machine learning subgrouping algorithm based on causal forest to better identify subpopulation who will benefit (or be harmed) more from a specific treatment.
-                The iCF algorithm iteratively develops shallow causal forests at different depths to obtain a family of subgroup decisions, 
-                then picks the cross-validated subgroup decision that best predicts causal treatment effect as the final output (subgroup decision).
-              </ul>
-            </div>
-            <figure class="figure-card">
-              <img src="/images/figures/FIGURE1_all_Panels_AB.jpg" alt="iCF workflow">
-              <figcaption class="caption">iCF workflow</figcaption>
-            </figure>
-          </article>
+<!-- Contact -->
+<section id="contact" class="reveal">
+  <div class="container">
+    <h2>Contact</h2>
+    <p><strong>Email:</strong> <a href="mailto:tianwang@uh.edu">tianwang@uh.edu</a> · <strong>GitHub:</strong> <a href="https://github.com/tianshengwang" target="_blank">@tianshengwang</a></p>
+    <p style="color:#7c869a">© <span id="year"></span> Tiansheng (Tian) Wang — Built with vanilla HTML/CSS, animated blobs, and scroll-reveal ✦ Hosted on GitHub Pages.</p>
+  </div>
+</section>
 
-          <article class="paper">
-            <div class="meta">
-              <ul>
-                <li><a href="https://doi.org/10.1093/aje/kwae322" target="_blank"><strong>High-dimensional Iterative Causal Forest (hdiCF)</strong></a> — <em>Am J Epidemiol</em>, 2024</li>
-                We developed hdiCF, the high-dimensional extension of our iterative Causal Forest (iCF) algorithm. 
-                hdiCF uses diagnosis/procedure/prescription codes (i.e., does not require predefined covariates) to identify subgroups with heterogeneous treatment effects in claims data. 
-                We demonstrate its utility using a case study of SGLT2i and hospitalized heart failure.
-              </ul>
-            </div>
-            <figure class="figure-card">
-              <img src="/images/figures/FIGURE1_hdiCF_3KEYsteps.jpg" alt="hdiCF schematic">
-              <figcaption class="caption">hdiCF workflow</figcaption>
+<button id="toTop" class="toTop" aria-label="Back to top">↑</button>
+
+<!-- Shared JS -->
+<script defer src="/assets/site.js"></script>
+</body>
+</html>
+
