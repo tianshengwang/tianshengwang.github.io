@@ -126,7 +126,7 @@ footer{padding:28px 0;color:#7c869a}
   .title{font-size:28px}
   .avatar{max-width:320px}
 }
- 
+
 /* Force true centering inside software cards */
 .soft-media{
   display:grid;
@@ -143,4 +143,32 @@ footer{padding:28px 0;color:#7c869a}
   object-position:center center;
   margin:0 auto;
 }
+
+/* ===== Domain link (globe spins continuously while hovered) ===== */
+.domain-link{
+  color: var(--link);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.domain-text{
+  text-decoration: underline;
+}
+
+@keyframes spin360 {
+  to { transform: rotate(360deg); }
+}
+.globe-svg{
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  transition: transform .2s ease;
+}
+.domain-link:hover .globe-svg{
+  animation: spin360 1.5s linear infinite; /* continuous spin while hovered */
+}
+
+
 
