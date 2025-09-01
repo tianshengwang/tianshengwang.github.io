@@ -63,7 +63,7 @@
     <!-- Big Title -->
     <h1 class="title">CausalRx.AI Lab</h1>
 
-    <!-- Small domain link under the title -->
+    <!-- Domain link with spinning globe on hover -->
     <p class="subtitle" style="margin-top:-6px; margin-bottom:20px; font-size:0.95rem;">
       <a href="http://CausalRx.AI" target="_blank" 
          style="color:var(--link); font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
@@ -81,6 +81,21 @@
     </p>
   </div>
 </section>
+
+<!-- Spin animation -->
+<style>
+  @keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .globe-icon {
+    display: inline-block;
+  }
+  a:hover .globe-icon {
+    animation: spin 1.5s linear infinite; /* continuous spin while hovered */
+  }
+</style>
+
 
 <!-- Spin animation -->
 <style>
