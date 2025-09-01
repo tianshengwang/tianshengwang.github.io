@@ -127,3 +127,8 @@ html[data-theme="light"] {
   margin:0 auto;           /* extra centering guard */
 }
 
+/* Hero: make an item span both columns (full width of container) */
+.hero .intro-wide{
+  grid-column: 1 / -1;
+}
+
