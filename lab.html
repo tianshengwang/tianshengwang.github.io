@@ -16,10 +16,11 @@
   <link rel="icon" href="/images/favicon.jpg" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 
-  <!-- Tiny scoped helpers (everything else is inline in-section to overrule old styles) -->
+  <!-- Page-scoped helpers -->
   <style>
     .title a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
-    /* Card visuals (safe to keep global) */
+
+    /* Cards (safe global) */
     .research-card { position: relative; border-radius: 16px; display: flex; flex-direction: column; }
     .research-card .img-wrap {
       width: 100%; aspect-ratio: 16/9; border-radius: 16px; overflow: hidden;
@@ -29,6 +30,27 @@
     .research-card h3 { margin-top: 6px; }
     .research-card p { margin: 6px 0 0; color: var(--muted, #5e6b85); }
     .research-card a.card-link { position: absolute; inset: 0; border-radius: 16px; }
+
+    /* Banner image */
+    .hero-img { width:100%; line-height:0; }
+    .hero-img img { display:block; width:100%; height:auto; }
+    /* Optional: fixed-height banner (uncomment to crop) */
+    /* .hero-img { height: 320px; background:url('/images/houstonskyline.jpg') center/cover no-repeat; }
+       .hero-img img { display:none; } */
+
+    /* Domain link + spinning globe (SVG) */
+    .domain-link{
+      color: var(--link);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .domain-text{ text-decoration: underline; }
+    @keyframes spin360 { to { transform: rotate(360deg); } }
+    .globe-svg{ display:inline-block; width:18px; height:18px; }
+    .domain-link:hover .globe-svg{ animation: spin360 1.5s linear infinite; } /* continuous spin while hovered */
   </style>
 </head>
 <body>
@@ -39,7 +61,7 @@
       <div class="brand">Tiansheng (Tian) Wang</div>
       <div class="nav">
         <a href="/index.html">Home</a>
-        <a href="/lab.html" class="active">CausalRx.AI Lab</a>
+        <a href="/lab.html" class="active">Lab</a>
         <a href="/software.html">Software</a>
         <a href="/publications.html">Publications</a>
         <a href="/gallery.html">Gallery</a>
@@ -50,118 +72,50 @@
 </header>
 
 <main>
-  
-<!-- Top Banner Image (no overlay) -->
-<div class="hero-img">
-  <img src="/images/houstonskyline.jpg" alt="University of Houston skyline at sunset">
-</div>
 
-<!-- Big Title -->
-<h1 class="title">CausalRx.AI Lab</h1>
+  <!-- Top Banner Image -->
+  <div class="hero-img">
+    <img src="/images/houstonskyline.jpg" alt="University of Houston skyline at sunset">
+  </div>
 
-  <h1 class="title">CausalRx.AI Lab</h1>
-<p class="subtitle" style="margin-top:-6px; margin-bottom:20px; font-size:0.95rem;">
-  <a href="http://CausalRx.AI" target="_blank" class="domain-link">
-    <svg class="globe-svg" viewBox="0 0 24 24" aria-hidden="true">
-      <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
-      <ellipse cx="12" cy="12" rx="6" ry="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
-      <ellipse cx="12" cy="12" rx="3" ry="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
-      <line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="1.5"/>
-      <path d="M4 7c2.5 1.2 5.2 1.8 8 1.8S17.5 8.2 20 7" fill="none" stroke="currentColor" stroke-width="1.2"/>
-      <path d="M4 17c2.5-1.2 5.2-1.8 8-1.8s5.5.6 8 1.8" fill="none" stroke="currentColor" stroke-width="1.2"/>
-    </svg>
-    <span class="domain-text">http://CausalRx.AI</span>
-  </a>
-</p>
+  <!-- Title + Domain link (single row, no duplicates) -->
+  <section class="hero reveal" style="background:none; color:inherit; padding:24px 0 0;">
+    <div class="container">
+      <h1 class="title">CausalRx.AI Lab</h1>
+      <p class="subtitle" style="margin-top:-6px; margin-bottom:20px; font-size:0.95rem;">
+        <a href="http://CausalRx.AI" target="_blank" class="domain-link" rel="noopener">
+          <!-- Inline SVG globe (no external icon libs needed) -->
+          <svg class="globe-svg" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+            <ellipse cx="12" cy="12" rx="6" ry="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <ellipse cx="12" cy="12" rx="3" ry="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M4 7c2.5 1.2 5.2 1.8 8 1.8S17.5 8.2 20 7" fill="none" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M4 17c2.5-1.2 5.2-1.8 8-1.8s5.5.6 8 1.8" fill="none" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+          <span class="domain-text">http://CausalRx.AI</span>
+        </a>
+      </p>
 
-  
-<!-- Domain link with spinning globe on hover (SVG, no external icon libs needed) -->
-<p class="subtitle" style="margin-top:-6px; margin-bottom:20px; font-size:0.95rem;">
-  <a href="http://CausalRx.AI" target="_blank" class="domain-link">
-    <!-- Inline SVG globe -->
-    <svg class="globe-svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-      <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
-      <!-- meridians -->
-      <ellipse cx="12" cy="12" rx="6" ry="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
-      <ellipse cx="12" cy="12" rx="3" ry="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
-      <!-- parallels -->
-      <line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="1.5"/>
-      <path d="M4 7c2.5 1.2 5.2 1.8 8 1.8S17.5 8.2 20 7" fill="none" stroke="currentColor" stroke-width="1.2"/>
-      <path d="M4 17c2.5-1.2 5.2-1.8 8-1.8s5.5.6 8 1.8" fill="none" stroke="currentColor" stroke-width="1.2"/>
-    </svg>
-    <span class="domain-text">http://CausalRx.AI</span>
-  </a>
-</p>
-
-
-<!-- Spin animation -->
-<style>
-  @keyframes spin {
-    0%   { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  .globe-icon {
-    display: inline-block;
-  }
-  a:hover .globe-icon {
-    animation: spin 1.5s linear infinite; /* continuous spin while hovered */
-  }
-</style>
-
-
-<!-- Spin animation -->
-<style>
-  @keyframes spin {
-    0%   { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  .globe-icon {
-    display: inline-block;
-    transition: transform 0.3s ease;
-  }
-  a:hover .globe-icon {
-    animation: spin 1.5s linear infinite; /* continuous spin */
-  }
-</style>
-
-
-<!-- Spin animation -->
-<style>
-  .globe-icon {
-    transition: transform 0.6s ease;
-  }
-  a:hover .globe-icon {
-    transform: rotate(360deg);
-  }
-</style>
-
-
-
-
-<style>
-  .hero-img { width:100%; line-height:0; }           /* removes gap below image */
-  .hero-img img { display:block; width:100%; height:auto; }
-  @media (min-width: 1024px) {                       /* optional: fixed banner height via object-fit */
-    /* If you prefer a fixed-height banner, use this instead of the <img> approach:
-    .hero-img { height: 420px; background:url('/images/houstonskyline.jpg') center/cover no-repeat; }
-    .hero-img img { display:none; } 
-    */
-  }
-</style>
-
-
+      <p class="subtitle">
+        The CausalRx.AI lab at UH develops and applies <strong>AI–powered causal inference</strong> methods 
+        to evaluate drug effects. Focus areas include 
+        <strong>precision medicine</strong>, <strong>confounding control</strong>, and 
+        <strong>using multimodal data (genetics, imaging, real-world data) to assess drug effects</strong>.
+      </p>
+    </div>
+  </section>
 
   <!-- Join Us -->
   <section class="reveal">
     <div class="container">
       <h2>Join Us</h2>
       <div class="grid two">
-        
         <div class="card">
           <h3>Postdoctoral Fellow</h3>
           <p>Start: Sep 2025 · Duration: up to 2 years · Location: Houston, TX</p>
           <ul>
-            <li>Causal inference &amp; machine learing for assessing drug effects</li>
+            <li>Causal inference &amp; machine learning for assessing drug effects</li>
             <li>Lead analyses, publish, and present at national/international meetings</li>
           </ul>
           <p><strong>How to apply:</strong> Email <a href="mailto:tianwang@uh.edu">tianwang@uh.edu</a> including
@@ -169,69 +123,66 @@
           </p>
           <p><a href="#postdoc" class="button">See full description</a></p>
         </div>
-
-
-        
       </div>
     </div>
   </section>
 
   <!-- Full Postdoc Description -->
   <section id="postdoc" class="reveal">
-  <div class="container">
-    <h2>Postdoctoral Fellowship in Causal Inference &amp; Health Outcomes Research</h2>
-    <div class="card">
-      <p>
-        The Population Health Outcomes and Pharmacoepidemiology Education and Research Center
-        (<strong>P-HOPER Center</strong>) and the Department of Pharmaceutical Health Outcomes and Policy
-        (<strong>PHOP</strong>) at the <strong>University of Houston, College of Pharmacy</strong>, invite applications
-        for a <strong>full-time postdoctoral fellowship</strong> focused on developing and applying methods for
-        estimating causal treatment effects on health outcomes using large health data.
-      </p>
+    <div class="container">
+      <h2>Postdoctoral Fellowship in Causal Inference &amp; Health Outcomes Research</h2>
+      <div class="card">
+        <p>
+          The Population Health Outcomes and Pharmacoepidemiology Education and Research Center
+          (<strong>P-HOPER Center</strong>) and the Department of Pharmaceutical Health Outcomes and Policy
+          (<strong>PHOP</strong>) at the <strong>University of Houston, College of Pharmacy</strong>, invite applications
+          for a <strong>full-time postdoctoral fellowship</strong> focused on developing and applying methods for
+          estimating causal treatment effects on health outcomes using large health data.
+        </p>
 
-      <p>
-        The Mission of the P-HOPER Center is to conduct innovative population health outcomes research and offer
-        educational programs that impact both the region and the nation. The University of Houston is a
-        Carnegie-designated Tier One public research university and a member institution of the world-renowned Texas
-        Medical Center, home to leading clinical and academic programs. UH is also one of the most culturally and
-        ethnically diverse public universities in the nation, with over 40,000 students.
-      </p>
+        <p>
+          The Mission of the P-HOPER Center is to conduct innovative population health outcomes research and offer
+          educational programs that impact both the region and the nation. The University of Houston is a
+          Carnegie-designated Tier One public research university and a member institution of the world-renowned Texas
+          Medical Center, home to leading clinical and academic programs. UH is also one of the most culturally and
+          ethnically diverse public universities in the nation, with over 40,000 students.
+        </p>
 
-      <p>
-        This position offers a unique opportunity to work with real-world data and modern causal inference methods to
-        inform clinical decision-making. Ongoing projects focus on the comparative effectiveness of drug therapies
-        using large-scale observational electronic health record (EHR) data and local EHR data. The fellow’s
-        responsibilities include analyzing large-scale observational EHR and claims data (e.g., Medicare), leading
-        manuscript preparation, and presenting findings at national and international conferences.
-      </p>
+        <p>
+          This position offers a unique opportunity to work with real-world data and modern causal inference methods to
+          inform clinical decision-making. Ongoing projects focus on the comparative effectiveness of drug therapies
+          using large-scale observational electronic health record (EHR) data and local EHR data. The fellow’s
+          responsibilities include analyzing large-scale observational EHR and claims data (e.g., Medicare), leading
+          manuscript preparation, and presenting findings at national and international conferences.
+        </p>
 
-      <p>
-        The position is a two-year, full-time postdoctoral fellowship with competitive compensation and potential for
-        renewal based on performance and funding availability.
-      </p>
+        <p>
+          The position is a two-year, full-time postdoctoral fellowship with competitive compensation and potential for
+          renewal based on performance and funding availability.
+        </p>
 
-      <h3>Qualifications</h3>
-      <ul>
-        <li>Ph.D. in Pharmaceutical Health Outcomes, (Pharmaco)epidemiology, Biostatistics, or a related field.</li>
-        <li>Strong capabilities in quantitative healthcare data analysis (e.g., medical claims, electronic medical records, or registry data).</li>
-        <li>Expertise in or a strong interest in machine learning and deep learning algorithms.</li>
-        <li>Research and publication experience in health outcomes research.</li>
-      </ul>
+        <h3>Qualifications</h3>
+        <ul>
+          <li>Ph.D. in Pharmaceutical Health Outcomes, (Pharmaco)epidemiology, Biostatistics, or a related field.</li>
+          <li>Strong capabilities in quantitative healthcare data analysis (e.g., medical claims, electronic medical records, or registry data).</li>
+          <li>Expertise in or a strong interest in machine learning and deep learning algorithms.</li>
+          <li>Research and publication experience in health outcomes research.</li>
+        </ul>
 
-      <h3>Application Materials</h3>
-      <ul>
-        <li>CV</li>
-        <li>Cover letter</li>
-        <li>Contact information for three references</li>
-      </ul>
+        <h3>Application Materials</h3>
+        <ul>
+          <li>CV</li>
+          <li>Cover letter</li>
+          <li>Contact information for three references</li>
+        </ul>
 
-      <p>
-        If you are interested, please send your application materials to
-        <a href="mailto:tianwang@uh.edu">Dr. Tiansheng Wang</a>.
-      </p>
+        <p>
+          If you are interested, please send your application materials to
+          <a href="mailto:tianwang@uh.edu">Dr. Tiansheng Wang</a>.
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 </main>
 
@@ -250,6 +201,7 @@
 <script defer src="/assets/site.js"></script>
 </body>
 </html>
+
 
 
 
