@@ -34,9 +34,6 @@
     /* Banner image */
     .hero-img { width:100%; line-height:0; }
     .hero-img img { display:block; width:100%; height:auto; }
-    /* Optional: fixed-height banner (uncomment to crop) */
-    /* .hero-img { height: 320px; background:url('/images/houstonskyline.jpg') center/cover no-repeat; }
-       .hero-img img { display:none; } */
 
     /* Domain link + spinning globe (SVG) */
     .domain-link{
@@ -50,7 +47,20 @@
     .domain-text{ text-decoration: underline; }
     @keyframes spin360 { to { transform: rotate(360deg); } }
     .globe-svg{ display:inline-block; width:18px; height:18px; }
-    .domain-link:hover .globe-svg{ animation: spin360 1.5s linear infinite; } /* continuous spin while hovered */
+    .domain-link:hover .globe-svg{ animation: spin360 1.5s linear infinite; }
+
+    /* === NEW: Divider between stacked cards in Join Us === */
+    .card-sep {
+      height: 1px;
+      background: var(--border, rgba(255,255,255,0.14));
+      margin: 16px 0;
+      border: 0;
+      border-radius: 1px;
+    }
+    @media (min-width: 900px) {
+      /* Hide the divider when cards sit side-by-side */
+      .card-sep { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -78,13 +88,12 @@
     <img src="/images/houstonskyline.jpg" alt="University of Houston skyline at sunset">
   </div>
 
-  <!-- Title + Domain link (single row, no duplicates) -->
+  <!-- Title + Domain link -->
   <section class="hero reveal" style="background:none; color:inherit; padding:24px 0 0;">
     <div class="container">
       <h1 class="title">CausalRx.AI Lab</h1>
       <p class="subtitle" style="margin-top:-6px; margin-bottom:20px; font-size:0.95rem;">
         <a href="http://CausalRx.AI" target="_blank" class="domain-link" rel="noopener">
-          <!-- Inline SVG globe (no external icon libs needed) -->
           <svg class="globe-svg" viewBox="0 0 24 24" aria-hidden="true">
             <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
             <ellipse cx="12" cy="12" rx="6" ry="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
@@ -104,8 +113,8 @@
         <strong>using multimodal data (genetics, imaging, real-world data) to assess drug effects</strong>.
       </p>
       <p class="subtitle" style="margin-top:16px;">
-          <strong>I have openings for Postdocs and PhD students, please feel free to contact me if you are interested to learn more about my research</strong>.
-        </p>
+        <strong>I have openings for Postdocs and PhD students—feel free to contact me if you’d like to learn more about my research.</strong>
+      </p>
     </div>
   </section>
 
@@ -117,21 +126,31 @@
         <!-- Postdoc card -->
         <div class="card">
           <h3>Postdoctoral Fellow</h3>
-          
+          <p>Duration: up to 2 years · Location: Houston, TX</p>
+          <ul>
+            <li>Causal inference &amp; machine learning for assessing drug effects</li>
+            <li>Lead analyses, publish, and present at national/international meetings</li>
+          </ul>
           <p><strong><a href="https://careers.uh.edu/jobs/pharmaceutical-health-outcomes-and-policy-post-doctoral-fellow-houston-texas-united-states" target="_blank" rel="noopener">Apply here</a></strong></p>
-
-           <h3>PhD Student</h3>
-          <p><strong><a href="https://www.uh.edu/pharmacy/prospective-students/graduate-programs/" target="_blank" rel="noopener">Apply here</a></strong></p>
-          
+          <p><a href="#postdoc" class="button">See full description</a></p>
         </div>
 
-       
+        <!-- Divider line (visible when stacked) -->
+        <hr class="card-sep">
+
+        <!-- PhD card -->
+        <div class="card">
+          <h3>PhD Student</h3>
+          <p>Duration: ~4 years · Location: Houston, TX</p>
+          <ul>
+            <li>Causal inference &amp; machine learning for assessing drug effects</li>
+            <li>Lead analyses, publish, and present at national/international meetings</li>
+          </ul>
+          <p><strong><a href="https://www.uh.edu/pharmacy/prospective-students/graduate-programs/" target="_blank" rel="noopener">Apply here</a></strong></p>
+        </div>
       </div>
     </div>
   </section>
-
-
-  
 
   <!-- Full Postdoc Description -->
   <section id="postdoc" class="reveal">
@@ -207,6 +226,7 @@
 <script defer src="/assets/site.js"></script>
 </body>
 </html>
+
 
 
 
