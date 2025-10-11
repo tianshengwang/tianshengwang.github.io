@@ -49,21 +49,6 @@
     .globe-svg{ display:inline-block; width:18px; height:18px; }
     .domain-link:hover .globe-svg{ animation: spin360 1.5s linear infinite; }
 
-    /* === NEW: Divider between stacked cards in Join Us === */
-    /* Divider between stacked cards in Join Us */
-.card-sep{
-  display: block;
-  grid-column: 1 / -1;          /* span across the grid row */
-  height: 1px;
-  background: var(--border, #2b3445);  /* slightly stronger line for dark mode */
-  margin: 16px 0;
-  border: 0;
-  border-radius: 1px;
-}
-@media (min-width: 900px){
-  /* Hide when cards are side-by-side on wide screens */
-  .card-sep{ display: none; }
-}
 
     
   </style>
@@ -140,9 +125,10 @@
           <p><a href="#postdoc" class="button">See full description</a></p>
         </div>
 
-        <!-- Divider line (visible when stacked) -->
-        <hr class="card-sep">
-
+ 
+      <!-- Divider line (only visible on stacked layout) -->
+      <hr class="card-sep">
+        
         <!-- PhD card -->
         <div class="card">
           <h3>PhD Student</h3>
