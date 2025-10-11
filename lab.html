@@ -50,17 +50,22 @@
     .domain-link:hover .globe-svg{ animation: spin360 1.5s linear infinite; }
 
     /* === NEW: Divider between stacked cards in Join Us === */
-    .card-sep {
-      height: 1px;
-      background: var(--border, rgba(255,255,255,0.14));
-      margin: 16px 0;
-      border: 0;
-      border-radius: 1px;
-    }
-    @media (min-width: 900px) {
-      /* Hide the divider when cards sit side-by-side */
-      .card-sep { display: none; }
-    }
+    /* Divider between stacked cards in Join Us */
+.card-sep{
+  display: block;
+  grid-column: 1 / -1;          /* span across the grid row */
+  height: 1px;
+  background: var(--border, #2b3445);  /* slightly stronger line for dark mode */
+  margin: 16px 0;
+  border: 0;
+  border-radius: 1px;
+}
+@media (min-width: 900px){
+  /* Hide when cards are side-by-side on wide screens */
+  .card-sep{ display: none; }
+}
+
+    
   </style>
 </head>
 <body>
