@@ -4,35 +4,93 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CausalRx.AI Lab — Tiansheng (Tian) Wang</title>
+  <meta name="description" content="CausalRx.AI Lab at the University of Houston — Machine learning–powered causal inference in real-world data." />
+
+  <!-- Fonts + shared styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/styles.css?v=4">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/images/favicon.jpg" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+
+  <!-- Page-scoped helpers -->
   <style>
-    body { background: #0f0f0f; color: #eee; }
-    .people-section { padding: 40px 0; }
+    .title a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+
+    /* Banner image */
+    .hero-img { width:100%; line-height:0; }
+    .hero-img img { display:block; width:100%; height:auto; }
+
+    /* Domain link + spinning globe (SVG) */
+    .domain-link{
+      color: var(--link);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .domain-text{ text-decoration: underline; }
+    @keyframes spin360 { to { transform: rotate(360deg); } }
+    .globe-svg{ display:inline-block; width:18px; height:18px; }
+    .domain-link:hover .globe-svg{ animation: spin360 1.5s linear infinite; }
+
+    /* People section */
+    .people-section {
+      padding-top: 24px;
+      padding-bottom: 40px;
+    }
+
     .people-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    @media (max-width: 1024px) {
+      .people-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .people-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
     }
 
     .person-card {
-      background: #1a1a1a;
-      border-radius: 15px;
-      padding: 22px;
-      text-align: center;
+      background: #111827; /* same color for all panels, matches dark/black background */
+      border-radius: 18px;
+      padding: 20px 20px 16px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.55);
+      border: 1px solid rgba(148, 163, 184, 0.35);
       display: flex;
       flex-direction: column;
-      transition: transform 0.15s ease;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
-    .person-card:hover { transform: translateY(-4px); }
+
+    .person-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.7);
+    }
 
     .person-photo {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      margin: 0 auto 16px;
+      width: 160px;
+      height: 160px;
+      border-radius: 999px;
       overflow: hidden;
-      border: 4px solid #444;
+      background: #020617;
+      border: 4px solid rgba(148, 163, 184, 0.6);
+      margin-bottom: 12px;
+      flex-shrink: 0;
     }
+
     .person-photo img {
       width: 100%;
       height: 100%;
@@ -41,123 +99,287 @@
     }
 
     .person-name {
-      font-size: 1.15rem;
       font-weight: 600;
-      margin: 0 0 6px;
-      color: #fff;
+      font-size: 1.05rem;
+      margin: 4px 0 2px;
+      color: #f9fafb;
     }
-    .person-role { margin: 0; font-size: 0.92rem; color: #aaa; }
-    .person-bio { font-size: 0.88rem; margin-top: 8px; color: #bbb; }
+
+    .person-role {
+      font-size: 0.9rem;
+      color: #cbd5f5;
+      margin: 0 0 4px;
+    }
+
+    .person-meta {
+      font-size: 0.85rem;
+      color: #9ca3af;
+      margin: 0 0 6px;
+    }
+
+    .person-bio {
+      font-size: 0.88rem;
+      color: #e5e7eb;
+      margin-top: 4px;
+    }
 
     .person-links {
-      margin-top: auto;
+      margin-top: 12px;
+      font-size: 0.85rem;
       display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
       justify-content: center;
-      gap: 12px;
-      margin-top: 14px;
     }
-    .person-links a {
-      color: #6ad0e0;
-      text-decoration: none;
-      font-size: 0.88rem;
-    }
-    .person-links a:hover { text-decoration: underline; }
 
-    /* Background color variations */
-    .bg1 { background: #2b1a3b; }
-    .bg2 { background: #2a321f; }
-    .bg3 { background: #1a2b3b; }
-    .bg4 { background: #3b281a; }
-    .bg5 { background: #1a3b28; }
-    .bg6 { background: #3a1a2f; }
+    .person-links a {
+      color: #38bdf8;
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(56, 189, 248, 0.6);
+      padding-bottom: 1px;
+    }
+
+    .person-links a:hover {
+      border-bottom-style: solid;
+    }
   </style>
 </head>
 <body>
 
-<section class="people-section">
+<header>
   <div class="container">
-    <h2 style="color:#fff; text-align:center; margin-bottom:20px;">People</h2>
-    <div class="people-grid">
-
-      <!-- PI -->
-      <div class="person-card bg1">
-        <div class="person-photo"><img src="/images/people/tian-wang.jpg" alt="Tiansheng (Tian) Wang"></div>
-        <p class="person-name">Tiansheng (Tian) Wang, PharmD, PhD</p>
-        <p class="person-role">PI, CausalRx.AI Lab</p>
-        <p class="person-bio">
-          Assistant Professor, University of Houston ● Research: AI/ML-powered causal inference, real-world evidence, heterogeneous treatment effects, ADRD drug discovery.
-        </p>
-        <div class="person-links">
-          <a href="mailto:tianwang@uh.edu">Email</a>
-          <a href="https://github.com/tianshengwang" target="_blank">GitHub</a>
-        </div>
+    <nav>
+      <div class="brand">Tiansheng (Tian) Wang</div>
+      <div class="nav">
+        <a href="/index.html">Home</a>
+        <a href="/lab.html" class="active">CausalRx.AI Lab</a>
+        <a href="/software.html">Software</a>
+        <a href="/publications.html">Publications</a>
+        <a href="/gallery.html">Gallery</a>
+        <button id="themeToggle" class="toggle" aria-label="Toggle light/dark">🌙</button>
       </div>
+    </nav>
+  </div>
+</header>
 
-      <!-- Postdoc Example -->
-      <div class="person-card bg2">
-        <div class="person-photo"><img src="/images/people/postdoc1.jpg" alt="Postdoctoral Fellow"></div>
-        <p class="person-name">[Postdoc Name]</p>
-        <p class="person-role">Postdoctoral Fellow</p>
-        <p class="person-bio">
-          Focus: causal machine learning & multimodal data integration for real-world evidence and drug repositioning.
-        </p>
-        <div class="person-links">
-          <a href="#">Profile</a>
-        </div>
-      </div>
+<main>
 
-      <!-- PhD Student Example -->
-      <div class="person-card bg3">
-        <div class="person-photo"><img src="/images/people/phd1.jpg" alt="PhD Student"></div>
-        <p class="person-name">[PhD Student Name]</p>
-        <p class="person-role">PhD Student</p>
-        <p class="person-bio">
-          Works on trajectory propensity scores and causal inference methods using claims and EHR data.
-        </p>
-        <div class="person-links">
-          <a href="#">Profile</a>
-        </div>
-      </div>
+  <!-- Top Banner Image -->
+  <div class="hero-img">
+    <img src="/images/houstonskyline.jpg" alt="University of Houston skyline at sunset">
+  </div>
 
-      <!-- Another Member -->
-      <div class="person-card bg4">
-        <div class="person-photo"><img src="/images/people/ms1.jpg" alt="MS Student"></div>
-        <p class="person-name">[MS Student]</p>
-        <p class="person-role">MS Data Science / PHOP</p>
-        <p class="person-bio">
-          Assists with data workflows, R/R Markdown, and reproducible analyses for research projects.
-        </p>
-        <div class="person-links"></div>
-      </div>
+  <!-- Title + Domain link -->
+  <section class="hero reveal" style="background:none; color:inherit; padding:24px 0 0;">
+    <div class="container">
+      <h1 class="title">CausalRx.AI Lab</h1>
+      <p class="subtitle" style="margin-top:-6px; margin-bottom:20px; font-size:0.95rem;">
+        <a href="http://CausalRx.AI" target="_blank" class="domain-link" rel="noopener">
+          <svg class="globe-svg" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+            <ellipse cx="12" cy="12" rx="6" ry="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <ellipse cx="12" cy="12" rx="3" ry="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M4 7c2.5 1.2 5.2 1.8 8 1.8S17.5 8.2 20 7" fill="none" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M4 17c2.5-1.2 5.2-1.8 8-1.8s5.5.6 8 1.8" fill="none" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+          <span class="domain-text">http://CausalRx.AI</span>
+        </a>
+      </p>
 
-      <!-- Another Member -->
-      <div class="person-card bg5">
-        <div class="person-photo"><img src="/images/people/ug1.jpg" alt="Undergraduate"></div>
-        <p class="person-name">[Undergraduate Student]</p>
-        <p class="person-role">Undergraduate Student</p>
-        <p class="person-bio">
-          Supports data curation, literature summaries, and exploratory analytics.
-        </p>
-        <div class="person-links"></div>
-      </div>
-
-      <!-- Placeholder for special collaborators -->
-      <div class="person-card bg6">
-        <div class="person-photo"><img src="/images/people/alumni.jpg" alt="Collaborators/Alumni"></div>
-        <p class="person-name">Collaborators & Alumni</p>
-        <p class="person-role">Team & Partners</p>
-        <p class="person-bio">
-          Alumni and key collaborators from UH, UNC, Baylor, and Texas Medical Center.
-        </p>
-        <div class="person-links"></div>
-      </div>
-
+      <p class="subtitle">
+        The CausalRx.AI lab at University of Houston 
+        <a href="https://www.uh.edu/pharmacy/about-us/academic-depts/phop/" target="_blank" rel="noopener">
+          Department of Pharmaceutical Health Outcomes and Policy (PHOP)
+        </a>
+        and 
+        <a href="https://www.uh.edu/pharmacy/research/centers-and-institutes/p-hoper-center/" target="_blank" rel="noopener">
+          Center for Population Health Outcomes and Pharmacoepidemiology Education and Research (P-HOPER Center)
+        </a>
+        develops and applies <strong>AI–powered causal inference</strong> methods 
+        to evaluate drug effects. Focus areas include 
+        <strong>precision medicine</strong>, <strong>confounding control</strong>, and 
+        <strong>using multimodal data (genetics, imaging, real-world data) to assess drug effects</strong>.
+      </p>
+      <p class="subtitle" style="margin-top:16px;">
+        <strong>I have openings for Postdocs and PhD students—feel free to contact me if you’d like to learn more about my research.</strong>
+      </p>
     </div>
+  </section>
+
+  <!-- People section -->
+  <section class="people-section reveal">
+    <div class="container">
+      <h2>People</h2>
+      <p class="subtitle" style="margin-bottom:16px; max-width:720px;">
+        We are a collaborative group working at the intersection of pharmacoepidemiology, causal inference, AI/ML, and multimodal data (claims, EHR, imaging, genetics).
+      </p>
+
+      <div class="people-grid">
+        <!-- PI -->
+        <article class="person-card">
+          <div class="person-photo">
+            <!-- Update the image path if needed -->
+            <img src="/images/people/tian-wang.jpg" alt="Portrait of Tiansheng (Tian) Wang">
+          </div>
+          <h3 class="person-name">Tiansheng (Tian) Wang, PharmD, PhD</h3>
+          <p class="person-role">PI, CausalRx.AI Lab</p>
+          <p class="person-meta">
+            Assistant Professor, University of Houston College of Pharmacy · Adjunct Assistant Professor, UNC Gillings School of Global Public Health
+          </p>
+          <p class="person-bio">
+            Tian develops causal machine learning and real-world evidence methods for drug repurposing, heterogeneous treatment effects, and confounding control, with a focus on Alzheimer’s disease and related dementias (ADRD).
+          </p>
+          <div class="person-links">
+            <a href="mailto:tianwang@uh.edu">Email</a>
+            <a href="https://tianshengwang.ai" target="_blank" rel="noopener">Website</a>
+            <a href="https://scholar.google.com/scholar?hl=en&q=Tiansheng+Wang" target="_blank" rel="noopener">Google Scholar</a>
+          </div>
+        </article>
+
+        <!-- Example Postdoc -->
+        <article class="person-card">
+          <div class="person-photo">
+            <img src="/images/people/postdoc-placeholder.jpg" alt="Postdoctoral fellow">
+          </div>
+          <h3 class="person-name">[Postdoctoral Fellow Name]</h3>
+          <p class="person-role">Postdoctoral Fellow</p>
+          <p class="person-meta">
+            Interests: high-dimensional PS methods, target trial emulation, ADRD pharmacoepidemiology.
+          </p>
+          <p class="person-bio">
+            Works on developing and applying temporal high-dimensional propensity scores and trajectory-based confounding control methods in large claims and EHR databases.
+          </p>
+          <div class="person-links">
+            <!-- Optional links -->
+            <!-- <a href="#">Website</a> -->
+          </div>
+        </article>
+
+        <!-- Example PhD student -->
+        <article class="person-card">
+          <div class="person-photo">
+            <img src="/images/people/phd-placeholder.jpg" alt="PhD student">
+          </div>
+          <h3 class="person-name">[PhD Student Name]</h3>
+          <p class="person-role">PhD Student</p>
+          <p class="person-meta">
+            Joined PHOP in [Year] · Co-advised with [Co-advisor, if any].
+          </p>
+          <p class="person-bio">
+            Focuses on machine learning subgroup identification, GLP-1RA and cardiometabolic outcomes, and leveraging large real-world datasets for precision therapeutics.
+          </p>
+          <div class="person-links">
+            <!-- <a href="#">LinkedIn</a> -->
+          </div>
+        </article>
+
+        <!-- Add more cards as needed -->
+        <article class="person-card">
+          <div class="person-photo">
+            <img src="/images/people/ms-placeholder.jpg" alt="Graduate student">
+          </div>
+          <h3 class="person-name">[MS Student Name]</h3>
+          <p class="person-role">MS Student · Data Science / PHOP</p>
+          <p class="person-meta">
+            Projects: real-world evidence pipelines, reproducible analytics, visualization of heterogeneous treatment effects.
+          </p>
+          <p class="person-bio">
+            Works on building robust data pipelines and dashboards for CausalRx.AI projects using R, Python, and SAS.
+          </p>
+          <div class="person-links"></div>
+        </article>
+
+        <article class="person-card">
+          <div class="person-photo">
+            <img src="/images/people/ug-placeholder.jpg" alt="Undergraduate student">
+          </div>
+          <h3 class="person-name">[Undergraduate / Visiting Student]</h3>
+          <p class="person-role">Undergraduate / Visiting Student</p>
+          <p class="person-meta">
+            Assists with data curation, literature reviews, and exploratory analyses.
+          </p>
+          <p class="person-bio">
+            Interested in learning about pharmacoepidemiology, real-world data, and AI-driven causal inference.
+          </p>
+          <div class="person-links"></div>
+        </article>
+
+        <article class="person-card">
+          <div class="person-photo">
+            <img src="/images/people/alumni-placeholder.jpg" alt="Lab alumni">
+          </div>
+          <h3 class="person-name">Lab Alumni & Collaborators</h3>
+          <p class="person-role">Alumni & Collaborators</p>
+          <p class="person-meta">
+            We are fortunate to collaborate with colleagues across UH, UNC, Baylor, MD Anderson, and beyond.
+          </p>
+          <p class="person-bio">
+            Alumni and key collaborators will be listed here soon. Stay tuned!
+          </p>
+          <div class="person-links"></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Us -->
+  <section class="reveal">
+    <div class="container">
+      <h2>Join Us</h2>
+      <div class="grid two">
+        <!-- Postdoc + PhD card -->
+        <div class="card">
+          <h3>Postdoctoral Fellow</h3>
+          <ul>
+            <li>Causal inference &amp; machine learning for assessing drug effects in real-world data (large claims, electronic health record, etc.).</li>
+            <li>Lead analyses, publish, and present at national/international meetings.</li>
+            <li>Contribute to grant preparation and collaborative projects.</li>
+          </ul>
+          <p>
+            <strong>
+              <a href="https://careers.uh.edu/jobs/pharmaceutical-health-outcomes-and-policy-post-doctoral-fellow-houston-texas-united-states" target="_blank" rel="noopener">
+                Apply here
+              </a>
+            </strong>
+          </p>
+
+          <h3>PhD Student</h3>
+          <ul>
+            <li>PhD in Pharmaceutical Health Outcomes &amp; Policy with a focus on real-world evidence and AI/ML-driven causal inference.</li>
+            <li>Opportunities to work with large datasets (Medicare, MarketScan, NACC, UK Biobank, etc.).</li>
+            <li>Collaborate with an interdisciplinary team across UH, UNC, Baylor, and Texas Medical Center partners.</li>
+          </ul>
+          <p>
+            <strong>
+              <a href="https://www.uh.edu/pharmacy/prospective-students/graduate-programs/" target="_blank" rel="noopener">
+                Apply here
+              </a>
+            </strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Contact -->
+<section id="contact" class="reveal">
+  <div class="container">
+    <h2>Contact</h2>
+    <p><strong>Email:</strong> <a href="mailto:tianwang@uh.edu">tianwang@uh.edu</a> · <strong>GitHub:</strong> <a href="https://github.com/tianshengwang" target="_blank" rel="noopener">@tianshengwang</a></p>
+    <p style="color:#7c869a">© <span id="year"></span> Tiansheng (Tian) Wang — Built with vanilla HTML/CSS, animated blobs, and scroll-reveal ✦ Hosted on GitHub Pages.</p>
   </div>
 </section>
 
+<button id="toTop" class="toTop" aria-label="Back to top">↑</button>
+
+<!-- Shared JS -->
+<script defer src="/assets/site.js"></script>
 </body>
 </html>
+
 
 
 
