@@ -262,7 +262,7 @@
             <img src="/images/people/nitin.jpg" alt="PhD student">
           </div>
           <h3 class="person-name">Nitin Hariprasad</h3>
-          <p class="person-role">MS Student @ UH</p>
+          <p class="person-role">Engineering data cience MS Student @ UH</p>
           <p class="person-meta">
             Interests: leveraging Agentic AI and LLMs to solve causal inference challenges in pharmaco-epidemiology
           </p>
@@ -271,7 +271,7 @@
           </p>
           <div class="person-links">
             <a href="mailto:nvengite@CougarNet.UH.EDU">Email</a>
-            <a href="https://github.com/nitinvh" target="_blank" rel="noopener">Website</a>
+            <a href="https://github.com/nitinvh" target="_blank" rel="noopener noreferrer">Website</a>
           </div>
         </article>
 
@@ -378,6 +378,16 @@
 
 <!-- Shared JS -->
 <script defer src="/assets/site.js"></script>
+  <script>
+  // Open all external links in a new tab
+  document.querySelectorAll('a[href^="http"]').forEach(a => {
+    const isExternal = new URL(a.href).origin !== window.location.origin;
+    if (isExternal) {
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+    }
+  });
+</script>
 </body>
 </html>
 
