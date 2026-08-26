@@ -95,61 +95,105 @@
   </div>
 </section>
 
-<!-- FEATURED slider (unchanged) -->
+<!-- FEATURED slider -->
 <section class="reveal">
   <div class="container">
     <h2 style="margin-bottom:14px;">Featured</h2>
+
     <div class="feature-hero" id="featureHero">
       <button class="feature-nav prev" aria-label="Previous">⟨</button>
+
       <div class="feature-track" id="featureTrack" aria-live="polite">
+
+        <!-- 1. iCF -->
         <article class="feature-slide active" aria-hidden="false">
           <div class="feature-media">
             <img src="/images/figures/FIGURE1_all_Panels_AB.jpg" alt="iCF workflow">
           </div>
+
           <div class="feature-meta">
             <h3 class="feature-title">
-              <a href="https://doi.org/10.1093/aje/kwad219" target="_blank" rel="noopener">
+              <a href="https://doi.org/10.1093/aje/kwad219"
+                 target="_blank"
+                 rel="noopener">
                 Iterative Causal Forest: A Novel Algorithm for Subgroup Identification
               </a>
             </h3>
-            <p class="subtitle"><em>American Journal of Epidemiology</em>, 2024</p>
-            <p class="feature-caption">We've developed a machine learning subgrouping algorithm based on causal forest to better identify subpopulation who will benefit (or be harmed) more from a specific treatment. 
-              The iCF algorithm iteratively develops shallow causal forests at different depths to obtain a family of subgroup decisions, then selects the cross-validated decision that best predicts causal treatment effect.</p>
+
+            <p class="subtitle">
+              <em>American Journal of Epidemiology</em>, 2024
+            </p>
+
+            <p class="feature-caption">
+              We've developed a machine learning subgrouping algorithm based on causal
+              forest to better identify subpopulations who will benefit (or be harmed)
+              more from a specific treatment. The iCF algorithm iteratively develops
+              shallow causal forests at different depths to obtain a family of subgroup
+              decisions, then selects the cross-validated decision that best predicts
+              causal treatment effect.
+            </p>
           </div>
         </article>
+
+
+        <!-- 2. hdiCF -->
         <article class="feature-slide" aria-hidden="true">
           <div class="feature-media">
             <img src="/images/figures/FIGURE1_hdiCF_3KEYsteps.jpg" alt="hdiCF steps">
           </div>
+
           <div class="feature-meta">
             <h3 class="feature-title">
-              <a href="https://doi.org/10.1093/aje/kwae322" target="_blank" rel="noopener">
+              <a href="https://doi.org/10.1093/aje/kwae322"
+                 target="_blank"
+                 rel="noopener">
                 High-dimensional Iterative Causal Forest (hdiCF)
               </a>
             </h3>
-            <p class="subtitle"><em>American Journal of Epidemiology</em>, 2024</p>
-            <p class="feature-caption">hdiCF extends iCF to high-dimensional claims data, using diagnosis/procedure/prescription codes to identify subgroups with heterogeneous treatment effects.</p>
+
+            <p class="subtitle">
+              <em>American Journal of Epidemiology</em>, 2024
+            </p>
+
+            <p class="feature-caption">
+              hdiCF extends iCF to high-dimensional claims data, using
+              diagnosis/procedure/prescription codes to identify subgroups with
+              heterogeneous treatment effects.
+            </p>
           </div>
         </article>
+
+
+        <!-- 3. ARIC dementia algorithm -->
         <article class="feature-slide" aria-hidden="true">
           <div class="feature-media">
-            <img src="/images/figures/Fig3_StudyDesignTimeline_Dementia.jpg" alt="ADRD identification timeline">
+            <img src="/images/figures/Fig3_StudyDesignTimeline_Dementia.jpg"
+                 alt="Dementia identification study timeline">
           </div>
+
           <div class="feature-meta">
             <h3 class="feature-title">
-              <a href="https://doi.org/10.1093/aje/kwaf166" target="_blank" rel="noopener">
+              <a href="https://doi.org/10.1093/aje/kwaf166"
+                 target="_blank"
+                 rel="noopener">
                 A Novel Algorithm to Identify Incident and Prevalent Dementia in Medicare Claims (ARIC)
               </a>
             </h3>
-            <p class="subtitle"><em>American Journal of Epidemiology</em>, 2025</p>
-            <p class="feature-caption">Using Medicare claims from ARIC participants and ARIC’s syndromic dementia classification, we developed and validated claims-based algorithms to identify incident and prevalent dementia.</p>
+
+            <p class="subtitle">
+              <em>American Journal of Epidemiology</em>, 2025
+            </p>
+
+            <p class="feature-caption">
+              Using Medicare claims from ARIC participants and ARIC’s syndromic
+              dementia classification, we developed and validated claims-based
+              algorithms to identify incident and prevalent dementia.
+            </p>
           </div>
         </article>
-      </div>
-      <button class="feature-nav next" aria-label="Next">⟩</button>
-    </div>
 
-       <!-- 4. ATHENA -->
+
+        <!-- 4. ATHENA -->
         <article class="feature-slide" aria-hidden="true">
           <div class="feature-media">
             <img src="/images/figures/ATHENA_Fig1.jpeg"
@@ -180,12 +224,14 @@
 
       </div>
 
-  <button class="feature-nav next" aria-label="Next">⟩</button>
+      <button class="feature-nav next" aria-label="Next">⟩</button>
     </div>
 
-    <p class="subtitle" style="margin-top:8px;color:var(--muted)">Tip: use ← / → or swipe to navigate. Auto-plays and pauses on hover.</p>
-  </div>
+    <p class="subtitle" style="margin-top:8px;color:var(--muted)">
+      Tip: use ← / → or swipe to navigate. Auto-plays and pauses on hover.
+    </p>
 
+  </div>
 </section>
 
 <!-- Full publications by year (collapsible) -->
